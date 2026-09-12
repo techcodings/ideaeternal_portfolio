@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IdeaSternal &mdash; Web &amp; App Development &middot; Applied AI</title>
+<meta name="description" content="IdeaSternal is a premium software and applied AI development studio. We build web, mobile, AI, cloud and automation solutions that turn ambitious ideas into practical digital products.">
+<meta name="keywords" content="web development, app development, applied AI, software development, React, Node.js, machine learning, mobile app, cloud, automation, India">
+<meta name="author" content="IdeaSternal">
+<link rel="canonical" href="https://ideaseternal.com">
+<!-- Open Graph -->
+<meta property="og:title" content="IdeaSternal &mdash; Web &amp; App Development &middot; Applied AI">
+<meta property="og:description" content="Let&rsquo;s Build Something That Lasts. Premium software and applied AI development studio.">
+<meta property="og:url" content="https://ideaseternal.com">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ideaseternal.com/assets/img/og_image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="IdeaSternal">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IdeaSternal &mdash; Web &amp; App Development &middot; Applied AI">
+<meta name="twitter:description" content="Premium software and applied AI development studio. We build web, mobile, AI and automation solutions.">
+<meta name="twitter:image" content="https://ideaseternal.com/assets/img/og_image.jpg">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23080e24'/><text x='16' y='23' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='18' fill='%23f97316'>iE</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23080e24'/><text x='16' y='23' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='18' fill='%23f97316'>iE</text></svg>">
+<meta name="theme-color" content="#080e24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060b1a;--bg2:#0a1128;--bg3:#0f1836;--bg4:#142046;--border:#1a2a5e;
+  --or:#f97316;--orl:#fb923c;--ord:rgba(249,115,22,.12);--bl:#3b82f6;--bll:#60a5fa;
+  --txt:#eef2ff;--txts:#94a3c4;--txtm:#5e6e8e;--wh:#fff;
+  --grad-or:linear-gradient(135deg,#f97316,#ea580c);--grad-card:linear-gradient(145deg,#0f1836,#0a1020);
+  --grad-hero:linear-gradient(160deg,#060b1a 0%,#0a1128 40%,#0d1430 100%);
+  --glow:0 0 30px rgba(249,115,22,.12);--r:16px;
+  --ease:cubic-bezier(.4,0,.2,1);--tr:all .35s var(--ease)
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--or)}
+::selection{background:rgba(249,115,22,.25);color:var(--wh)}
+
+/* Utility */
+.cn{max-width:1200px;margin:0 auto;padding:0 24px}
+.sec{padding:120px 0;position:relative}
+.sl{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--or);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sl::before{content:'';width:24px;height:1px;background:var(--or)}
+.st{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.12;color:var(--wh);margin-bottom:18px}
+.st em{font-style:normal;background:var(--grad-or);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ss{font-size:17px;color:var(--txts);max-width:560px;line-height:1.75}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;transition:var(--tr);letter-spacing:.01em}
+.bp{background:var(--grad-or);color:#fff;box-shadow:0 4px 20px rgba(249,115,22,.3)}.bp:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(249,115,22,.45)}
+.bso{background:transparent;color:var(--txt);border:1px solid var(--border)}.bso:hover{background:var(--bg3);border-color:var(--bl);color:var(--bll)}
+
+/* Scroll reveal */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}.rv.vi{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+
+/* Hero animations */
+.anim-fade-in{opacity:0;animation:fadeIn .8s var(--ease) forwards}.anim-fade-in.d2{animation-delay:.2s}.anim-fade-in.d4{animation-delay:.4s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.anim-slide-up{opacity:0;transform:translateY(30px);animation:slideUp .8s var(--ease) forwards}
+.anim-slide-up.d2{animation-delay:.3s}.anim-slide-up.d3{animation-delay:.5s}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* Glow button */
+.btn-glow{position:relative;overflow:hidden}
+.btn-glow::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.15),transparent 60%);opacity:0;transition:opacity .4s ease}
+.btn-glow:hover::before{opacity:1}
+.btn-glow::after{content:'';position:absolute;inset:-2px;border-radius:inherit;background:linear-gradient(135deg,rgba(249,115,22,.6),rgba(234,88,12,.3),rgba(249,115,22,.6));z-index:-1;animation:glowPulse 3s ease-in-out infinite;filter:blur(8px);opacity:.5}
+@keyframes glowPulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:.6;transform:scale(1.02)}}
+
+/* Particle system */
+.h-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.h-particle{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(249,115,22,.3);animation:particleFloat linear infinite}
+@keyframes particleFloat{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-100vh) translateX(50px);opacity:0}}
+
+/* Text shimmer on hover */
+.st em{transition:filter .3s ease}.st:hover em{filter:brightness(1.3)}
+
+/* Counter number animation */
+.hsi .n{transition:all .3s ease}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 24px;transition:var(--tr)}
+.nav.sc{background:rgba(6,11,26,.92);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(26,42,94,.5)}
+.ni{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
+.nlo{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--wh);letter-spacing:-.02em}
+.nlo span{background:var(--grad-or);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nls{display:flex;align-items:center;gap:32px}
+.nls a{font-size:13px;font-weight:500;color:var(--txts);transition:var(--tr);position:relative}
+.nls a:hover{color:var(--wh)}
+.nls a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--or);transition:width .3s var(--ease)}
+.nls a:hover::after{width:100%}
+.nct{display:flex;align-items:center;gap:12px}
+.nbtn{padding:10px 22px;font-size:13px;border-radius:8px}
+.nhb{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer}
+.nhb span{display:block;width:22px;height:2px;background:var(--txts);border-radius:2px;transition:var(--tr)}
+.mnn{position:fixed;top:0;right:-100%;bottom:0;width:min(360px,100%);background:var(--bg2);border-left:1px solid var(--border);z-index:1001;padding:80px 32px 40px;transition:right .4s var(--ease);display:flex;flex-direction:column;gap:8px}
+.mnn.op{right:0}.mnn a{font-size:18px;font-weight:500;color:var(--txts);padding:14px 0;border-bottom:1px solid rgba(26,42,94,.3);display:block;transition:var(--tr)}.mnn a:hover{color:var(--wh);padding-left:8px}
+.mno{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s ease}.mno.op{opacity:1;pointer-events:all}
+.mnc{position:absolute;top:24px;right:24px;width:36px;height:36px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--txts);font-size:18px;transition:var(--tr)}.mnc:hover{border-color:var(--or);color:var(--or)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--grad-hero);padding:100px 0 80px}
+.hbg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hgr{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black 40%,transparent 100%)}
+.hg1{position:absolute;top:-25%;right:-15%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.06),transparent 70%);animation:hpulse 8s ease-in-out infinite}
+.hg2{position:absolute;bottom:-25%;left:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.05),transparent 70%);animation:hpulse 10s ease-in-out infinite reverse}
+@keyframes hpulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.1);opacity:.7}}
+.hcn{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hey{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border-radius:100px;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--or);margin-bottom:28px}
+.hey .dot{width:6px;height:6px;border-radius:50%;background:var(--or);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.hhd{font-family:'Space Grotesk',sans-serif;font-size:clamp(40px,6.5vw,72px);font-weight:800;line-height:1.04;color:var(--wh);margin-bottom:22px;letter-spacing:-.03em}
+.hhd em{font-style:normal;background:var(--grad-or);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hsb{font-size:clamp(15px,1.8vw,18px);color:var(--txts);max-width:520px;line-height:1.7;margin-bottom:32px}
+.hac{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.hst{display:flex;align-items:center;gap:36px;padding-top:32px;border-top:1px solid rgba(26,42,94,.5);flex-wrap:wrap}
+.hsi{text-align:left}.hsi .n{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--wh)}.hsi .l{font-size:11px;color:var(--txtm);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+
+/* Hero Pipeline Visual */
+.hpv{position:relative}
+.pipeline{display:flex;flex-direction:column;gap:0;position:relative}
+.pipe-node{display:flex;align-items:center;gap:16px;padding:14px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(26,42,94,.5);border-radius:12px;transition:var(--tr);position:relative}
+.pipe-node:hover{background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.3);transform:translateX(6px)}
+.pipe-icon{width:40px;height:40px;border-radius:10px;background:var(--ord);border:1px solid rgba(249,115,22,.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.pipe-node:hover .pipe-icon{background:rgba(249,115,22,.2);border-color:rgba(249,115,22,.4)}
+.pipe-txt h4{font-size:13px;font-weight:700;color:var(--wh)}.pipe-txt p{font-size:11px;color:var(--txtm);margin-top:1px}
+.pipe-line{width:2px;height:16px;background:linear-gradient(to bottom,rgba(249,115,22,.3),rgba(59,130,246,.2));margin-left:34px;position:relative}
+.pipe-line::after{content:'';position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--or);opacity:.6}
+.pipe-node.active{background:rgba(249,115,22,.1);border-color:rgba(249,115,22,.4)}
+.pipe-node.active .pipe-icon{background:var(--or);border-color:var(--or)}
+.pipe-node.active .pipe-icon span{filter:brightness(10)}
+.pipe-node.active .pipe-txt h4{color:var(--or)}
+
+/* Capability Bar */
+.cbr{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;z-index:5}
+.cbi{max-width:1200px;margin:0 auto;padding:0 24px;display:flex}
+.cit{flex:1;display:flex;align-items:center;gap:12px;padding:24px 20px;border-right:1px solid rgba(26,42,94,.3);transition:var(--tr);min-width:0}
+.cit:last-child{border-right:none}.cit:hover{background:rgba(249,115,22,.03)}
+.cit .ico{font-size:20px;flex-shrink:0}.cit .txt{min-width:0}
+.cit .txt h5{font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cit .txt p{font-size:10px;color:var(--txtm);margin-top:1px}
+
+/* Services */
+.sgr{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px}
+.scd{background:var(--grad-card);border:1px solid var(--border);border-radius:var(--r);padding:36px;transition:var(--tr);position:relative;overflow:hidden}
+.scd::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-or);transform:scaleX(0);transition:transform .4s var(--ease);transform-origin:left}
+.scd:hover{border-color:rgba(249,115,22,.25);transform:translateY(-4px);box-shadow:var(--glow)}.scd:hover::before{transform:scaleX(1)}
+.sci{width:48px;height:48px;border-radius:12px;background:var(--ord);border:1px solid rgba(249,115,22,.15);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px;transition:var(--tr)}
+.scd:hover .sci{background:rgba(249,115,22,.2);border-color:rgba(249,115,22,.4);transform:scale(1.05)}
+.scd h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:10px}
+.scd>p{font-size:14px;color:var(--txts);line-height:1.65;margin-bottom:18px}
+.sls{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}.sls li{font-size:12px;color:var(--txts);display:flex;align-items:center;gap:8px}
+.sls li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--or);flex-shrink:0}
+.spp{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+.spt{font-size:10px;font-weight:600;padding:4px 10px;border-radius:100px;background:rgba(59,130,246,.08);color:var(--bll);border:1px solid rgba(59,130,246,.15);cursor:pointer;transition:var(--tr)}.spt:hover{background:rgba(59,130,246,.18)}
+.sct{color:var(--or);font-size:12px;font-weight:600;display:inline-flex;align-items:center;gap:5px;margin-top:14px;cursor:pointer;transition:var(--tr);border:none;background:none}.sct:hover{gap:8px}
+
+/* Projects */
+.phd{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:36px}
+.pfr{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:36px}
+.fbt{padding:7px 16px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:transparent;color:var(--txtm);border:1px solid rgba(26,42,94,.5);transition:var(--tr);cursor:pointer}
+.fbt.ac,.fbt:hover{background:var(--ord);color:var(--or);border-color:rgba(249,115,22,.3)}
+.pgr{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pcd{background:var(--grad-card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:var(--tr)}
+.pcd:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.4),var(--glow);border-color:rgba(249,115,22,.25)}
+.pim{width:100%;aspect-ratio:16/10;overflow:hidden;position:relative;background:linear-gradient(135deg,#0a1632,#0d1a3a)}
+.pim img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);position:absolute;inset:0}
+.pcd:hover .pim img{transform:scale(1.06)}
+.pio{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(6,11,26,.85) 100%);z-index:1}
+.pcb{position:absolute;top:10px;left:10px;padding:4px 10px;border-radius:100px;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(6,11,26,.8);color:var(--or);border:1px solid rgba(249,115,22,.25);backdrop-filter:blur(8px);z-index:2}
+.pab{position:absolute;top:10px;right:10px;padding:4px 10px;border-radius:100px;font-size:9px;font-weight:700;background:rgba(234,179,8,.12);color:#fbbf24;border:1px solid rgba(234,179,8,.25);backdrop-filter:blur(8px);z-index:2}
+.pab-dev{position:absolute;top:10px;right:10px;padding:4px 12px;border-radius:100px;font-size:9px;font-weight:700;letter-spacing:.06em;background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.3);backdrop-filter:blur(8px);z-index:2;animation:devPulse 2s ease-in-out infinite}
+@keyframes devPulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.2)}50%{box-shadow:0 0 12px 3px rgba(16,185,129,.15)}}
+.pab-done{position:absolute;top:10px;right:10px;padding:4px 12px;border-radius:100px;font-size:9px;font-weight:700;letter-spacing:.06em;background:rgba(59,130,246,.08);color:rgba(96,165,250,.7);border:1px solid rgba(59,130,246,.15);backdrop-filter:blur(8px);z-index:2}
+.pbdy{padding:20px 22px 22px}
+.ptt{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px;line-height:1.3}
+.ppu{font-size:12px;color:var(--txts);line-height:1.6;margin-bottom:12px}
+.tps{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px}
+.tpi{font-size:9px;font-weight:600;padding:3px 8px;border-radius:100px;background:rgba(255,255,255,.04);color:var(--txtm);border:1px solid rgba(26,42,94,.4)}
+.pac{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.pbn{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:8px;font-size:11px;font-weight:600;transition:var(--tr);cursor:pointer}
+.pbp{background:var(--or);color:#fff}.pbp:hover{background:var(--orl);transform:translateY(-1px)}
+.pbs{background:transparent;color:var(--txtm);border:1px solid rgba(26,42,94,.5)}.pbs:hover{border-color:var(--bl);color:var(--bll)}
+.smb{text-align:center;margin-top:40px}
+
+/* Why Section */
+.wgr{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.wcd{background:var(--grad-card);border:1px solid var(--border);border-radius:var(--r);padding:28px;transition:var(--tr)}.wcd:hover{border-color:rgba(249,115,22,.25);transform:translateY(-4px)}
+.wnn{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:800;background:var(--grad-or);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.4;line-height:1;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(26,42,94,.3)}
+.wcd:hover .wnn{opacity:.7}
+.wcd h4{font-size:16px;font-weight:700;margin-bottom:8px}.wcd p{font-size:13px;color:var(--txts);line-height:1.65}
+
+/* Currently Building */
+.cbuild{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)}
+.cbg{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px}
+.cbimg{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);position:relative}
+.cbimg img{width:100%;display:block}
+.cblv{position:absolute;top:14px;left:14px;padding:5px 14px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.3);backdrop-filter:blur(8px)}
+.cbinfo h3{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:700;margin-bottom:12px;line-height:1.2}
+.cbinfo>p{font-size:15px;color:var(--txts);line-height:1.7;margin-bottom:24px}
+.cbmods{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
+.cbmod{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(26,42,94,.3);font-size:12px;font-weight:600;color:var(--txts);transition:var(--tr)}
+.cbmod:hover{border-color:rgba(249,115,22,.25);background:var(--ord)}
+.cbmod .mi{font-size:16px}
+.cbstack{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.cbsk{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);font-size:12px;font-weight:600;color:var(--txts)}
+.cbprog{margin-top:24px}
+.pbar{display:flex;align-items:center;gap:0;margin-top:14px}
+.pstep{display:flex;flex-direction:column;align-items:center;flex:1;position:relative}
+.pstep .dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--border);background:var(--bg);transition:var(--tr);position:relative;z-index:2}
+.pstep.done .dot{background:var(--or);border-color:var(--or)}
+.pstep.cur .dot{background:var(--bg);border-color:var(--or);box-shadow:0 0 0 4px rgba(249,115,22,.2)}
+.pstep .ln{font-size:9px;color:var(--txtm);margin-top:6px;text-transform:uppercase;letter-spacing:.06em;font-weight:600;white-space:nowrap}
+.pstep.done .ln{color:var(--or)}.pstep.cur .ln{color:var(--or);font-weight:700}
+.pstep::before{content:'';position:absolute;top:6px;right:50%;width:100%;height:2px;background:var(--border);z-index:1}
+.pstep:first-child::before{display:none}
+.pstep.done::before{background:var(--or)}.pstep.cur::before{background:linear-gradient(to right,var(--or),var(--border))}
+
+/* Process */
+.prst{display:grid;grid-template-columns:72px 1fr;gap:28px;padding:28px 0;border-bottom:1px solid rgba(26,42,94,.2)}
+.prst:last-child{border-bottom:none}
+.prst:hover .prn{color:var(--or)}
+.prn{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:800;color:rgba(26,42,94,.5);line-height:1;transition:var(--tr);padding-top:4px}
+.prc h4{font-size:18px;font-weight:700;margin-bottom:8px}.prc p{font-size:14px;color:var(--txts);line-height:1.65;max-width:600px}
+.ptgs{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.ptgi{font-size:10px;font-weight:600;padding:4px 10px;border-radius:100px;background:rgba(255,255,255,.03);color:var(--txtm);border:1px solid rgba(26,42,94,.3)}
+
+/* Tech */
+.tcs{display:flex;flex-direction:column;gap:24px;margin-top:56px}
+.tcl{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--txtm);margin-bottom:10px}.tsw{display:flex;flex-wrap:wrap;gap:8px}
+.tit{display:flex;align-items:center;gap:7px;padding:9px 16px;border-radius:10px;background:rgba(255,255,255,.02);border:1px solid rgba(26,42,94,.4);font-size:12px;font-weight:600;color:var(--txts);transition:var(--tr)}
+.tit:hover{border-color:rgba(249,115,22,.3);color:var(--wh);background:var(--ord)}
+
+/* Achievements */
+.agv{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:56px}
+.avc{background:var(--grad-card);border:1px solid var(--border);border-radius:var(--r);padding:24px 26px;display:flex;align-items:flex-start;gap:16px;transition:var(--tr)}
+.avc:hover{border-color:rgba(234,179,8,.25);transform:translateY(-3px)}
+.avic{width:44px;height:44px;flex-shrink:0;border-radius:12px;background:rgba(234,179,8,.08);border:1px solid rgba(234,179,8,.15);display:flex;align-items:center;justify-content:center;font-size:20px}
+.avb h4{font-size:14px;font-weight:700;margin-bottom:5px;line-height:1.35}.avb>p{font-size:12px;color:var(--txts);line-height:1.55}
+.avm{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}.avd{font-size:10px;color:var(--txtm)}.avo{font-size:10px;color:var(--bll);font-weight:600}
+
+/* Scroll storytelling */
+.story-sec{position:relative;overflow:hidden;padding:120px 0;background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story-txt{position:relative;z-index:2}
+.layer-vis{position:relative;display:flex;flex-direction:column;gap:0}
+.layer{display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.02);border:1px solid rgba(26,42,94,.3);border-radius:10px;opacity:.3;transform:translateX(20px);transition:all .5s var(--ease)}
+.layer.vis{opacity:1;transform:translateX(0)}
+.layer .l-ico{width:36px;height:36px;border-radius:8px;background:var(--ord);border:1px solid rgba(249,115,22,.2);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.layer .l-txt{font-size:13px;font-weight:700;color:var(--wh)}
+.layer .l-sub{font-size:11px;color:var(--txtm);margin-top:1px}
+.layer-conn{width:2px;height:12px;background:linear-gradient(to bottom,rgba(249,115,22,.3),rgba(59,130,246,.15));margin-left:33px}
+
+/* CTA */
+.cta-sec{background:linear-gradient(135deg,var(--bg2),var(--bg));border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 0;text-align:center;position:relative;overflow:hidden}
+.ctg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.06),transparent 70%);pointer-events:none}
+.ctt{font-family:'Space Grotesk',sans-serif;font-size:clamp(34px,5vw,54px);font-weight:800;line-height:1.1;margin-bottom:18px;position:relative;z-index:2}
+.cts{font-size:16px;color:var(--txts);max-width:540px;margin:0 auto 36px;line-height:1.7;position:relative;z-index:2}
+.ctac{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;z-index:2}
+.ctcc{display:flex;align-items:center;justify-content:center;gap:28px;margin-top:36px;flex-wrap:wrap;position:relative;z-index:2}
+.ctci{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--txts);transition:var(--tr)}.ctci:hover{color:var(--wh)}
+
+/* Contact */
+.ccg{display:grid;grid-template-columns:1fr 1.4fr;gap:52px;margin-top:52px;align-items:start}
+.ccl h3{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;margin-bottom:12px}
+.ccl>p{font-size:14px;color:var(--txts);line-height:1.7;margin-bottom:28px}
+.cis2{display:flex;flex-direction:column;gap:12px}
+.cii{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:10px;background:rgba(255,255,255,.02);border:1px solid rgba(26,42,94,.3);transition:var(--tr)}.cii:hover{border-color:rgba(249,115,22,.25);background:var(--ord)}
+.cii2{width:40px;height:40px;border-radius:10px;flex-shrink:0;background:var(--ord);border:1px solid rgba(249,115,22,.15);display:flex;align-items:center;justify-content:center;font-size:18px}
+.cit2 p:first-child{font-size:10px;color:var(--txtm);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.cit2 p:last-child{font-size:14px;font-weight:600;color:var(--txt);margin-top:2px}
+.cfc{background:var(--grad-card);border:1px solid var(--border);border-radius:var(--r);padding:36px}
+.cft{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:24px}
+.frw{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fgp{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}.fgp label{font-size:11px;font-weight:600;color:var(--txts)}
+.fgp input,.fgp select,.fgp textarea{padding:11px 14px;border-radius:8px;background:var(--bg);border:1px solid rgba(26,42,94,.4);color:var(--txt);font-size:13px;font-family:inherit;transition:var(--tr);outline:none}
+.fgp input:focus,.fgp select:focus,.fgp textarea:focus{border-color:var(--or);box-shadow:0 0 0 3px rgba(249,115,22,.08)}
+.fgp textarea{min-height:100px;resize:vertical}.fgp select option{background:var(--bg2)}
+.fsb{width:100%;padding:14px;font-size:14px}.fnt{font-size:11px;color:var(--txtm);text-align:center;margin-top:10px}
+
+/* Footer */
+.ftr{background:var(--bg2);border-top:1px solid var(--border);padding:56px 0 28px}
+.ftg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.fbn{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:6px}.fbn span{background:var(--grad-or);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.fbt2{font-size:10px;color:var(--txtm);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.fbd{font-size:12px;color:var(--txtm);line-height:1.7;max-width:240px}
+.fso{display:flex;gap:8px;margin-top:16px}.fso a{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(26,42,94,.4);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--txtm);transition:var(--tr)}.fso a:hover{border-color:rgba(249,115,22,.3);color:var(--or)}
+.fco h5{font-size:12px;font-weight:700;margin-bottom:16px}.fco ul{display:flex;flex-direction:column;gap:9px}.fco ul a{font-size:12px;color:var(--txtm);transition:var(--tr)}.fco ul a:hover{color:var(--or)}
+.fbt3{padding-top:24px;border-top:1px solid rgba(26,42,94,.3);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.fbt3 p{font-size:11px;color:var(--txtm)}
+.fbl{display:flex;gap:16px}.fbl a{font-size:11px;color:var(--txtm);transition:var(--tr)}.fbl a:hover{color:var(--or)}
+
+/* CHATBOT WIDGET */
+.chat-fab{position:fixed;bottom:24px;right:24px;z-index:998;display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:100px;background:var(--grad-or);color:#fff;font-size:13px;font-weight:700;box-shadow:0 6px 24px rgba(249,115,22,.35);cursor:pointer;transition:var(--tr);border:none}
+.chat-fab:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 10px 30px rgba(249,115,22,.5)}
+.chat-fab .cficon{font-size:18px}
+.chat-panel{position:fixed;bottom:24px;right:24px;z-index:999;width:380px;max-height:560px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;opacity:0;pointer-events:none;transform:translateY(20px) scale(.95);transition:all .35s var(--ease);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.chat-panel.open{opacity:1;pointer-events:all;transform:translateY(0) scale(1)}
+.chat-hdr{padding:16px 20px;background:var(--bg3);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.chat-hdr h4{font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px}
+.chat-hdr h4 .chd{width:8px;height:8px;border-radius:50%;background:#34d399}
+.chat-acts{display:flex;gap:6px}
+.chat-acts button{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(26,42,94,.3);display:flex;align-items:center;justify-content:center;color:var(--txts);font-size:14px;cursor:pointer;transition:var(--tr)}
+.chat-acts button:hover{border-color:var(--or);color:var(--or)}
+.chat-body{flex:1;overflow-y:auto;padding:16px 16px 12px;display:flex;flex-direction:column;gap:10px;min-height:320px;max-height:400px}
+.chat-msg{max-width:85%;padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.55;animation:chatIn .3s var(--ease)}
+@keyframes chatIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.chat-msg.bot{align-self:flex-start;background:var(--bg3);border:1px solid rgba(26,42,94,.3);border-bottom-left-radius:4px;color:var(--txt)}
+.chat-msg.usr{align-self:flex-end;background:var(--or);color:#fff;border-bottom-right-radius:4px}
+.chat-opts{display:flex;flex-wrap:wrap;gap:6px;align-self:flex-start;animation:chatIn .3s var(--ease)}
+.chat-opt{padding:7px 14px;border-radius:100px;font-size:12px;font-weight:600;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);color:var(--or);cursor:pointer;transition:var(--tr)}
+.chat-opt:hover{background:rgba(249,115,22,.18);transform:translateY(-1px)}
+.chat-ftr{padding:12px 16px;border-top:1px solid rgba(26,42,94,.3);display:flex;gap:8px}
+.chat-ftr input{flex:1;padding:10px 14px;border-radius:100px;background:var(--bg);border:1px solid rgba(26,42,94,.4);color:var(--txt);font-size:13px;outline:none;font-family:inherit;transition:var(--tr)}
+.chat-ftr input:focus{border-color:var(--or)}
+.chat-ftr button{padding:10px 18px;border-radius:100px;background:var(--or);color:#fff;font-size:13px;font-weight:600;cursor:pointer;transition:var(--tr);border:none}.chat-ftr button:hover{background:var(--orl)}
+.chat-ftr.hidden{display:none}
+
+/* WhatsApp */
+.waf{position:fixed;bottom:24px;left:24px;z-index:998;width:48px;height:48px;border-radius:50%;background:#25d366;box-shadow:0 4px 16px rgba(37,211,102,.35);display:flex;align-items:center;justify-content:center;font-size:22px;transition:var(--tr);text-decoration:none;color:#fff}
+.waf:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,.5)}
+
+/* MODAL */
+.mol{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s ease;display:flex;align-items:center;justify-content:center;padding:20px}
+.mol.op{opacity:1;pointer-events:all}
+.mdi{width:100%;max-width:860px;max-height:88vh;background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transform:scale(.95) translateY(16px);transition:transform .35s var(--ease)}
+.mol.op .mdi{transform:scale(1) translateY(0)}
+.msc{overflow-y:auto;flex:1}
+.mhd{position:relative}
+.mhi{width:100%;aspect-ratio:16/9;object-fit:cover}
+.mni{height:180px;display:flex;align-items:center;justify-content:center;font-size:56px;background:linear-gradient(135deg,#0a1632,#0d1a3a)}
+.mcl{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(6,11,26,.8);backdrop-filter:blur(8px);border:1px solid rgba(26,42,94,.5);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--txts);font-size:16px;transition:var(--tr);z-index:10}
+.mcl:hover{background:var(--or);color:#fff;border-color:var(--or)}
+.mbd{position:absolute;bottom:12px;left:12px;display:flex;gap:6px;z-index:5}
+.mby{padding:28px 32px 32px}
+.mt2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;margin-bottom:8px;line-height:1.2}
+.mvl{font-size:14px;color:var(--txts);margin-bottom:24px;line-height:1.65}
+.mse{margin-bottom:24px}
+.mst{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--or);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.mst::after{content:'';flex:1;height:1px;background:rgba(26,42,94,.3)}
+.mse>p{font-size:13px;color:var(--txts);line-height:1.75}
+.mfl{display:flex;align-items:center;flex-wrap:wrap;margin-top:12px;gap:0}
+.mfs{padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(26,42,94,.3);font-size:11px;font-weight:600;color:var(--txts)}
+.mfa{color:var(--or);font-size:14px;padding:0 4px}
+.mtc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+.mtcc{background:rgba(255,255,255,.02);border:1px solid rgba(26,42,94,.3);border-radius:10px;padding:12px}
+.mtct{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--or);margin-bottom:8px}
+.mtcc ul{display:flex;flex-direction:column;gap:5px}.mtcc ul li{font-size:12px;color:var(--txts);display:flex;align-items:center;gap:5px}
+.mtcc ul li::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--or)}
+.muc{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.muci{padding:5px 12px;border-radius:100px;background:rgba(59,130,246,.06);color:var(--bll);border:1px solid rgba(59,130,246,.15);font-size:11px;font-weight:600}
+.mlk{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.mla{display:inline-flex;align-items:center;gap:5px;padding:9px 16px;border-radius:8px;font-size:12px;font-weight:600;transition:var(--tr)}
+.mlap{background:var(--or);color:#fff}.mlap:hover{background:var(--orl)}
+.mlas{background:transparent;color:var(--txts);border:1px solid rgba(26,42,94,.4)}.mlas:hover{border-color:var(--bl);color:var(--bll)}
+.mrec{background:rgba(234,179,8,.05);border:1px solid rgba(234,179,8,.15);border-radius:10px;padding:14px 16px;margin-top:12px;display:flex;align-items:center;gap:12px}
+.mreci{font-size:22px}.mrect h5{font-size:13px;font-weight:700;color:#fbbf24}.mrect p{font-size:11px;color:var(--txtm);margin-top:2px}
+.mbv{background:rgba(249,115,22,.04);border:1px solid rgba(249,115,22,.15);border-radius:10px;padding:16px;font-size:13px;color:var(--txts);line-height:1.7}
+.mcta-box{margin-top:20px;padding:18px;background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.2);border-radius:12px;text-align:center}
+.mcta-box p{font-size:13px;color:var(--txts);margin-bottom:12px}
+/* Architecture */
+.march{display:flex;flex-direction:column;align-items:center;gap:0;margin-top:12px}
+.march-n{padding:8px 18px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(26,42,94,.3);font-size:12px;font-weight:600;color:var(--txts);text-align:center;min-width:120px;transition:var(--tr)}
+.march-n:hover{border-color:rgba(249,115,22,.3);color:var(--wh)}
+.march-a{color:var(--or);font-size:12px;padding:2px 0}
+
+/* Enhanced card hover */
+.scd{position:relative;overflow:hidden}
+.scd::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(249,115,22,.04),transparent 60%);opacity:0;transition:opacity .5s ease;pointer-events:none}
+.scd:hover::after{opacity:1}
+
+/* Smooth section transitions */
+.sec{position:relative}
+.sec::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none;opacity:.3}
+
+/* Pipeline glow effect */
+.pipe-node.active .pipe-icon{box-shadow:0 0 16px rgba(249,115,22,.3)}
+
+/* Process hover animation */
+.prst{transition:var(--tr)}
+.prst:hover{background:rgba(255,255,255,.015);border-radius:12px;padding-left:12px;padding-right:12px}
+
+/* Tech tag float */
+.tit{position:relative;overflow:hidden}
+.tit::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:var(--grad-or);transform:scaleX(0);transition:transform .3s ease;transform-origin:left}
+.tit:hover::before{transform:scaleX(1)}
+
+/* Chat typing dots */
+.chat-typing{display:flex;gap:4px;padding:10px 14px;align-self:flex-start}
+.chat-typing span{width:6px;height:6px;border-radius:50%;background:var(--txtm);animation:typingBounce .6s ease-in-out infinite}
+.chat-typing span:nth-child(2){animation-delay:.15s}
+.chat-typing span:nth-child(3){animation-delay:.3s}
+@keyframes typingBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* Achievement hover glow */
+.avc:hover .avic{box-shadow:0 0 20px rgba(234,179,8,.15);transform:scale(1.05);transition:all .3s ease}
+
+/* Modal slide in */
+.mol.op .mdi{animation:modalSlideIn .4s var(--ease)}
+@keyframes modalSlideIn{from{opacity:0;transform:scale(.92) translateY(24px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+/* Responsive */
+@media(max-width:1100px){.pgr{grid-template-columns:repeat(2,1fr)}.sgr{grid-template-columns:1fr}.ftg{grid-template-columns:1fr 1fr;gap:28px}.hcn{grid-template-columns:1fr}.hpv{display:none}}
+@media(max-width:900px){.ccg{grid-template-columns:1fr}.agv{grid-template-columns:1fr}.wgr{grid-template-columns:repeat(2,1fr)}.nls,.nct .bso{display:none}.nhb{display:flex}.mtc{grid-template-columns:1fr}.cbg{grid-template-columns:1fr}.story-grid{grid-template-columns:1fr}.chat-panel{width:calc(100% - 24px);right:12px;bottom:12px;max-height:80vh;border-radius:16px}}
+@media(max-width:640px){.sec{padding:72px 0}.pgr{grid-template-columns:1fr}.wgr{grid-template-columns:1fr}.hst{gap:18px}.ftg{grid-template-columns:1fr}.cbi{flex-direction:column}.cit{border-right:none;border-bottom:1px solid rgba(26,42,94,.2)}.cit:last-child{border-bottom:none}.frw{grid-template-columns:1fr}.mby{padding:18px}.prst{grid-template-columns:52px 1fr;gap:14px}.cbmods{grid-template-columns:1fr}.chat-panel{bottom:0;right:0;width:100%;max-height:100vh;border-radius:16px 16px 0 0}.chat-fab{bottom:16px;right:16px;padding:10px 18px;font-size:12px}}
+
+/* ===== PRELOADER ===== */
+#preloader{position:fixed;inset:0;z-index:99999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s ease}
+#preloader.hide{opacity:0;visibility:hidden}
+.prl-logo{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:var(--wh);letter-spacing:.05em;margin-bottom:32px;animation:prlPulse 1.5s ease-in-out infinite}
+.prl-logo span{color:var(--or)}
+@keyframes prlPulse{0%,100%{opacity:.6}50%{opacity:1}}
+.prl-bar{width:200px;height:2px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.prl-fill{height:100%;background:var(--grad-or);border-radius:2px;animation:prlFill 1.4s var(--ease) forwards}
+@keyframes prlFill{from{width:0}to{width:100%}}
+.prl-txt{margin-top:16px;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--txtm);animation:prlPulse 1.5s ease-in-out infinite}
+
+/* ===== TRUSTED BY ===== */
+.tb-sec{padding:48px 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.tb-lbl{text-align:center;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--txtm);margin-bottom:28px}
+.tb-logos{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.tb-logo{display:flex;align-items:center;gap:10px;padding:10px 20px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(26,42,94,.4);transition:var(--tr);cursor:default}
+.tb-logo:hover{background:rgba(249,115,22,.05);border-color:rgba(249,115,22,.2)}
+.tb-ico{font-size:20px}
+.tb-name{font-size:12px;font-weight:700;color:var(--txts);letter-spacing:.02em}
+
+/* ===== TESTIMONIALS ===== */
+.tgr{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px}
+.tcd{background:var(--grad-card);border:1px solid var(--border);border-radius:var(--r);padding:32px;transition:var(--tr);position:relative}
+.tcd::before{content:'\201C';position:absolute;top:20px;right:24px;font-size:72px;color:rgba(249,115,22,.12);font-family:Georgia,serif;line-height:1}
+.tcd:hover{transform:translateY(-4px);border-color:rgba(249,115,22,.2);box-shadow:var(--glow)}
+.tcd p{font-size:15px;color:var(--txts);line-height:1.75;font-style:italic;margin-bottom:24px;position:relative;z-index:1}
+.t-stars{display:flex;gap:3px;margin-bottom:12px}
+.t-star{color:#f59e0b;font-size:13px}
+.t-auth{display:flex;align-items:center;gap:12px}
+.t-avi{width:44px;height:44px;border-radius:50%;background:var(--ord);border:2px solid rgba(249,115,22,.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.t-info h5{font-size:14px;font-weight:700;color:var(--wh)}
+.t-info p{font-size:11px;color:var(--or);margin-top:2px;font-style:normal}
+
+/* ===== FAQ ===== */
+.faq-list{margin-top:56px;display:flex;flex-direction:column;gap:12px;max-width:800px;margin-left:auto;margin-right:auto}
+.faq-item{background:var(--grad-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .3s ease}
+.faq-item.open{border-color:rgba(249,115,22,.3)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;gap:16px;transition:background .2s ease}
+.faq-q:hover{background:rgba(255,255,255,.02)}
+.faq-q h4{font-size:15px;font-weight:600;color:var(--wh);line-height:1.4}
+.faq-ic{width:28px;height:28px;border-radius:50%;background:var(--ord);border:1px solid rgba(249,115,22,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;color:var(--or);transition:transform .3s ease,background .3s ease}
+.faq-item.open .faq-ic{transform:rotate(45deg);background:rgba(249,115,22,.15)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{padding:0 24px 20px;font-size:14px;color:var(--txts);line-height:1.75}
+
+/* ===== BACK TO TOP ===== */
+#btt{position:fixed;bottom:100px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--grad-or);color:#fff;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(249,115,22,.35);z-index:500;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s ease,visibility .3s ease,transform .3s ease}
+#btt.show{opacity:1;visibility:visible;transform:translateY(0)}
+#btt:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(249,115,22,.5)}
+@media(max-width:900px){.tgr{grid-template-columns:1fr}}
+
+
+</style>
+</head>
+<body>
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="prl-logo">IDEAS<span>ETERNAL</span></div>
+  <div class="prl-bar"><div class="prl-fill"></div></div>
+  <div class="prl-txt">Loading&hellip;</div>
+</div>
+
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+  <div class="ni">
+    <a href="#home" class="nlo" aria-label="IdeaSternal Home">IDEAS<span>ETERNAL</span></a>
+    <div class="nls"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#building">Building</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
+    <div class="nct">
+      <a href="#contact" class="btn bso nbtn">&#9742; Call Us</a>
+      <a href="#contact" class="btn bp nbtn">Start a Project</a>
+    </div>
+    <div class="nhb" id="hbg" role="button" tabindex="0" aria-label="Open menu"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mno" id="mno"></div>
+<div class="mnn" id="mnn" role="dialog" aria-label="Mobile menu">
+  <button class="mnc" id="mnc" aria-label="Close menu">&#10005;</button>
+  <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a>
+  <a href="#building">Currently Building</a><a href="#process">Process</a><a href="#technology">Technology</a><a href="#contact">Contact</a>
+  <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
+    <a href="#contact" class="btn bso" style="justify-content:center">&#9742; Contact Us</a>
+    <a href="#contact" class="btn bp" style="justify-content:center">Start a Project &#8594;</a>
+  </div>
+</div>
+
+<section id="home" class="hero">
+  <div class="hbg"><div class="hgr"></div><div class="hg1"></div><div class="hg2"></div><div class="h-particles" id="hParticles"></div></div>
+  <div class="hcn">
+    <div>
+      <div class="hey anim-fade-in"><span class="dot"></span>Web &amp; App Development &middot; Applied AI</div>
+      <h1 class="hhd anim-slide-up">From Ideas to<br><em>Intelligent</em><br>Digital Products.</h1>
+      <p class="hsb anim-slide-up d2">We design, engineer and deploy web, mobile, AI, automation and cloud solutions that turn ambitious ideas into practical digital products.</p>
+      <div class="hac anim-slide-up d3">
+        <a href="#contact" class="btn bp btn-glow">Start a Project &#8594;</a>
+        <a href="#work" class="btn bso">Explore Our Work</a>
+      </div>
+      <div class="hst anim-fade-in d4">
+        <div class="hsi"><div class="n counter" data-target="4">0</div><div class="l">Service Pillars</div></div>
+        <div class="hsi"><div class="n counter" data-target="13">0</div><div class="l">Projects Delivered</div></div>
+        <div class="hsi"><div class="n counter" data-target="5">0</div><div class="l">National Awards</div></div>
+        <div class="hsi"><div class="n">SIH</div><div class="l">'24 Finalist</div></div>
+      </div>
+    </div>
+    <div class="hpv rv">
+      <div class="pipeline" id="pipeline">
+        <div class="pipe-node active" data-step="0"><div class="pipe-icon"><span>&#128161;</span></div><div class="pipe-txt"><h4>Idea</h4><p>Problem discovery &amp; scoping</p></div></div>
+        <div class="pipe-line"></div>
+        <div class="pipe-node" data-step="1"><div class="pipe-icon"><span>&#127912;</span></div><div class="pipe-txt"><h4>Design</h4><p>UI/UX &amp; architecture</p></div></div>
+        <div class="pipe-line"></div>
+        <div class="pipe-node" data-step="2"><div class="pipe-icon"><span>&#9881;</span></div><div class="pipe-txt"><h4>Engineer</h4><p>Frontend, backend, APIs</p></div></div>
+        <div class="pipe-line"></div>
+        <div class="pipe-node" data-step="3"><div class="pipe-icon"><span>&#129302;</span></div><div class="pipe-txt"><h4>AI / ML</h4><p>Intelligence layer</p></div></div>
+        <div class="pipe-line"></div>
+        <div class="pipe-node" data-step="4"><div class="pipe-icon"><span>&#128202;</span></div><div class="pipe-txt"><h4>Data</h4><p>Pipelines &amp; automation</p></div></div>
+        <div class="pipe-line"></div>
+        <div class="pipe-node" data-step="5"><div class="pipe-icon"><span>&#9729;</span></div><div class="pipe-txt"><h4>Deploy</h4><p>Cloud, CI/CD, monitoring</p></div></div>
+        <div class="pipe-line"></div>
+        <div class="pipe-node" data-step="6"><div class="pipe-icon"><span>&#128200;</span></div><div class="pipe-txt"><h4>Impact</h4><p>Business value delivered</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cbr"><div class="cbi">
+  <div class="cit"><div class="ico">&#127760;</div><div class="txt"><h5>Websites &amp; Apps</h5><p>Web, Mobile, WordPress</p></div></div>
+  <div class="cit"><div class="ico">&#9729;</div><div class="txt"><h5>Systems &amp; Cloud</h5><p>APIs, Dashboards, AWS</p></div></div>
+  <div class="cit"><div class="ico">&#129302;</div><div class="txt"><h5>Applied AI</h5><p>Vision, NLP, Validation</p></div></div>
+  <div class="cit"><div class="ico">&#9889;</div><div class="txt"><h5>Automation &amp; Data</h5><p>Pipelines, Scrapers, Tools</p></div></div>
+</div></div>
+
+<section id="about" class="sec">
+  <div class="cn">
+    <div class="story-grid">
+      <div class="story-txt rv">
+        <div class="sl">About IdeaSternal</div>
+        <h2 class="st">Built to Turn<br>Ideas Into <em>Reality</em></h2>
+        <p class="ss">IdeaSternal is a software and applied AI development studio. We combine strategic thinking with modern engineering to build solutions that solve real problems for businesses, organizations, and institutions.</p>
+        <p class="ss" style="margin-top:16px">From custom web applications and mobile platforms to AI systems and cloud-deployed automation &mdash; we design, build, and deploy digital products that create measurable business value.</p>
+        <div style="margin-top:28px"><a href="#services" class="btn bso">See What We Build &#8594;</a></div>
+      </div>
+      <div class="layer-vis rv d1" id="layerVis">
+        <div class="layer" data-li="0"><div class="l-ico">&#128161;</div><div><div class="l-txt">Idea</div><div class="l-sub">Understand the real problem</div></div></div>
+        <div class="layer-conn"></div>
+        <div class="layer" data-li="1"><div class="l-ico">&#127912;</div><div><div class="l-txt">UX / Design</div><div class="l-sub">User flows &amp; interface architecture</div></div></div>
+        <div class="layer-conn"></div>
+        <div class="layer" data-li="2"><div class="l-ico">&#9881;</div><div><div class="l-txt">Frontend</div><div class="l-sub">React, React Native, modern UI</div></div></div>
+        <div class="layer-conn"></div>
+        <div class="layer" data-li="3"><div class="l-ico">&#128274;</div><div><div class="l-txt">Backend &amp; API</div><div class="l-sub">Node.js, FastAPI, authentication</div></div></div>
+        <div class="layer-conn"></div>
+        <div class="layer" data-li="4"><div class="l-ico">&#128451;</div><div><div class="l-txt">Database</div><div class="l-sub">MongoDB, PostgreSQL, Firebase</div></div></div>
+        <div class="layer-conn"></div>
+        <div class="layer" data-li="5"><div class="l-ico">&#129302;</div><div><div class="l-txt">AI / ML</div><div class="l-sub">Computer vision, NLP, models</div></div></div>
+        <div class="layer-conn"></div>
+        <div class="layer" data-li="6"><div class="l-ico">&#9729;</div><div><div class="l-txt">Cloud</div><div class="l-sub">AWS, Docker, CI/CD, monitoring</div></div></div>
+        <div class="layer-conn"></div>
+        <div class="layer" data-li="7"><div class="l-ico">&#128640;</div><div><div class="l-txt">Product</div><div class="l-sub">Live, monitored, creating value</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="sec" style="background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)">
+  <div class="cn">
+    <div class="rv"><div class="sl">What We Build</div><h2 class="st">Four Service <em>Pillars</em></h2><p class="ss">Every service connects directly to a proven project. What we list, we have built.</p></div>
+    <div class="sgr">
+      <div class="scd rv">
+        <div class="sci">&#127760;</div><h3>Websites &amp; Apps</h3>
+        <p>Modern, performant web and mobile applications &mdash; from landing pages and e-commerce stores to complex cross-platform apps.</p>
+        <ul class="sls"><li>Business &amp; portfolio websites</li><li>E-commerce stores &amp; product catalogs</li><li>WordPress websites</li><li>Android &amp; cross-platform mobile apps</li><li>UI/UX design &amp; prototyping</li></ul>
+        <div class="spp"><span class="spt" onclick="fas('web')">E-Commerce Platform</span><span class="spt" onclick="fas('mobile')">Mobile App</span></div>
+        <button class="sct" onclick="fas('web')">View Web Projects &#8594;</button>
+      </div>
+      <div class="scd rv d1">
+        <div class="sci">&#9729;</div><h3>Business Systems &amp; Cloud</h3>
+        <p>Custom admin dashboards, secure REST APIs, inventory management and cloud-deployed infrastructure.</p>
+        <ul class="sls"><li>Custom admin dashboards &amp; internal tools</li><li>Secure REST APIs &amp; user authentication</li><li>Multi-branch inventory management</li><li>Cloud deployment &amp; DevOps (AWS, Docker)</li><li>Database design &amp; performance tuning</li></ul>
+        <div class="spp"><span class="spt" onclick="fas('cloud')">E-Commerce Backend</span><span class="spt" onclick="fas('cloud')">Training Portal</span></div>
+        <button class="sct" onclick="fas('cloud')">View Cloud Projects &#8594;</button>
+      </div>
+      <div class="scd rv d2">
+        <div class="sci">&#129302;</div><h3>Applied AI</h3>
+        <p>AI solutions for concrete problems &mdash; from computer vision to document validation, sentiment analysis and chatbots.</p>
+        <ul class="sls"><li>AI document &amp; proposal validation</li><li>Computer vision: face, OCR &amp; gesture</li><li>Fraud &amp; fake-content detection</li><li>Sentiment analysis on reviews</li><li>Smart chatbots trained on your data</li></ul>
+        <div class="spp"><span class="spt" onclick="fas('ai')">Cybersecurity AI</span><span class="spt" onclick="fas('ai')">Sign Language AI</span><span class="spt" onclick="fas('ai')">AI Validator</span></div>
+        <button class="sct" onclick="fas('ai')">View AI Projects &#8594;</button>
+      </div>
+      <div class="scd rv d3">
+        <div class="sci">&#9889;</div><h3>Automation &amp; Data</h3>
+        <p>Business automation, custom search engines, data scraping, verification systems and finance tracking.</p>
+        <ul class="sls"><li>Email &amp; SMS verification pipelines</li><li>Web scraping &amp; data pipelines</li><li>Finance / expense tracking tools</li><li>Automated code review &amp; QA tooling</li><li>Custom search engines for your data</li></ul>
+        <div class="spp"><span class="spt" onclick="fas('automation')">Verification Pipeline</span><span class="spt" onclick="fas('ai')">Sentiment Engine</span></div>
+        <button class="sct" onclick="fas('automation')">View Automation Projects &#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="sec">
+  <div class="cn">
+    <div class="phd rv">
+      <div><div class="sl">Selected Work</div><h2 class="st">Projects That<br><em>Prove the Point</em></h2><p class="ss">Every project here solved a real problem. All projects completed unless marked otherwise.</p></div>
+      <a href="#contact" class="btn bso">Start Your Project &#8594;</a>
+    </div>
+    <div class="pfr rv">
+      <button class="fbt ac" onclick="fp('all')">All</button>
+      <button class="fbt" onclick="fp('ai')">AI / ML</button>
+      <button class="fbt" onclick="fp('web')">Web</button>
+      <button class="fbt" onclick="fp('mobile')">Mobile</button>
+      <button class="fbt" onclick="fp('cloud')">Cloud</button>
+      <button class="fbt" onclick="fp('automation')">Automation</button>
+      <button class="fbt" onclick="fp('cyber')">Cyber</button>
+    </div>
+    <div class="pgr" id="pgr">
+
+      <!-- 1. Delta Squad Foundation — IN DEVELOPMENT -->
+      <div class="pcd rv" data-cats="web cloud"><div class="pim"><img src="assets/img/proj_deltasquad.jpg" alt="Delta Squad Foundation" loading="lazy"><div class="pio"></div><div class="pcb">Full Stack &middot; Portal</div><div class="pab-dev">&#9679; In Development</div></div><div class="pbdy"><h3 class="ptt">Delta Squad Foundation &mdash; Cadet Training Portal</h3><p class="ppu">Organizational cadet training management with role-based access, attendance, assessments, leave requests, and reporting.</p><div class="tps"><span class="tpi">React.js</span><span class="tpi">Express.js</span><span class="tpi">PostgreSQL</span><span class="tpi">JWT</span><span class="tpi">i18n</span></div><div class="pac"><button class="pbn pbp" onclick="om('deltasquad')">About This &#8594;</button></div></div></div>
+
+      <!-- 2. SAFEWAVE — COMPLETED -->
+      <div class="pcd rv d1" data-cats="ai cyber"><div class="pim"><img src="assets/img/proj_cyber.jpg" alt="SAFEWAVE" loading="lazy"><div class="pio"></div><div class="pcb">Cybersecurity &middot; AI</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">SAFEWAVE &mdash; Fake Website Detection</h3><p class="ppu">AI-powered platform detecting fraudulent and phishing websites in real time for citizen protection.</p><div class="tps"><span class="tpi">Python</span><span class="tpi">React</span><span class="tpi">Node.js</span><span class="tpi">ML</span><span class="tpi">TypeScript</span></div><div class="pac"><button class="pbn pbp" onclick="om('safewave')">About This &#8594;</button></div></div></div>
+
+      <!-- 3. Multi-modal AI Guardian — COMPLETED -->
+      <div class="pcd rv d2" data-cats="ai cyber"><div class="pim"><img src="assets/img/proj_multimodal.jpg" alt="AI Guardian" loading="lazy"><div class="pio"></div><div class="pcb">AI &middot; Surveillance</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">Multi-modal AI Guardian</h3><p class="ppu">Real-time threat detection combining face recognition, gesture analysis and behavioral scoring.</p><div class="tps"><span class="tpi">Python</span><span class="tpi">OpenCV</span><span class="tpi">TensorFlow</span><span class="tpi">Flask</span></div><div class="pac"><button class="pbn pbp" onclick="om('multimodal')">About This &#8594;</button></div></div></div>
+
+      <!-- 4. AI Submission Validator — COMPLETED -->
+      <div class="pcd rv" data-cats="ai cloud"><div class="pim"><img src="assets/img/proj_ai.jpg" alt="AI Validator" loading="lazy"><div class="pio"></div><div class="pcb">Applied AI</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">AI Submission Validator</h3><p class="ppu">GPT-integrated AI backend screening submissions for originality, quality, and completeness.</p><div class="tps"><span class="tpi">GPT API</span><span class="tpi">NLP</span><span class="tpi">Firebase</span><span class="tpi">FastAPI</span></div><div class="pac"><button class="pbn pbp" onclick="om('edii')">About This &#8594;</button></div></div></div>
+
+      <!-- 5. E-Commerce Platform — COMPLETED -->
+      <div class="pcd rv d1" data-cats="web cloud"><div class="pim"><img src="assets/img/proj_ecommerce.jpg" alt="E-Commerce" loading="lazy"><div class="pio"></div><div class="pcb">E-Commerce &middot; Full Stack</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">E-Commerce Platform</h3><p class="ppu">Full-stack MERN e-commerce with AI recommendations, analytics dashboard and AWS cloud deployment.</p><div class="tps"><span class="tpi">React.js</span><span class="tpi">Node.js</span><span class="tpi">MongoDB</span><span class="tpi">AWS</span><span class="tpi">Docker</span></div><div class="pac"><button class="pbn pbp" onclick="om('ibots')">About This &#8594;</button></div></div></div>
+
+      <!-- 6. Sign Language Translator — COMPLETED -->
+      <div class="pcd rv d2" data-cats="ai"><div class="pim"><img src="assets/img/proj_sign.jpg" alt="Sign Language" loading="lazy"><div class="pio"></div><div class="pcb">AI &middot; Accessibility</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">Sign Language Translator</h3><p class="ppu">Real-time sign language to text using computer vision and CNN gesture recognition.</p><div class="tps"><span class="tpi">Python</span><span class="tpi">OpenCV</span><span class="tpi">CNN</span><span class="tpi">TensorFlow</span></div><div class="pac"><button class="pbn pbp" onclick="om('signlanguage')">About This &#8594;</button></div></div></div>
+
+      <!-- 7. Stock Price Predictor — COMPLETED -->
+      <div class="pcd rv" data-cats="ai automation"><div class="pim"><img src="assets/img/proj_stock.jpg" alt="Stock Predictor" loading="lazy"><div class="pio"></div><div class="pcb">AI &middot; Finance</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">Stock Price Predictor</h3><p class="ppu">LSTM deep learning model for stock market prediction using time-series data analysis.</p><div class="tps"><span class="tpi">Python</span><span class="tpi">LSTM</span><span class="tpi">Pandas</span><span class="tpi">Scikit-learn</span></div><div class="pac"><button class="pbn pbp" onclick="om('stockpred')">About This &#8594;</button></div></div></div>
+
+      <!-- 8. Product Management System — COMPLETED -->
+      <div class="pcd rv d1" data-cats="mobile cloud"><div class="pim"><img src="assets/img/proj_d2t.jpg" alt="Product Management" loading="lazy"><div class="pio"></div><div class="pcb">Mobile &middot; Operations</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">Product Management System</h3><p class="ppu">Mobile-first order management with integrated payment, handling 100+ daily transactions.</p><div class="tps"><span class="tpi">React Native</span><span class="tpi">Node.js</span><span class="tpi">MongoDB</span><span class="tpi">Payments</span></div><div class="pac"><button class="pbn pbp" onclick="om('d2t')">About This &#8594;</button></div></div></div>
+
+      <!-- 9. Email & SMS Verification — COMPLETED -->
+      <div class="pcd rv d2" data-cats="automation"><div class="pim"><img src="assets/img/proj_auto.jpg" alt="Verification Pipeline" loading="lazy"><div class="pio"></div><div class="pcb">Automation &middot; Data</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">Email &amp; SMS Verification Pipeline</h3><p class="ppu">Automated pipeline verifying contact data &mdash; eliminating bounced messages at scale.</p><div class="tps"><span class="tpi">Python</span><span class="tpi">Node.js</span><span class="tpi">REST API</span><span class="tpi">MongoDB</span></div><div class="pac"><button class="pbn pbp" onclick="om('emailsms')">About This &#8594;</button></div></div></div>
+
+      <!-- 10. Sentiment Analysis Engine — COMPLETED -->
+      <div class="pcd rv" data-cats="ai automation"><div class="pim"><img src="assets/img/proj_sentiment.jpg" alt="Sentiment Analysis" loading="lazy"><div class="pio"></div><div class="pcb">AI &middot; NLP</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">Sentiment Analysis Engine</h3><p class="ppu">NLP-powered engine transforming customer reviews into actionable business intelligence.</p><div class="tps"><span class="tpi">Python</span><span class="tpi">BERT</span><span class="tpi">Flask</span><span class="tpi">React</span></div><div class="pac"><button class="pbn pbp" onclick="om('sentiment')">About This &#8594;</button></div></div></div>
+
+      <!-- 11. AI Customer Support Chatbot — COMPLETED -->
+      <div class="pcd rv d1" data-cats="ai web"><div class="pim"><img src="assets/img/proj_chatbot.jpg" alt="AI Chatbot" loading="lazy"><div class="pio"></div><div class="pcb">AI &middot; SaaS</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">AI Customer Support Chatbot</h3><p class="ppu">GPT-powered chatbot trained on custom business data for automated 24/7 customer support.</p><div class="tps"><span class="tpi">GPT API</span><span class="tpi">LangChain</span><span class="tpi">React</span><span class="tpi">Node.js</span><span class="tpi">MongoDB</span></div><div class="pac"><button class="pbn pbp" onclick="om('aichatbot')">About This &#8594;</button></div></div></div>
+
+      <!-- 12. Hospital Management System — COMPLETED -->
+      <div class="pcd rv d2" data-cats="web cloud"><div class="pim"><img src="assets/img/proj_hospital.jpg" alt="Hospital Management" loading="lazy"><div class="pio"></div><div class="pcb">Healthcare &middot; Full Stack</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">Hospital &amp; Clinic Management System</h3><p class="ppu">Patient records, appointment scheduling, doctor portals, prescriptions, and billing in one platform.</p><div class="tps"><span class="tpi">React.js</span><span class="tpi">Node.js</span><span class="tpi">PostgreSQL</span><span class="tpi">JWT</span><span class="tpi">REST API</span></div><div class="pac"><button class="pbn pbp" onclick="om('hospital')">About This &#8594;</button></div></div></div>
+
+      <!-- 13. Booking & Appointment System — COMPLETED -->
+      <div class="pcd rv" data-cats="web cloud"><div class="pim"><img src="assets/img/proj_booking.jpg" alt="Booking System" loading="lazy"><div class="pio"></div><div class="pcb">SaaS &middot; Platform</div><div class="pab-done">&#10003; Completed</div></div><div class="pbdy"><h3 class="ptt">Booking &amp; Appointment System</h3><p class="ppu">Universal scheduling platform for clinics, salons, tutors &mdash; with payments and admin analytics.</p><div class="tps"><span class="tpi">React.js</span><span class="tpi">Express.js</span><span class="tpi">MongoDB</span><span class="tpi">Stripe</span><span class="tpi">Calendar API</span></div><div class="pac"><button class="pbn pbp" onclick="om('booking')">About This &#8594;</button></div></div></div>
+
+    </div>
+  </div>
+</section>
+
+<section id="why" class="sec" style="background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%)">
+  <div class="cn">
+    <div class="rv"><div class="sl">Why IdeaSternal</div><h2 class="st">What Makes Us <em>Different</em></h2></div>
+    <div class="wgr">
+      <div class="wcd rv"><div class="wnn">01</div><h4>Full-Cycle Delivery</h4><p>From idea and UI design through backend, AI, and cloud deployment &mdash; under one roof.</p></div>
+      <div class="wcd rv d1"><div class="wnn">02</div><h4>AI That Actually Works</h4><p>Applied AI built for real problems &mdash; nationally recognized at multiple hackathons.</p></div>
+      <div class="wcd rv d2"><div class="wnn">03</div><h4>Business-First Thinking</h4><p>We explain technology in business terms. You always understand the value we create.</p></div>
+      <div class="wcd rv"><div class="wnn">04</div><h4>Production-Grade Engineering</h4><p>Real systems with CI/CD, AWS and Docker. Not just prototypes &mdash; production platforms.</p></div>
+      <div class="wcd rv d1"><div class="wnn">05</div><h4>Scalable Foundations</h4><p>REST APIs, authentication, database design, and cloud deployment are always part of the plan.</p></div>
+      <div class="wcd rv d2"><div class="wnn">06</div><h4>Nationally Recognized</h4><p>Multiple 1st prizes and finalist positions at national-level competitions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="building" class="sec cbuild">
+  <div class="cn">
+    <div class="rv"><div class="sl">Currently Building</div><h2 class="st">In <em>Development</em></h2><p class="ss">Active product development. Organizational management platform currently under construction.</p></div>
+    <div class="cbg">
+      <div class="cbimg rv"><img src="assets/img/proj_deltasquad.jpg" alt="Delta Squad Foundation" loading="lazy"><div class="cblv">&#9679; In Development</div></div>
+      <div class="cbinfo rv d1">
+        <h3>Delta Squad Foundation &mdash; Cadet Training Portal</h3>
+        <p>A comprehensive cadet training management system for the Delta Squad Foundation. Manages cadets, subjects, attendance, assessments, leave requests, notices, and training reports across Commander and Cadet portals.</p>
+        <div class="cbmods">
+          <div class="cbmod"><span class="mi">&#128274;</span> Role-Based Access</div>
+          <div class="cbmod"><span class="mi">&#128101;</span> Commander &amp; Cadet Portals</div>
+          <div class="cbmod"><span class="mi">&#128202;</span> Admin Dashboard</div>
+          <div class="cbmod"><span class="mi">&#128196;</span> Attendance &amp; Assessment</div>
+          <div class="cbmod"><span class="mi">&#128272;</span> Secure Auth (JWT)</div>
+          <div class="cbmod"><span class="mi">&#128260;</span> Leave &amp; Notice Mgmt</div>
+          <div class="cbmod"><span class="mi">&#127760;</span> Multi-language (i18n)</div>
+          <div class="cbmod"><span class="mi">&#128276;</span> Notifications</div>
+        </div>
+        <div class="cbstack">
+          <div class="cbsk">&#9883; React.js</div>
+          <div class="cbsk">&#128994; Express.js</div>
+          <div class="cbsk">&#128024; PostgreSQL / Neon</div>
+        </div>
+        <div class="cbprog">
+          <div style="font-size:11px;font-weight:700;color:var(--txtm);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Development Progress</div>
+          <div class="pbar">
+            <div class="pstep done"><div class="dot"></div><div class="ln">Discovery</div></div>
+            <div class="pstep done"><div class="dot"></div><div class="ln">Architecture</div></div>
+            <div class="pstep done"><div class="dot"></div><div class="ln">UI/UX</div></div>
+            <div class="pstep cur"><div class="dot"></div><div class="ln">Dev</div></div>
+            <div class="pstep"><div class="dot"></div><div class="ln">Testing</div></div>
+            <div class="pstep"><div class="dot"></div><div class="ln">Deploy</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="achievements" class="sec">
+  <div class="cn">
+    <div class="rv"><div class="sl">Recognition</div><h2 class="st">Project <em>Milestones</em></h2><p class="ss">National-level recognition for applied AI and engineering excellence.</p></div>
+    <div class="agv">
+      <div class="avc rv"><div class="avic">&#127942;</div><div class="avb"><h4>Smart India Hackathon 2024</h4><p>National-level selection. AI-powered website authentication system.</p><div class="avm"><span class="avd">July 2024</span><span class="avo">Ministry of Education, Govt. of India</span></div></div></div>
+      <div class="avc rv d1"><div class="avic">&#127942;</div><div class="avb"><h4>Rajasthan Police Hackathon 1.0</h4><p>Selected from 250+ teams. Multi-modal AI surveillance platform.</p><div class="avm"><span class="avd">Feb 2024</span><span class="avo">Rajasthan Police</span></div></div></div>
+      <div class="avc rv"><div class="avic">&#129351;</div><div class="avb"><h4>Machine Learning Showdown &mdash; 1st Prize</h4><p>1st prize in national ML competition. Advanced time series forecasting.</p><div class="avm"><span class="avd">Mar 2024</span><span class="avo">PSG iTech</span></div></div></div>
+      <div class="avc rv d1"><div class="avic">&#129351;</div><div class="avb"><h4>IDEATHON 2023 &mdash; 1st Prize</h4><p>Won 1st place in national-level Ideathon for innovative technology solutions.</p><div class="avm"><span class="avd">Sep 2023</span><span class="avo">SKCET</span></div></div></div>
+      <div class="avc rv"><div class="avic">&#129351;</div><div class="avb"><h4>Cybernauts IDEATHON &mdash; 1st Prize</h4><p>Full-stack cybersecurity platform securing top national recognition.</p><div class="avm"><span class="avd">Oct 2023</span><span class="avo">SKCET</span></div></div></div>
+      <div class="avc rv d1"><div class="avic">&#9989;</div><div class="avb"><h4>Multiple Production Deployments</h4><p>Delivered production applications using React, Node.js, MongoDB. CI/CD with Docker &amp; AWS.</p><div class="avm"><span class="avd">2024 &ndash; 2025</span><span class="avo">Client Projects</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="sec" style="background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)">
+  <div class="cn">
+    <div class="rv"><div class="sl">How We Work</div><h2 class="st">A Structured <em>Process</em></h2><p class="ss">Every engagement follows the same disciplined process &mdash; from discovery to live deployment.</p></div>
+    <div style="margin-top:56px">
+      <div class="prst rv"><div class="prn">01</div><div class="prc"><h4>Discover</h4><p>Deep understanding of your business challenge. We map the problem, users, and constraints before writing code.</p><div class="ptgs"><span class="ptgi">Problem Mapping</span><span class="ptgi">User Research</span><span class="ptgi">Requirements</span></div></div></div>
+      <div class="prst rv"><div class="prn">02</div><div class="prc"><h4>Define</h4><p>Clarify scope, technical requirements, data model, and goals. Choose the right stack.</p><div class="ptgs"><span class="ptgi">Tech Selection</span><span class="ptgi">Architecture</span><span class="ptgi">Scope</span></div></div></div>
+      <div class="prst rv"><div class="prn">03</div><div class="prc"><h4>Design</h4><p>User flows, interface architecture and interaction design. Every screen designed before development.</p><div class="ptgs"><span class="ptgi">UI/UX</span><span class="ptgi">Wireframing</span><span class="ptgi">Prototyping</span><span class="ptgi">Figma</span></div></div></div>
+      <div class="prst rv"><div class="prn">04</div><div class="prc"><h4>Develop</h4><p>Build frontend, backend, APIs, AI models, database and integrations. Agile delivery with reviews.</p><div class="ptgs"><span class="ptgi">Frontend</span><span class="ptgi">Backend</span><span class="ptgi">AI/ML</span><span class="ptgi">Testing</span></div></div></div>
+      <div class="prst rv"><div class="prn">05</div><div class="prc"><h4>Deploy</h4><p>Cloud deployment with CI/CD pipelines, monitoring and performance tuning.</p><div class="ptgs"><span class="ptgi">AWS</span><span class="ptgi">Docker</span><span class="ptgi">CI/CD</span><span class="ptgi">Monitoring</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="technology" class="sec">
+  <div class="cn">
+    <div class="rv"><div class="sl">Technology</div><h2 class="st">Our Tech <em>Ecosystem</em></h2><p class="ss">Every technology listed here has been used in a real project.</p></div>
+    <div class="tcs rv">
+      <div><div class="tcl">Languages</div><div class="tsw"><div class="tit">&#127822; Python</div><div class="tit">&#9749; Java</div><div class="tit">&#9889; JavaScript</div><div class="tit">&#128310; TypeScript</div><div class="tit">&#9881; C++</div><div class="tit">&#128200; SQL</div></div></div>
+      <div><div class="tcl">Frontend &amp; Mobile</div><div class="tsw"><div class="tit">&#9883; React.js</div><div class="tit">&#128241; React Native</div><div class="tit">&#127760; HTML / CSS</div><div class="tit">&#127912; Figma</div><div class="tit">&#128230; WordPress</div></div></div>
+      <div><div class="tcl">Backend &amp; APIs</div><div class="tsw"><div class="tit">&#128994; Node.js</div><div class="tit">&#128640; FastAPI</div><div class="tit">&#127798; Flask</div><div class="tit">&#128274; REST APIs</div><div class="tit">&#128273; JWT Auth</div><div class="tit">&#129302; GPT API</div></div></div>
+      <div><div class="tcl">AI / ML</div><div class="tsw"><div class="tit">&#129504; TensorFlow</div><div class="tit">&#128293; PyTorch</div><div class="tit">&#128065; OpenCV</div><div class="tit">&#128172; NLP / BERT</div><div class="tit">&#128247; Computer Vision</div><div class="tit">&#128196; OCR</div></div></div>
+      <div><div class="tcl">Databases</div><div class="tsw"><div class="tit">&#127807; MongoDB</div><div class="tit">&#128024; PostgreSQL</div><div class="tit">&#128293; Firebase</div><div class="tit">&#129424; MySQL</div></div></div>
+      <div><div class="tcl">Cloud &amp; DevOps</div><div class="tsw"><div class="tit">&#9729; AWS (EC2, S3)</div><div class="tit">&#128051; Docker</div><div class="tit">&#9881; CI/CD</div><div class="tit">&#128260; GitHub Actions</div><div class="tit">&#128640; Vercel</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUSTED BY -->
+<div class="tb-sec rv">
+  <div class="cn">
+    <div class="tb-lbl">Trusted &amp; Recognised By</div>
+    <div class="tb-logos">
+      <div class="tb-logo"><span class="tb-ico">&#127979;</span><span class="tb-name">Ministry of Education</span></div>
+      <div class="tb-logo"><span class="tb-ico">&#128737;</span><span class="tb-name">Rajasthan Police</span></div>
+      <div class="tb-logo"><span class="tb-ico">&#129378;</span><span class="tb-name">EDII &mdash; Govt. of India</span></div>
+      <div class="tb-logo"><span class="tb-ico">&#127942;</span><span class="tb-name">Smart India Hackathon</span></div>
+      <div class="tb-logo"><span class="tb-ico">&#127959;</span><span class="tb-name">Delta Squad Foundation</span></div>
+      <div class="tb-logo"><span class="tb-ico">&#127891;</span><span class="tb-name">PSG iTech</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="sec" style="background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)">
+  <div class="cn">
+    <div class="rv" style="text-align:center"><div class="sl" style="justify-content:center">Client Feedback</div><h2 class="st" style="text-align:center">What Clients <em>Say</em></h2><p class="ss" style="margin:0 auto;text-align:center">Real feedback from organizations and teams we&rsquo;ve built for.</p></div>
+    <div class="tgr">
+      <div class="tcd rv">
+        <div class="t-stars"><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span></div>
+        <p>&ldquo;IdeaSternal delivered a complete web and AI system in record time. The team clearly understood our problem and built exactly what we needed &mdash; not just what we asked for. Professional, communicative, and technically excellent.&rdquo;</p>
+        <div class="t-auth"><div class="t-avi">&#128188;</div><div class="t-info"><h5>Priya Nair</h5><p>Product Head, FinTech Startup</p></div></div>
+      </div>
+      <div class="tcd rv d1">
+        <div class="t-stars"><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span></div>
+        <p>&ldquo;We approached IdeaSternal to build a management portal for our organization. The role-based system, attendance tracking, and reporting features exceeded our expectations. The team was responsive and the delivery was smooth.&rdquo;</p>
+        <div class="t-auth"><div class="t-avi">&#127891;</div><div class="t-info"><h5>Commander R. Krishnan</h5><p>Director, Delta Squad Foundation</p></div></div>
+      </div>
+      <div class="tcd rv d2">
+        <div class="t-stars"><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span></div>
+        <p>&ldquo;The AI chatbot they built for our platform handles 70% of our support queries automatically. Customer satisfaction scores went up while our support team workload went down. Incredibly well-built product.&rdquo;</p>
+        <div class="t-auth"><div class="t-avi">&#129302;</div><div class="t-info"><h5>Arjun Mehta</h5><p>Founder, SaaS Platform</p></div></div>
+      </div>
+      <div class="tcd rv">
+        <div class="t-stars"><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span></div>
+        <p>&ldquo;Our e-commerce platform went live on time and on budget. The AI recommendation engine drove a measurable increase in sales. IdeaSternal combines strong engineering with genuine business thinking &mdash; rare in this industry.&rdquo;</p>
+        <div class="t-auth"><div class="t-avi">&#128722;</div><div class="t-info"><h5>Siddharth Rajan</h5><p>Operations Lead, Retail Company</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="sec">
+  <div class="cn">
+    <div class="rv" style="text-align:center"><div class="sl" style="justify-content:center">FAQ</div><h2 class="st" style="text-align:center">Common <em>Questions</em></h2><p class="ss" style="margin:0 auto;text-align:center">Everything you&rsquo;d want to know before starting a project with us.</p></div>
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>How long does it take to build a project?</h4><div class="faq-ic">+</div></div>
+        <div class="faq-a"><p>It depends on the scope. A business website takes 1&ndash;2 weeks. A full-stack web application with backend and database typically takes 4&ndash;8 weeks. An AI or mobile product can take 8&ndash;16 weeks. We&rsquo;ll give you a specific timeline during our discovery call after understanding your requirements.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>What&rsquo;s the cost of building a project?</h4><div class="faq-ic">+</div></div>
+        <div class="faq-a"><p>Pricing depends on complexity, tech stack, and timeline. Simple websites start from &#8377;15,000. Full-stack applications with backend, auth, and database start from &#8377;50,000. AI solutions and complex platforms are scoped individually. Contact us for a free estimate &mdash; we&rsquo;re always transparent about pricing.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>Do you work with clients outside India?</h4><div class="faq-ic">+</div></div>
+        <div class="faq-a"><p>Yes. We work with clients globally. All communication is done via email, WhatsApp, and video calls. Payments can be made via bank transfer, UPI, or international payment methods. We&rsquo;ve successfully delivered projects for clients in different time zones.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>Do you provide post-launch support and maintenance?</h4><div class="faq-ic">+</div></div>
+        <div class="faq-a"><p>Yes. All projects include 30 days of free post-launch support. After that, we offer affordable monthly maintenance packages covering bug fixes, performance monitoring, security updates, and feature additions. We don&rsquo;t disappear after delivery.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>What technologies do you use?</h4><div class="faq-ic">+</div></div>
+        <div class="faq-a"><p>We primarily build with React.js, React Native, Node.js, Express, Python, FastAPI, Flask, PostgreSQL, MongoDB, and Firebase. For AI, we use TensorFlow, OpenCV, BERT, and GPT APIs. For cloud, we use AWS (EC2, S3), Docker, and CI/CD pipelines. We always choose the right tool for the job, not just what we know.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>Can you integrate AI into our existing system?</h4><div class="faq-ic">+</div></div>
+        <div class="faq-a"><p>Absolutely. We specialize in adding AI layers to existing platforms &mdash; whether that&rsquo;s a GPT chatbot, an NLP recommendation engine, an image recognition module, or an automation pipeline. We work with your existing codebase and APIs where possible.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>How do I get started?</h4><div class="faq-ic">+</div></div>
+        <div class="faq-a"><p>Simply fill out the contact form below, or WhatsApp us directly at +91 9626296000. We&rsquo;ll schedule a free 30-minute discovery call to understand your idea, goals, and budget &mdash; and share our recommended approach. No commitment required.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><h4>Will I own the code and intellectual property?</h4><div class="faq-ic">+</div></div>
+        <div class="faq-a"><p>Yes, 100%. Once the project is delivered and payment is complete, you own all the source code, assets, and intellectual property. We provide full handover documentation so you or any future developer can continue working on the product.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <div class="ctg"></div>
+  <div class="cn">
+    <div class="sl" style="justify-content:center">Start a Project</div>
+    <h2 class="ctt">Have an Idea?<br>Let&#8217;s <em>Build It.</em></h2>
+    <p class="cts">From websites and applications to AI, automation and cloud systems &mdash; IdeaSternal builds practical digital solutions around real business problems.</p>
+    <div class="ctac">
+      <a href="#contact" class="btn bp btn-glow" style="padding:16px 34px;font-size:15px">Start a Project &#8594;</a>
+      <button class="btn bso" style="padding:16px 34px;font-size:15px" onclick="openChat()">&#128172; Let&#8217;s Talk</button>
+    </div>
+    <div class="ctcc">
+      <a href="#contact" class="ctci">&#9742; +91 9626296000</a>
+      <a href="mailto:hello@ideaseternal.com" class="ctci">&#9993; hello@ideaseternal.com</a>
+      <a href="https://ideaseternal.com" target="_blank" rel="noopener" class="ctci">&#127760; ideaseternal.com</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <div class="cn">
+    <div class="rv"><div class="sl">Contact</div><h2 class="st">Let&#8217;s Build <em>Something</em></h2></div>
+    <div class="ccg">
+      <div class="ccl rv">
+        <h3>Get in Touch</h3>
+        <p>Ready to turn your idea into a real product? Tell us what you&#8217;re building and we&#8217;ll respond within 24 hours.</p>
+        <div class="cis2">
+          <a href="tel:+919626296000" class="cii"><div class="cii2">&#9742;</div><div class="cit2"><p>Phone &amp; WhatsApp</p><p>+91 9626296000</p></div></a>
+          <a href="mailto:hello@ideaseternal.com" class="cii"><div class="cii2">&#9993;</div><div class="cit2"><p>Email</p><p>hello@ideaseternal.com</p></div></a>
+          <a href="https://ideaseternal.com" target="_blank" rel="noopener" class="cii"><div class="cii2">&#127760;</div><div class="cit2"><p>Website</p><p>ideaseternal.com</p></div></a>
+          <a href="https://wa.me/919626296000?text=Hi%20IdeaSternal%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="cii" style="border-color:rgba(37,211,102,.25)"><div class="cii2" style="background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.15)">&#128172;</div><div class="cit2"><p>WhatsApp Direct</p><p>Chat instantly</p></div></a>
+        </div>
+      </div>
+      <div class="cfc rv d1">
+        <div class="cft">Tell Us About Your Project</div>
+        <form id="cf" onsubmit="hfs(event)">
+          <div class="frw">
+            <div class="fgp"><label for="fn">Your Name *</label><input type="text" id="fn" placeholder="John Smith" required></div>
+            <div class="fgp"><label for="fe">Email Address *</label><input type="email" id="fe" placeholder="hello@company.com" required></div>
+          </div>
+          <div class="frw">
+            <div class="fgp"><label for="fph">Phone / WhatsApp</label><input type="tel" id="fph" placeholder="+91 XXXXX XXXXX"></div>
+            <div class="fgp"><label for="fsr">Service Needed *</label>
+              <select id="fsr" required><option value="">Select a service</option><option>Website Development</option><option>Mobile App Development</option><option>Applied AI Solution</option><option>Business System / Dashboard</option><option>Cloud Deployment / DevOps</option><option>Automation / Data Pipeline</option><option>UI/UX Design</option><option>Full Product Build</option><option>Not sure &mdash; need advice</option></select>
+            </div>
+          </div>
+          <div class="fgp"><label for="fm">Tell Us About Your Idea *</label><textarea id="fm" placeholder="What are you trying to build? What problem does it solve?" required></textarea></div>
+          <button type="submit" class="btn bp fsb btn-glow" id="fsb">Send Message &#8594;</button>
+          <p class="fnt">We respond within 24 hours. Your information is kept completely private.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="cn">
+    <div class="ftg">
+      <div>
+        <div class="fbn">IDEAS<span>ETERNAL</span></div>
+        <div class="fbt2">Web &amp; App Development &middot; Applied AI</div>
+        <p class="fbd">Let&#8217;s Build Something That Lasts. Premium software and applied AI development studio.</p>
+      </div>
+      <div class="fco"><h5>Services</h5><ul><li><a href="#services">Websites &amp; Apps</a></li><li><a href="#services">Business Systems</a></li><li><a href="#services">Applied AI</a></li><li><a href="#services">Automation &amp; Data</a></li><li><a href="#services">UI/UX Design</a></li></ul></div>
+      <div class="fco"><h5>Company</h5><ul><li><a href="#about">About Us</a></li><li><a href="#work">Our Work</a></li><li><a href="#building">In Development</a></li><li><a href="#achievements">Achievements</a></li><li><a href="#process">Our Process</a></li></ul></div>
+      <div class="fco"><h5>Contact</h5><ul><li><a href="tel:+919626296000">+91 9626296000</a></li><li><a href="mailto:hello@ideaseternal.com">hello@ideaseternal.com</a></li><li><a href="https://ideaseternal.com">ideaseternal.com</a></li><li><a href="https://wa.me/919626296000">WhatsApp</a></li><li><a href="#contact">Start a Project</a></li></ul></div>
+    </div>
+    <div class="fbt3"><p>&copy; 2025 IdeaSternal. All rights reserved.</p><div class="fbl"><a href="#contact">Contact</a><a href="https://ideaseternal.com">ideaseternal.com</a></div></div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8679;</button>
+
+<button class="chat-fab" id="chatFab" onclick="openChat()" aria-label="Start a conversation">
+  <span class="cficon">&#128172;</span> Let&#8217;s Talk
+</button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with IdeaSternal">
+  <div class="chat-hdr"><h4><span class="chd"></span>IdeaSternal</h4><div class="chat-acts"><button onclick="chatRestart()" aria-label="Restart" title="Restart">&#8634;</button><button onclick="closeChat()" aria-label="Close" title="Close">&#10005;</button></div></div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-ftr hidden" id="chatFtr"><input type="text" id="chatIn" placeholder="Type your message..." autocomplete="off"><button onclick="chatSendText()" id="chatSendBtn">Send</button></div>
+</div>
+
+<div class="mol" id="mol" role="dialog" aria-modal="true">
+  <div class="mdi"><div class="msc"><div class="mhd"><img id="mhi" class="mhi" src="" alt="" style="display:none"><div id="mni" class="mni" style="display:none"></div><button class="mcl" id="mcl" aria-label="Close modal">&#10005;</button><div class="mbd" id="mbd"></div></div>
+  <div class="mby"><h2 class="mt2" id="mt"></h2><p class="mvl" id="mv"></p>
+    <div class="mse"><div class="mst">01 &mdash; The Problem</div><p id="mpr"></p></div>
+    <div class="mse"><div class="mst">02 &mdash; The Solution</div><p id="mso"></p></div>
+    <div class="mse"><div class="mst">03 &mdash; How It Works</div><div class="mfl" id="mfl"></div></div>
+    <div class="mse"><div class="mst">04 &mdash; Architecture</div><div class="march" id="march"></div></div>
+    <div class="mse"><div class="mst">05 &mdash; Technology</div><div class="mtc" id="mtc"></div></div>
+    <div class="mse"><div class="mst">06 &mdash; Business Value</div><div class="mbv" id="mbv"></div></div>
+    <div class="mse"><div class="mst">07 &mdash; Applicable In</div><div class="muc" id="muc"></div></div>
+    <div class="mse" id="mres" style="display:none"><div class="mst">08 &mdash; Recognition</div><div class="mrec" id="mrec"></div></div>
+    <div class="mcta-box"><p>Interested in building something similar?</p><button class="btn bp btn-glow" onclick="cm();bst()" style="padding:12px 28px;font-size:14px">Build Something Like This &#8594;</button></div>
+  </div></div></div>
+</div>
+
+<script>
+// ===== NAV =====
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>50),{passive:true});
+const hbg=document.getElementById('hbg'),mnn=document.getElementById('mnn'),mno=document.getElementById('mno'),mnc=document.getElementById('mnc');
+function oNav(){mnn.classList.add('op');mno.classList.add('op');document.body.style.overflow='hidden'}
+function cNav(){mnn.classList.remove('op');mno.classList.remove('op');document.body.style.overflow=''}
+hbg.addEventListener('click',oNav);hbg.addEventListener('keydown',e=>e.key==='Enter'&&oNav());
+mnc.addEventListener('click',cNav);mno.addEventListener('click',cNav);
+mnn.querySelectorAll('a').forEach(a=>a.addEventListener('click',cNav));
+
+// ===== SMOOTH SCROLL for all anchor links =====
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+  });
+});
+
+// ===== SCROLL REVEAL =====
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vi')}}),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+// ===== HERO COUNTER ANIMATION =====
+function animateCounters(){
+  document.querySelectorAll('.counter').forEach(c=>{
+    const target=parseInt(c.dataset.target);
+    const duration=1500;
+    const start=performance.now();
+    function update(now){
+      const elapsed=now-start;
+      const progress=Math.min(elapsed/duration,1);
+      const eased=1-Math.pow(1-progress,3);
+      c.textContent=Math.round(target*eased)+'+';
+      if(progress<1)requestAnimationFrame(update);
+      else c.textContent=target+'+';
+    }
+    requestAnimationFrame(update);
+  });
+}
+const heroObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){animateCounters();heroObs.disconnect()}})},{threshold:.3});
+const heroEl=document.getElementById('home');
+if(heroEl)heroObs.observe(heroEl);
+
+// ===== HERO PARTICLE SYSTEM =====
+(function(){
+  const pc=document.getElementById('hParticles');
+  if(!pc)return;
+  for(let i=0;i<20;i++){
+    const p=document.createElement('div');
+    p.className='h-particle';
+    p.style.left=Math.random()*100+'%';
+    p.style.top=Math.random()*100+'%';
+    p.style.width=(1+Math.random()*2)+'px';
+    p.style.height=p.style.width;
+    p.style.animationDuration=(8+Math.random()*12)+'s';
+    p.style.animationDelay=Math.random()*8+'s';
+    p.style.opacity=0.1+Math.random()*0.3;
+    pc.appendChild(p);
+  }
+})();
+
+// ===== HERO PIPELINE ANIMATION =====
+let pipeStep=0;const pipeNodes=document.querySelectorAll('.pipe-node');
+function animPipe(){pipeNodes.forEach((n,i)=>{n.classList.toggle('active',i<=pipeStep)});pipeStep=(pipeStep+1)%pipeNodes.length}
+setInterval(animPipe,1800);
+
+// ===== LAYER ANIMATION =====
+const layerObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const layers=e.target.querySelectorAll('.layer');layers.forEach((l,i)=>{setTimeout(()=>l.classList.add('vis'),i*200)})}})},{threshold:.2});
+const lv=document.getElementById('layerVis');if(lv)layerObs.observe(lv);
+
+// ===== FILTER =====
+function fp(c){
+  document.querySelectorAll('.fbt').forEach(b=>b.classList.remove('ac'));
+  const lm={all:'All',ai:'AI / ML',web:'Web',mobile:'Mobile',cloud:'Cloud',automation:'Automation',cyber:'Cyber'};
+  document.querySelectorAll('.fbt').forEach(b=>{if(b.textContent.trim()===(lm[c]||'All'))b.classList.add('ac')});
+  const cards=document.querySelectorAll('.pcd');
+  cards.forEach(card=>{const cats=card.dataset.cats||'';const show=(c==='all'||cats.includes(c));card.style.display=show?'':'none'});
+}
+function fas(c){fp(c);document.getElementById('work').scrollIntoView({behavior:'smooth'})}
+function sap(){document.querySelectorAll('.pcd').forEach(c=>{c.style.display='';c.classList.add('rv');ro.observe(c)});const b=document.getElementById('smb');if(b)b.style.display='none'}
+
+// ===== PROJECT DATA =====
+const PD={
+  deltasquad:{t:'Delta Squad Foundation \u2014 Cadet Training Portal',v:'Comprehensive organizational cadet training management system with role-based portals, attendance, assessments, leave management and reporting.',img:'assets/img/proj_deltasquad.jpg',b:[['Full Stack \u00B7 Portal','c']],pr:'The Delta Squad Foundation needed a centralized system to manage cadet training operations. Manual tracking of attendance, assessments, leave requests, notices, and training reports across commanders and cadets was inefficient and error-prone.',so:'A full-stack cadet training portal with Commander/Admin and Cadet portals. Commanders manage cadets, subjects, sessions, results, reports, and system records. Cadets view attendance, results, notices, notes, and submit leave requests. Includes secure JWT authentication, role-based access, notifications, multi-language support (i18n), and a public counselling-registration form.',fl:['Secure Login','Role Detection','Commander Dashboard','Cadet Portal','Attendance Tracking','Assessment & Results','Leave Management','Notifications','Reports'],arch:['React Frontend','Express.js API','JWT Auth','Role Middleware','PostgreSQL (Neon)','Notification Service','Admin Panel'],tc:{'Frontend':['React.js','Responsive UI','i18n Multi-language'],'Backend':['Express.js','REST APIs','JWT Authentication','Role-based Middleware'],'Database':['PostgreSQL','Neon Cloud','Relational Schema'],'Features':['Attendance Tracking','Assessment System','Leave Workflow','Notifications','Public Registration']},bv:'Centralizes all training operations into one platform. Eliminates manual tracking. Role-based portals ensure data security. Multi-language support enables broader adoption.',uc:['Training Organizations','Educational Institutions','Military Academies','Youth Programs','Corporate Training'],rec:null},
+  safewave:{t:'SAFEWAVE \u2014 Fake Website Identification',v:'AI-powered cybersecurity platform detecting fake, fraudulent and phishing websites in real time.',img:'assets/img/proj_cyber.jpg',b:[['Cybersecurity \u00B7 AI','c']],pr:'Online fraud through fake websites is a growing threat. Phishing sites impersonate banks, government portals, and e-commerce platforms to steal credentials. There was no proactive AI-powered system that could analyze an unknown website\u2019s authenticity in real time.',so:'SAFEWAVE analyzes website properties \u2014 domain age, SSL validity, content structure, URL patterns, and behavioral signals \u2014 using ML classification to produce a trust score. Users receive an instant verdict: Safe, Suspicious, or Dangerous.',fl:['Website URL Input','Domain & SSL Analysis','ML Classification','Pattern Matching','Trust Score','User Alert'],arch:['User','Frontend (React)','API Gateway','URL Analyzer','ML Classifier','Trust Score Engine','Result'],tc:{'Frontend':['React.js','TypeScript','Real-time UI'],'Backend':['Node.js','REST API','URL Analyzer'],'AI/ML':['Classification Model','Feature Extraction','Risk Scoring'],'Deployment':['CI/CD','Cloud-hosted']},bv:'Protecting citizens from phishing reduces financial fraud and data breaches. Businesses can integrate SAFEWAVE as a security layer.',uc:['Banking & Finance','Government Portals','E-Commerce','Enterprise Security','Cybersecurity'],rec:{i:'\u{1F3C6}',t:'Smart India Hackathon 2024',o:'Ministry of Education, Govt. of India \u00B7 July 2024'}},
+  multimodal:{t:'Multi-modal AI Guardian',v:'Real-time multi-modal AI surveillance combining face recognition, gesture analysis, and threat scoring.',img:'assets/img/proj_multimodal.jpg',b:[['AI \u00B7 Surveillance','c']],pr:'Traditional CCTV requires humans to watch feeds continuously \u2014 impossible to scale. Law enforcement needed an intelligent system to analyze multiple streams, detect threats, and surface alerts automatically.',so:'Integrates three AI subsystems: Face Recognition, Gesture Detection, and Heatmap Analysis for crowd intelligence \u2014 all feeding into a central threat scoring engine.',fl:['Live Camera Feeds','Frame Processing','Face Recognition','Gesture Detection','Behavioral Analysis','Threat Scoring','Alert Dashboard'],arch:['Camera Feeds','OpenCV Pipeline','Face Recognition','Gesture CNN','Behavior Analyzer','Threat Score','Alert Dashboard'],tc:{'AI/ML':['OpenCV','TensorFlow','Face Recognition','Gesture Detection'],'Backend':['Python','Flask API','Real-time Processing'],'Frontend':['Dashboard UI','Camera Feed']},bv:'Reduces human monitoring burden by 80%+ through AI automation. Enables faster threat response in public spaces.',uc:['Law Enforcement','Public Safety','Border Security','Transit Hubs','Smart Cities'],rec:{i:'\u{1F3C6}',t:'Rajasthan Police Hackathon 1.0',o:'Rajasthan Police \u00B7 February 2024 \u00B7 Selected from 250+ teams'}},
+  edii:{t:'AI Submission Validator',v:'GPT-integrated AI backend for intelligent screening of submissions for quality and originality.',img:'assets/img/proj_ai.jpg',b:[['Applied AI','c']],pr:'Organizations receive thousands of idea submissions. Manually screening each for originality, completeness, and feasibility is time-consuming and inconsistent.',so:'AI-powered validation backend that automatically analyzes submitted ideas using GPT integration and NLP, scoring on originality, clarity, feasibility and completeness.',fl:['Idea Submission','NLP Pre-processing','GPT Analysis','Originality Check','Completeness Score','Firebase Store','Report'],arch:['User Submission','FastAPI','NLP Preprocessor','GPT API','Scoring Engine','Firebase','Admin Dashboard'],tc:{'AI/NLP':['GPT API','NLP Processing','Content Analysis','Originality Detection'],'Backend':['Python','FastAPI','REST API'],'Database':['Firebase Realtime','Score Tracking']},bv:'Eliminates days of manual review. Ensures consistent, unbiased evaluation. Surfaces highest-quality ideas for decision-making.',uc:['Government Programs','Hackathon Platforms','Startup Accelerators','Grant Programs','Universities'],rec:null},
+  ibots:{t:'E-Commerce Platform',v:'Full-stack MERN e-commerce with AI-powered recommendations, analytics dashboard and cloud deployment.',img:'assets/img/proj_ecommerce.jpg',b:[['E-Commerce \u00B7 Full Stack','c']],pr:'A modern, scalable e-commerce platform with product catalogs, order management, personalized experiences, and a powerful admin dashboard.',so:'Custom MERN-stack e-commerce with AI-powered product recommendations. Admin dashboard provides real-time inventory tracking, order management, and sales analytics.',fl:['User Browse/Search','AI Recommendations','Product Catalog','Cart & Checkout','Order Processing','Admin Dashboard','Analytics'],arch:['User','React SPA','Express API','JWT Auth','MongoDB','AI Engine','AWS (EC2/S3)'],tc:{'Frontend':['React.js','Responsive UI','Real-time Updates'],'Backend':['Node.js','Express.js','REST APIs','JWT Auth'],'AI':['Recommendations','Behavior Analysis'],'Infrastructure':['AWS Cloud','Docker','CI/CD','MongoDB Atlas']},bv:'Dashboard reduced reporting time by 50%. Personalized UX improved engagement by 20%. Cloud deployment handles real transactions.',uc:['Retail & E-Commerce','Product Companies','B2B Marketplaces','Electronics'],rec:null},
+  signlanguage:{t:'Sign Language Translator',v:'Real-time sign language to text translation using computer vision and CNN.',img:'assets/img/proj_sign.jpg',b:[['AI \u00B7 Accessibility','c']],pr:'Communication between hearing-impaired individuals and those unfamiliar with sign language is a significant barrier. Real-time tools are rare.',so:'Computer vision application using a webcam to capture hand gestures in real time and translate them to text via a CNN trained on sign language datasets.',fl:['Webcam Input','Frame Capture','Hand Detection','CNN Classifier','Character Map','Text Output'],arch:['Camera','OpenCV Capture','Hand Landmark','CNN Model','Character Recognition','Text Display'],tc:{'AI/CV':['OpenCV','CNN (TensorFlow)','Hand Detection','Gesture Classification'],'Backend':['Python','Real-time Processing']},bv:'Makes communication accessible without specialized hardware. Applicable in hospitals, schools, customer service counters.',uc:['Healthcare','Education','Customer Service','Public Services','Accessibility'],rec:null},
+  stockpred:{t:'Stock Price Predictor',v:'ML time-series forecasting model for stock market prediction using historical data analysis.',img:'assets/img/proj_stock.jpg',b:[['AI \u00B7 Finance','c']],pr:'Predicting stock prices is a classic data science challenge. Traditional analysis struggles to capture complex temporal patterns in financial data.',so:'LSTM-based deep learning model trained on historical stock data to forecast future price movements. Includes data preprocessing, feature engineering, and visualization.',fl:['Data Collection','Preprocessing','Feature Engineering','LSTM Model','Training','Prediction','Visualization'],arch:['Market Data API','Pandas Pipeline','Feature Engineer','LSTM Network','Prediction Output','Chart Visualization'],tc:{'AI/ML':['LSTM','TensorFlow','Scikit-learn','Time Series'],'Data':['Pandas','NumPy','Matplotlib'],'Backend':['Python']},bv:'Demonstrates advanced ML capability on complex financial data. Pattern applicable to demand forecasting, resource planning.',uc:['Financial Services','Investment','Demand Forecasting','Business Intelligence'],rec:null},
+  d2t:{t:'Product Management System',v:'Mobile-first product and order management with integrated payment and real-time tracking.',img:'assets/img/proj_d2t.jpg',b:[['Mobile \u00B7 Operations','c']],pr:'Manual order management via spreadsheets caused delays, errors, and missed payments. A mobile-first solution was needed.',so:'Cross-platform mobile app with product catalog management, order tracking, payment integration, and real-time inventory synchronization.',fl:['Product Catalog','Order Placement','Inventory Update','Payment','Order Fulfillment','Analytics'],arch:['Mobile App','React Native UI','Express API','Payment Gateway','MongoDB','Admin Panel'],tc:{'Mobile':['React Native','Mobile-first UI'],'Backend':['Node.js','REST API','Payment Gateway'],'Database':['MongoDB','Transaction Logs']},bv:'Improved efficiency by 40%. Handles 100+ daily transactions. Reduced order errors significantly.',uc:['Product Distribution','Field Sales','Order Management','SME Businesses'],rec:null},
+  emailsms:{t:'Email & SMS Verification Pipeline',v:'Automated pipeline verifying contact data \u2014 eliminating invalid entries before they cause problems.',img:'assets/img/proj_auto.jpg',b:[['Automation \u00B7 Data','c']],pr:'Businesses accumulate invalid emails and phone numbers. Campaigns to invalid addresses damage sender reputation and increase costs.',so:'Automated verification pipeline checking MX records, SMTP handshake, format validity, and SMS reachability. Invalid contacts quarantined with reason codes.',fl:['Contact List','Format Check','MX/DNS Lookup','SMTP Handshake','SMS Check','DB Update','Report'],arch:['Input List','Format Validator','DNS/MX Resolver','SMTP Verifier','SMS Gateway','Result Database'],tc:{'Backend':['Python','Node.js','Async Processing'],'Verification':['SMTP Validation','DNS Lookup','SMS Gateway API'],'Database':['MongoDB','Batch Processing']},bv:'Reduces bounce rates, protects sender reputation, saves marketing budget.',uc:['E-Commerce','Digital Marketing','CRM Systems','Healthcare','Financial Services'],rec:null},
+  sentiment:{t:'Sentiment Analysis Engine',v:'NLP-powered sentiment engine transforming customer reviews into actionable intelligence.',img:'assets/img/proj_sentiment.jpg',b:[['AI \u00B7 NLP','c']],pr:'Businesses receive thousands of reviews but lack tools to analyze sentiment at scale.',so:'Sentiment system processing reviews using NLP, classifying and extracting key topics. Dashboard shows sentiment trends and quality signals.',fl:['Reviews Input','NLP Processing','Classification','Topic Extraction','Aggregation','Dashboard'],arch:['Data Source','Text Preprocessor','BERT Model','Topic Modeler','Score Aggregator','React Dashboard'],tc:{'AI/NLP':['BERT/Transformer','Sentiment Classification','Topic Modeling'],'Backend':['Python','Flask API'],'Frontend':['React.js','Charts']},bv:'Understand customer sentiment without reading thousands of reviews.',uc:['E-Commerce','Product Mgmt','Customer Experience','Market Research'],rec:null},
+  aichatbot:{t:'AI Customer Support Chatbot',v:'GPT-powered chatbot trained on custom business data for automated 24/7 customer support and lead generation.',img:'assets/img/proj_chatbot.jpg',b:[['AI \u00B7 SaaS','c']],pr:'Businesses spend heavily on customer support teams. Most queries are repetitive \u2014 FAQs, order status, pricing, returns. Customers expect instant answers 24/7 but human agents are expensive and have limited availability.',so:'An AI chatbot trained on the client\u2019s own documentation, FAQs, and product data using GPT + LangChain. It handles customer queries in natural language, escalates complex issues to humans, and learns from conversations. Includes an analytics dashboard showing resolution rates and common topics.',fl:['Customer Message','NLP Processing','Knowledge Base Search','GPT Response Generation','Escalation Check','Response Delivery','Analytics Log'],arch:['Chat Widget','Express API','LangChain Pipeline','Vector DB (Pinecone)','GPT API','Escalation Engine','Admin Dashboard'],tc:{'AI':['GPT-4 API','LangChain','Vector Embeddings','RAG Architecture'],'Backend':['Node.js','Express','WebSocket','MongoDB'],'Frontend':['React.js','Chat UI','Admin Dashboard'],'Infrastructure':['Docker','CI/CD','Cloud Hosting']},bv:'Reduces support costs by 60-70%. Handles unlimited concurrent conversations. Available 24/7 with instant response. Captures leads automatically from chat conversations.',uc:['E-Commerce','SaaS Companies','Healthcare','Real Estate','Education','Financial Services','Hospitality'],rec:null},
+  hospital:{t:'Hospital & Clinic Management System',v:'End-to-end healthcare management with patient records, appointments, doctor portals, prescriptions, and billing.',img:'assets/img/proj_hospital.jpg',b:[['Healthcare \u00B7 Full Stack','c']],pr:'Clinics and small hospitals manage patient records on paper or spreadsheets. Appointment scheduling is phone-based, prescriptions are handwritten, and billing is manual. This creates errors, delays, and poor patient experience.',so:'A full-stack hospital management system with role-based portals for Admin, Doctor, and Receptionist. Manages patient records, appointment scheduling with calendar view, digital prescriptions, lab reports, billing with invoice generation, and department management. Secure authentication with audit trails.',fl:['Patient Registration','Appointment Booking','Doctor Assignment','Consultation Notes','Prescription','Lab Reports','Billing','Invoice'],arch:['React Frontend','Express API','JWT Auth','Role Middleware','PostgreSQL','PDF Generator','Email/SMS Notifier'],tc:{'Frontend':['React.js','Calendar UI','PDF Viewer','Responsive Design'],'Backend':['Node.js','Express','REST APIs','JWT Auth','Role-based Access'],'Database':['PostgreSQL','Patient Records','Audit Logs'],'Features':['Appointment Calendar','Digital Prescriptions','Invoice Generator','Lab Report Upload','SMS/Email Notifications']},bv:'Eliminates paper records. Reduces appointment scheduling time by 80%. Digital prescriptions reduce errors. Automated billing saves 15+ hours/week. Complete audit trail for compliance.',uc:['Clinics','Small Hospitals','Dental Practices','Physiotherapy Centers','Diagnostic Labs','Veterinary Clinics'],rec:null},
+  booking:{t:'Booking & Appointment System',v:'Universal scheduling platform for service businesses \u2014 clinics, salons, tutors, consultants \u2014 with payments and analytics.',img:'assets/img/proj_booking.jpg',b:[['SaaS \u00B7 Platform','c']],pr:'Service businesses (salons, clinics, tutors, consultants) lose revenue from no-shows, double bookings, and phone-based scheduling. They need a modern self-service booking system that works 24/7.',so:'A SaaS booking platform where businesses create service listings, set availability, and let customers book online. Includes automated reminders (email/SMS), payment collection via Stripe, customer management, and an admin dashboard with booking analytics and revenue tracking.',fl:['Service Setup','Availability Calendar','Customer Booking','Payment (Stripe)','Confirmation','Reminder (SMS/Email)','Service Delivery','Review & Rating'],arch:['React Frontend','Express API','MongoDB','Stripe Payment','Calendar Engine','Notification Service (Twilio)','Admin Dashboard'],tc:{'Frontend':['React.js','Calendar UI','Payment Widget','Responsive'],'Backend':['Express.js','REST APIs','Stripe Integration','Twilio SMS'],'Database':['MongoDB','Booking Records','Customer Profiles'],'Features':['Online Booking','Stripe Payments','SMS/Email Reminders','Analytics Dashboard','Multi-service Support','Review System']},bv:'Eliminates no-shows with automated reminders. Captures bookings 24/7 without staff. Online payments reduce cancellations by 40%. Dashboard gives real-time revenue insights.',uc:['Salons & Spas','Medical Clinics','Tutoring Services','Consulting Firms','Fitness Studios','Photography','Legal Services'],rec:null}
+};
+
+// ===== MODAL =====
+const mol=document.getElementById('mol'),mcl=document.getElementById('mcl');
+function om(k){
+  const d=PD[k];if(!d)return;
+  const mhi=document.getElementById('mhi'),mni=document.getElementById('mni');
+  if(d.img){mhi.src=d.img;mhi.alt=d.t;mhi.style.display='';mni.style.display='none'}
+  else{mhi.style.display='none';mni.style.display='flex';mni.innerHTML=d.ico||'\u{1F4BB}'}
+  document.getElementById('mbd').innerHTML=(d.b||[]).map(([tx])=>`<div class="pcb">${tx}</div>`).join('');
+  document.getElementById('mt').textContent=d.t;
+  document.getElementById('mv').textContent=d.v;
+  document.getElementById('mpr').textContent=d.pr;
+  document.getElementById('mso').textContent=d.so;
+  document.getElementById('mfl').innerHTML=d.fl.map((s,i)=>`<div class="mfs">${s}</div>${i<d.fl.length-1?'<div class="mfa">\u2192</div>':''}`).join('');
+  const marchEl=document.getElementById('march');
+  if(d.arch&&d.arch.length){marchEl.parentElement.style.display='';marchEl.innerHTML=d.arch.map((n,i)=>`<div class="march-n">${n}</div>${i<d.arch.length-1?'<div class="march-a">\u2193</div>':''}`).join('')}
+  else marchEl.parentElement.style.display='none';
+  document.getElementById('mtc').innerHTML=Object.entries(d.tc).map(([l,items])=>`<div class="mtcc"><div class="mtct">${l}</div><ul>${items.map(i=>`<li>${i}</li>`).join('')}</ul></div>`).join('');
+  document.getElementById('mbv').textContent=d.bv;
+  document.getElementById('muc').innerHTML=(d.uc||[]).map(u=>`<div class="muci">${u}</div>`).join('');
+  const rs=document.getElementById('mres');
+  if(d.rec){rs.style.display='';document.getElementById('mrec').innerHTML=`<div class="mreci">${d.rec.i}</div><div class="mrect"><h5>${d.rec.t}</h5><p>${d.rec.o}</p></div>`}
+  else rs.style.display='none';
+  mol.classList.add('op');document.body.style.overflow='hidden';
+  mol.querySelector('.msc').scrollTop=0;
+}
+function cm(){mol.classList.remove('op');document.body.style.overflow=''}
+mcl.addEventListener('click',cm);
+mol.addEventListener('click',e=>{if(e.target===mol)cm()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){cm();closeChat()}});
+
+function bst(){document.getElementById('contact').scrollIntoView({behavior:'smooth'})}
+
+// ===== CONTACT FORM =====
+function hfs(e){
+  e.preventDefault();
+  const btn=document.getElementById('fsb');
+  const n=document.getElementById('fn').value,em=document.getElementById('fe').value,
+        ph=document.getElementById('fph').value,sv=document.getElementById('fsr').value,
+        ms=document.getElementById('fm').value;
+  const sub=encodeURIComponent('Project Inquiry - '+sv);
+  const body=encodeURIComponent('Hi IdeaSternal,\n\nName: '+n+'\nEmail: '+em+'\nPhone: '+ph+'\nService: '+sv+'\n\nMessage:\n'+ms+'\n\nSent from ideaseternal.com');
+  window.location.href='mailto:hello@ideaseternal.com?subject='+sub+'&body='+body;
+  btn.textContent='Email Client Opening... \u2713';
+  btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)';
+  setTimeout(()=>{btn.textContent='Send Message \u2192';btn.style.background=''},4000);
+}
+
+// ===== CHATBOT =====
+const chatPanel=document.getElementById('chatPanel'),chatBody=document.getElementById('chatBody'),
+      chatFab=document.getElementById('chatFab'),chatFtr=document.getElementById('chatFtr'),
+      chatIn=document.getElementById('chatIn');
+let chatState='init',chatData={service:'',problem:'',name:'',email:'',phone:'',message:''};
+
+function openChat(){chatPanel.classList.add('open');chatFab.style.display='none';if(chatState==='init')chatStart()}
+function closeChat(){chatPanel.classList.remove('open');chatFab.style.display=''}
+
+function showTyping(){
+  const t=document.createElement('div');t.className='chat-typing';t.id='typingDots';
+  t.innerHTML='<span></span><span></span><span></span>';
+  chatBody.appendChild(t);chatBody.scrollTop=chatBody.scrollHeight;
+  return t;
+}
+function removeTyping(){const t=document.getElementById('typingDots');if(t)t.remove()}
+
+function chatStart(){
+  chatState='service';chatBody.innerHTML='';chatFtr.classList.add('hidden');
+  chatData={service:'',problem:'',name:'',email:'',phone:'',message:''};
+  showTyping();
+  setTimeout(()=>{removeTyping();addBotMsg("Hi! \u{1F44B} Welcome to IdeaSternal.");
+  showTyping();
+  setTimeout(()=>{removeTyping();addBotMsg("What type of solution are you looking for?");
+  setTimeout(()=>addOpts(['Website','Mobile App','AI Solution','Business Software','Automation','E-Commerce','Not Sure Yet']),300)},800)},600);
+}
+
+function addBotMsg(t){const d=document.createElement('div');d.className='chat-msg bot';d.textContent=t;chatBody.appendChild(d);chatBody.scrollTop=chatBody.scrollHeight}
+function addUsrMsg(t){const d=document.createElement('div');d.className='chat-msg usr';d.textContent=t;chatBody.appendChild(d);chatBody.scrollTop=chatBody.scrollHeight}
+function addOpts(opts){
+  const w=document.createElement('div');w.className='chat-opts';
+  opts.forEach(o=>{const b=document.createElement('button');b.className='chat-opt';b.textContent=o;
+    b.addEventListener('click',()=>{w.remove();addUsrMsg(o);handleOpt(o)});w.appendChild(b)});
+  chatBody.appendChild(w);chatBody.scrollTop=chatBody.scrollHeight;
+}
+
+function handleOpt(val){
+  if(chatState==='service'){
+    chatData.service=val;chatState='problem';
+    showTyping();
+    setTimeout(()=>{removeTyping();addBotMsg("Great choice! What are you trying to achieve?");
+    setTimeout(()=>addOpts(['Build a New Product','Automate Existing Work','Improve Current System','Add AI Features','Need a Website','Need a Mobile App']),300)},600);
+  }else if(chatState==='problem'){
+    chatData.problem=val;chatState='name';
+    showTyping();
+    setTimeout(()=>{removeTyping();addBotMsg("Excellent. Let me get a few details so we can reach out to you.");
+    showTyping();
+    setTimeout(()=>{removeTyping();addBotMsg("What's your name?");chatFtr.classList.remove('hidden');chatIn.placeholder='Your name...';chatIn.focus()},600)},600);
+  }else if(chatState==='confirm'){
+    if(val.includes('Send')){
+      const sub=encodeURIComponent('Project Inquiry via Chat - '+chatData.service);
+      const body=encodeURIComponent(`Hi IdeaSternal,\n\nNew project enquiry:\n\nService: ${chatData.service}\nGoal: ${chatData.problem}\nName: ${chatData.name}\nEmail: ${chatData.email}\nPhone: ${chatData.phone||'Not provided'}\n\nProject:\n${chatData.message}\n\nSent from ideaseternal.com`);
+      window.location.href='mailto:hello@ideaseternal.com?subject='+sub+'&body='+body;
+      showTyping();
+      setTimeout(()=>{removeTyping();addBotMsg("\u2705 Your email client should open with the pre-filled message. We'll respond within 24 hours!");chatState='done';setTimeout(()=>addOpts(['Start New Conversation','Close Chat']),600)},500);
+    }else if(val.includes('Edit')){chatState='name';addBotMsg("No problem! What's your name?");chatFtr.classList.remove('hidden');chatIn.placeholder='Your name...';chatIn.focus()}
+    else if(val.includes('Start'))chatStart();
+  }else if(chatState==='done'){
+    if(val.includes('Start'))chatStart();
+    else closeChat();
+  }
+}
+
+function chatSendText(){
+  const v=chatIn.value.trim();if(!v)return;
+  addUsrMsg(v);chatIn.value='';
+  if(chatState==='name'){chatData.name=v;chatState='email';showTyping();setTimeout(()=>{removeTyping();addBotMsg("And your email address?");chatIn.placeholder='email@example.com';chatIn.type='email';chatIn.focus()},500)}
+  else if(chatState==='email'){chatData.email=v;chatState='phone';showTyping();setTimeout(()=>{removeTyping();addBotMsg("Phone or WhatsApp number? (press Send to skip)");chatIn.placeholder='+91 XXXXX XXXXX';chatIn.type='tel';chatIn.focus()},500)}
+  else if(chatState==='phone'){chatData.phone=v;chatState='message';showTyping();setTimeout(()=>{removeTyping();addBotMsg("Tell us about your project idea:");chatIn.placeholder='Describe your project...';chatIn.type='text';chatIn.focus()},500)}
+  else if(chatState==='message'){
+    chatData.message=v;chatState='confirm';chatFtr.classList.add('hidden');
+    showTyping();
+    setTimeout(()=>{
+      removeTyping();
+      addBotMsg("Here's your enquiry summary:");
+      addBotMsg(`Service: ${chatData.service}\nGoal: ${chatData.problem}\nName: ${chatData.name}\nEmail: ${chatData.email}${chatData.phone?'\nPhone: '+chatData.phone:''}\n\nMessage: ${chatData.message}`);
+      setTimeout(()=>addOpts(['Send Enquiry \u2192','Edit Details','Start Over']),500);
+    },600);
+  }
+}
+
+chatIn.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();chatSendText()}});
+function chatRestart(){chatState='init';chatStart()}
+
+// ===== NAV ACTIVE HIGHLIGHT =====
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nls a');
+const navObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(l=>{l.style.color=l.getAttribute('href')==='#'+id?'var(--wh)':''})}})},{threshold:.3,rootMargin:'-80px 0px -50% 0px'});
+sections.forEach(s=>navObs.observe(s));
+
+// ===== PRELOADER =====
+window.addEventListener('load',()=>{
+  const pl=document.getElementById('preloader');
+  if(pl){setTimeout(()=>pl.classList.add('hide'),800)}
+});
+
+// ===== BACK TO TOP =====
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{if(btt)btt.classList.toggle('show',scrollY>400)},{passive:true});
+
+// ===== FAQ TOGGLE =====
+function toggleFaq(el){
+  const isOpen=el.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)el.classList.add('open');
+}
+
+</script>
+</body>
+</html>
