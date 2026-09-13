@@ -136,8 +136,8 @@ function hfs(e){
         ph=document.getElementById('fph').value,sv=document.getElementById('fsr').value,
         ms=document.getElementById('fm').value;
   const sub=encodeURIComponent('Project Inquiry - '+sv);
-  const body=encodeURIComponent('Hi IdeaSternal,\n\nName: '+n+'\nEmail: '+em+'\nPhone: '+ph+'\nService: '+sv+'\n\nMessage:\n'+ms+'\n\nSent from ideaseternal.com');
-  window.location.href='mailto:hello@ideaseternal.com?subject='+sub+'&body='+body;
+  const body=encodeURIComponent('Hi IdeasEternal,\n\nName: '+n+'\nEmail: '+em+'\nPhone: '+ph+'\nService: '+sv+'\n\nMessage:\n'+ms+'\n\nSent from ideaseternal.com');
+  window.location.href='mailto:ideaseternal777@gmail.com?subject='+sub+'&body='+body;
   btn.textContent='Email Client Opening... \u2713';
   btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)';
   setTimeout(()=>{btn.textContent='Send Message \u2192';btn.style.background=''},4000);
@@ -164,7 +164,7 @@ function chatStart(){
   chatState='service';chatBody.innerHTML='';chatFtr.classList.add('hidden');
   chatData={service:'',problem:'',name:'',email:'',phone:'',message:''};
   showTyping();
-  setTimeout(()=>{removeTyping();addBotMsg("Hi! \u{1F44B} Welcome to IdeaSternal.");
+  setTimeout(()=>{removeTyping();addBotMsg("Hi! \u{1F44B} Welcome to IdeasEternal.");
   showTyping();
   setTimeout(()=>{removeTyping();addBotMsg("What type of solution are you looking for?");
   setTimeout(()=>addOpts(['Website','Mobile App','AI Solution','Business Software','Automation','E-Commerce','Not Sure Yet']),300)},800)},600);
@@ -194,8 +194,8 @@ function handleOpt(val){
   }else if(chatState==='confirm'){
     if(val.includes('Send')){
       const sub=encodeURIComponent('Project Inquiry via Chat - '+chatData.service);
-      const body=encodeURIComponent(`Hi IdeaSternal,\n\nNew project enquiry:\n\nService: ${chatData.service}\nGoal: ${chatData.problem}\nName: ${chatData.name}\nEmail: ${chatData.email}\nPhone: ${chatData.phone||'Not provided'}\n\nProject:\n${chatData.message}\n\nSent from ideaseternal.com`);
-      window.location.href='mailto:hello@ideaseternal.com?subject='+sub+'&body='+body;
+      const body=encodeURIComponent(`Hi IdeasEternal,\n\nNew project enquiry:\n\nService: ${chatData.service}\nGoal: ${chatData.problem}\nName: ${chatData.name}\nEmail: ${chatData.email}\nPhone: ${chatData.phone||'Not provided'}\n\nProject:\n${chatData.message}\n\nSent from ideaseternal.com`);
+      window.location.href='mailto:ideaseternal777@gmail.com?subject='+sub+'&body='+body;
       showTyping();
       setTimeout(()=>{removeTyping();addBotMsg("\u2705 Your email client should open with the pre-filled message. We'll respond within 24 hours!");chatState='done';setTimeout(()=>addOpts(['Start New Conversation','Close Chat']),600)},500);
     }else if(val.includes('Edit')){chatState='name';addBotMsg("No problem! What's your name?");chatFtr.classList.remove('hidden');chatIn.placeholder='Your name...';chatIn.focus()}

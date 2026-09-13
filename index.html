@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IdeaSternal &mdash; Web &amp; App Development &middot; Applied AI</title>
-<meta name="description" content="IdeaSternal is a premium software and applied AI development studio. We build web, mobile, AI, cloud and automation solutions that turn ambitious ideas into practical digital products.">
+<title>IdeasEternal &mdash; Web &amp; App Development &middot; Applied AI</title>
+<meta name="description" content="IdeasEternal is a premium software and applied AI development studio. We build web, mobile, AI, cloud and automation solutions that turn ambitious ideas into practical digital products.">
 <meta name="keywords" content="web development, app development, applied AI, software development, React, Node.js, machine learning, mobile app, cloud, automation, India">
-<meta name="author" content="IdeaSternal">
+<meta name="author" content="IdeasEternal">
 <link rel="canonical" href="https://ideaseternal.com">
 <!-- Open Graph -->
-<meta property="og:title" content="IdeaSternal &mdash; Web &amp; App Development &middot; Applied AI">
+<meta property="og:title" content="IdeasEternal &mdash; Web &amp; App Development &middot; Applied AI">
 <meta property="og:description" content="Let&rsquo;s Build Something That Lasts. Premium software and applied AI development studio.">
 <meta property="og:url" content="https://ideaseternal.com">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://ideaseternal.com/assets/img/og_image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:site_name" content="IdeaSternal">
+<meta property="og:site_name" content="IdeasEternal">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="IdeaSternal &mdash; Web &amp; App Development &middot; Applied AI">
+<meta name="twitter:title" content="IdeasEternal &mdash; Web &amp; App Development &middot; Applied AI">
 <meta name="twitter:description" content="Premium software and applied AI development studio. We build web, mobile, AI and automation solutions.">
 <meta name="twitter:image" content="https://ideaseternal.com/assets/img/og_image.jpg">
 <!-- Favicon -->
@@ -340,13 +340,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .mol.op{opacity:1;pointer-events:all}
 .mdi{width:100%;max-width:860px;max-height:88vh;background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transform:scale(.95) translateY(16px);transition:transform .35s var(--ease)}
 .mol.op .mdi{transform:scale(1) translateY(0)}
-.msc{overflow-y:auto;flex:1}
+.msc{overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch}
 .mhd{position:relative}
 .mhi{width:100%;aspect-ratio:16/9;object-fit:cover}
 .mni{height:180px;display:flex;align-items:center;justify-content:center;font-size:56px;background:linear-gradient(135deg,#0a1632,#0d1a3a)}
-.mcl{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(6,11,26,.8);backdrop-filter:blur(8px);border:1px solid rgba(26,42,94,.5);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--txts);font-size:16px;transition:var(--tr);z-index:10}
+.mcl{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:rgba(6,11,26,.85);backdrop-filter:blur(8px);border:1px solid rgba(26,42,94,.5);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--txts);font-size:16px;transition:var(--tr);z-index:10}
 .mcl:hover{background:var(--or);color:#fff;border-color:var(--or)}
-.mbd{position:absolute;bottom:12px;left:12px;display:flex;gap:6px;z-index:5}
+.mbd{position:relative;display:flex;gap:6px;z-index:5;flex-wrap:wrap;padding:0 0 8px 0}
+.mbd .pcb{position:relative;top:auto;left:auto;font-size:10px;padding:5px 12px}
 .mby{padding:28px 32px 32px}
 .mt2{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;margin-bottom:8px;line-height:1.2}
 .mvl{font-size:14px;color:var(--txts);margin-bottom:24px;line-height:1.65}
@@ -354,7 +355,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .mst{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--or);margin-bottom:10px;display:flex;align-items:center;gap:8px}
 .mst::after{content:'';flex:1;height:1px;background:rgba(26,42,94,.3)}
 .mse>p{font-size:13px;color:var(--txts);line-height:1.75}
-.mfl{display:flex;align-items:center;flex-wrap:wrap;margin-top:12px;gap:0}
+.mfl{display:flex;align-items:center;flex-wrap:wrap;margin-top:12px;gap:4px}
 .mfs{padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(26,42,94,.3);font-size:11px;font-weight:600;color:var(--txts)}
 .mfa{color:var(--or);font-size:14px;padding:0 4px}
 .mtc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
@@ -415,8 +416,114 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
 /* Responsive */
 @media(max-width:1100px){.pgr{grid-template-columns:repeat(2,1fr)}.sgr{grid-template-columns:1fr}.ftg{grid-template-columns:1fr 1fr;gap:28px}.hcn{grid-template-columns:1fr}.hpv{display:none}}
-@media(max-width:900px){.ccg{grid-template-columns:1fr}.agv{grid-template-columns:1fr}.wgr{grid-template-columns:repeat(2,1fr)}.nls,.nct .bso{display:none}.nhb{display:flex}.mtc{grid-template-columns:1fr}.cbg{grid-template-columns:1fr}.story-grid{grid-template-columns:1fr}.chat-panel{width:calc(100% - 24px);right:12px;bottom:12px;max-height:80vh;border-radius:16px}}
-@media(max-width:640px){.sec{padding:72px 0}.pgr{grid-template-columns:1fr}.wgr{grid-template-columns:1fr}.hst{gap:18px}.ftg{grid-template-columns:1fr}.cbi{flex-direction:column}.cit{border-right:none;border-bottom:1px solid rgba(26,42,94,.2)}.cit:last-child{border-bottom:none}.frw{grid-template-columns:1fr}.mby{padding:18px}.prst{grid-template-columns:52px 1fr;gap:14px}.cbmods{grid-template-columns:1fr}.chat-panel{bottom:0;right:0;width:100%;max-height:100vh;border-radius:16px 16px 0 0}.chat-fab{bottom:16px;right:16px;padding:10px 18px;font-size:12px}}
+@media(max-width:900px){
+  .ccg{grid-template-columns:1fr}.agv{grid-template-columns:1fr}.wgr{grid-template-columns:repeat(2,1fr)}
+  .nls,.nct .bso{display:none}.nhb{display:flex}
+  .mtc{grid-template-columns:1fr}.cbg{grid-template-columns:1fr}.story-grid{grid-template-columns:1fr}
+  .chat-panel{width:calc(100% - 24px);right:12px;bottom:12px;max-height:80vh;border-radius:16px}
+  /* Modal mobile */
+  .mol{padding:10px}
+  .mdi{max-height:92vh;border-radius:16px}
+  .mhi{aspect-ratio:16/8}
+  .mby{padding:20px 18px 24px}
+  .mt2{font-size:20px}
+  .mvl{font-size:13px;margin-bottom:18px}
+  .mfl{gap:4px}
+  .mfs{padding:6px 10px;font-size:10px}
+  .mfa{font-size:12px;padding:0 2px}
+  .mcta-box{padding:14px}
+  .mcta-box .btn{padding:10px 20px;font-size:13px}
+}
+@media(max-width:640px){
+  .sec{padding:72px 0}
+  .pgr{grid-template-columns:1fr}
+  .wgr{grid-template-columns:1fr}
+  .hst{gap:18px}
+  .ftg{grid-template-columns:1fr}
+  .cbi{flex-direction:column}
+  .cit{border-right:none;border-bottom:1px solid rgba(26,42,94,.2)}
+  .cit:last-child{border-bottom:none}
+  .frw{grid-template-columns:1fr}
+  .prst{grid-template-columns:52px 1fr;gap:14px}
+  .cbmods{grid-template-columns:1fr}
+  .chat-panel{bottom:0;right:0;width:100%;max-height:100vh;border-radius:16px 16px 0 0}
+  .chat-fab{bottom:16px;right:16px;padding:10px 18px;font-size:12px}
+  /* Modal fully mobile */
+  .mol{padding:0;align-items:flex-end}
+  .mdi{max-height:95vh;border-radius:16px 16px 0 0;max-width:100%}
+  .mhi{aspect-ratio:16/7}
+  .mni{height:120px;font-size:40px}
+  .mby{padding:16px 16px 24px}
+  .mt2{font-size:18px;margin-bottom:6px}
+  .mvl{font-size:12px;margin-bottom:16px;line-height:1.6}
+  .mse{margin-bottom:18px}
+  .mst{font-size:9px;gap:6px}
+  .mse>p{font-size:12px;line-height:1.7}
+  .mfl{gap:3px}
+  .mfs{padding:5px 8px;font-size:9px}
+  .mfa{font-size:10px;padding:0 1px}
+  .mtc{gap:8px}
+  .mtcc{padding:10px}
+  .mtcc ul li{font-size:11px}
+  .muci{padding:4px 10px;font-size:10px}
+  .mbv{padding:12px;font-size:12px}
+  .mcta-box{padding:12px}
+  .mcta-box p{font-size:12px;margin-bottom:10px}
+  .mcta-box .btn{padding:10px 18px;font-size:12px}
+  .march-n{padding:6px 14px;font-size:11px;min-width:100px}
+  .march-a{font-size:10px}
+  .mrec{padding:10px 12px;gap:10px}
+  .mreci{font-size:18px}
+  .mrect h5{font-size:12px}
+  .mrect p{font-size:10px}
+  /* Hero mobile */
+  .hhd{font-size:clamp(32px,8vw,48px)}
+  .hsb{font-size:14px}
+  .hac{gap:10px}
+  .hac .btn{padding:12px 20px;font-size:13px}
+  .hst{padding-top:24px;gap:14px}
+  .hsi .n{font-size:22px}
+  .hsi .l{font-size:10px}
+  /* Cards mobile */
+  .scd{padding:24px}
+  .scd h3{font-size:17px}
+  .scd>p{font-size:13px}
+  /* Contact mobile */
+  .ccl h3{font-size:22px}
+  .cfc{padding:24px}
+  .cft{font-size:18px}
+  /* WhatsApp floating */
+  .waf{bottom:16px;left:16px;width:44px;height:44px;font-size:20px}
+  /* Footer mobile */
+  .fbt3{flex-direction:column;text-align:center;gap:8px}
+  .fbl{justify-content:center}
+  /* CTA mobile */
+  .ctt{font-size:clamp(26px,7vw,40px)}
+  .cts{font-size:14px}
+  .ctac .btn{padding:13px 24px;font-size:13px}
+  /* Process mobile */
+  .prn{font-size:28px}
+  .prc h4{font-size:16px}
+  .prc p{font-size:13px}
+  /* Testimonials mobile */
+  .tcd{padding:24px}
+  .tcd p{font-size:14px}
+  .tcd::before{font-size:48px;top:12px;right:16px}
+  /* FAQ mobile */
+  .faq-q{padding:16px 18px}
+  .faq-q h4{font-size:14px}
+  .faq-a p{padding:0 18px 16px;font-size:13px}
+  /* Achievement mobile */
+  .avc{padding:18px 20px;gap:12px}
+  .avic{width:38px;height:38px;font-size:18px}
+  .avb h4{font-size:13px}
+  .avb>p{font-size:11px}
+  /* Why cards mobile */
+  .wcd{padding:22px}
+  .wnn{font-size:28px;margin-bottom:10px;padding-bottom:10px}
+  .wcd h4{font-size:15px}
+  .wcd p{font-size:12px}
+}
 
 /* ===== PRELOADER ===== */
 #preloader{position:fixed;inset:0;z-index:99999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s ease}
@@ -470,10 +577,188 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 #btt:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(249,115,22,.5)}
 @media(max-width:900px){.tgr{grid-template-columns:1fr}}
 
+/* ===== SCROLL PROGRESS BAR ===== */
+#scrollProgress{position:fixed;top:0;left:0;height:3px;background:var(--grad-or);z-index:10000;width:0;transition:width .1s linear;box-shadow:0 0 10px rgba(249,115,22,.5),0 0 5px rgba(249,115,22,.3)}
+
+/* ===== ENHANCED PRELOADER ===== */
+#preloader{background:radial-gradient(ellipse at center,var(--bg2),var(--bg))}
+.prl-logo{position:relative;overflow:hidden}
+.prl-logo::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(249,115,22,.15),transparent);animation:prlShimmer 2s ease-in-out infinite}
+@keyframes prlShimmer{0%{left:-100%}100%{left:200%}}
+.prl-bar{position:relative;overflow:hidden}
+.prl-bar::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);animation:prlBarShimmer 1.5s ease-in-out infinite}
+@keyframes prlBarShimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+/* ===== NAV ENHANCED ENTRANCE ===== */
+.nav{transform:translateY(-100%);animation:navSlideIn .6s var(--ease) .8s forwards}
+.nav.sc{animation:none;transform:translateY(0)}
+@keyframes navSlideIn{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
+
+/* ===== HERO FLOATING STATS ===== */
+.hsi{animation:heroStatFloat 4s ease-in-out infinite;position:relative}
+.hsi:nth-child(1){animation-delay:0s}
+.hsi:nth-child(2){animation-delay:.5s}
+.hsi:nth-child(3){animation-delay:1s}
+.hsi:nth-child(4){animation-delay:1.5s}
+@keyframes heroStatFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hsi::after{content:'';position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--grad-or);transition:width .4s var(--ease);border-radius:2px}
+.hsi:hover::after{width:80%}
+.hsi .n{transition:all .4s var(--ease)}
+.hsi:hover .n{transform:scale(1.1);color:var(--or)}
+
+/* ===== TEXT REVEAL ANIMATION ===== */
+.st{overflow:hidden}
+.st .word{display:inline-block;opacity:0;transform:translateY(40px) rotateX(-20deg);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.rv.vi .st .word{opacity:1;transform:translateY(0) rotateX(0)}
+
+/* ===== 3D TILT ON PROJECT CARDS ===== */
+.pcd{transform-style:preserve-3d;perspective:800px;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease)}
+.pcd .pbdy{transform:translateZ(20px);transition:transform .4s var(--ease)}
+.pcd:hover .pbdy{transform:translateZ(30px)}
+.pcd::before{content:'';position:absolute;inset:0;border-radius:var(--r);background:linear-gradient(135deg,rgba(249,115,22,.08),transparent 50%,rgba(59,130,246,.05));opacity:0;transition:opacity .5s ease;z-index:0;pointer-events:none}
+.pcd:hover::before{opacity:1}
+
+/* ===== GRADIENT BORDER ANIMATION ON SERVICE CARDS ===== */
+.scd{position:relative;overflow:hidden;background-clip:padding-box}
+.scd .sci{transition:all .5s var(--ease)}
+.scd:hover .sci{transform:scale(1.1) rotate(5deg);box-shadow:0 0 20px rgba(249,115,22,.2)}
+@keyframes borderGlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* ===== SHIMMER EFFECT ON TESTIMONIAL CARDS ===== */
+.tcd{overflow:hidden}
+.tcd::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(249,115,22,.04),transparent);transition:none;pointer-events:none}
+.tcd:hover::after{animation:testimonialShimmer .8s ease forwards}
+@keyframes testimonialShimmer{0%{left:-100%}100%{left:200%}}
+
+/* ===== ENHANCED FAQ SPRING ANIMATION ===== */
+.faq-a{transition:max-height .5s cubic-bezier(.68,-.55,.27,1.55),padding .4s var(--ease)}
+.faq-item{transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease}
+.faq-item:hover{transform:translateX(4px)}
+.faq-item.open{box-shadow:0 4px 24px rgba(249,115,22,.08)}
+.faq-q{transition:background .3s ease,padding-left .3s ease}
+.faq-item.open .faq-q{padding-left:28px}
+
+/* ===== TECH TAG CASCADE ===== */
+.tit{opacity:0;transform:translateY(12px);transition:opacity .4s var(--ease),transform .4s var(--ease),border-color .3s ease,color .3s ease,background .3s ease}
+.rv.vi .tit{opacity:1;transform:translateY(0)}
+.rv.vi .tsw .tit:nth-child(1){transition-delay:.05s}
+.rv.vi .tsw .tit:nth-child(2){transition-delay:.1s}
+.rv.vi .tsw .tit:nth-child(3){transition-delay:.15s}
+.rv.vi .tsw .tit:nth-child(4){transition-delay:.2s}
+.rv.vi .tsw .tit:nth-child(5){transition-delay:.25s}
+.rv.vi .tsw .tit:nth-child(6){transition-delay:.3s}
+
+/* ===== ENHANCED CTA SECTION ===== */
+.cta-sec{overflow:hidden}
+.ctg{animation:ctaGlowPulse 5s ease-in-out infinite}
+@keyframes ctaGlowPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6}50%{transform:translate(-50%,-50%) scale(1.15);opacity:.9}}
+.ctt{position:relative;z-index:2}
+.ctt em{position:relative;display:inline-block}
+.ctt em::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:3px;background:var(--grad-or);border-radius:3px;transform:scaleX(0);animation:ctaUnderline 1.5s var(--ease) 1s forwards}
+@keyframes ctaUnderline{to{transform:scaleX(1)}}
+
+/* ===== SECTION SEPARATOR GLOW ===== */
+.sec::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:1px;background:linear-gradient(90deg,transparent,rgba(249,115,22,.3),transparent);z-index:1}
+
+/* ===== SMOOTH REVEAL VARIANTS ===== */
+.rv-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.rv-left.vi{opacity:1;transform:translateX(0)}
+.rv-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.rv-right.vi{opacity:1;transform:translateX(0)}
+.rv-scale{opacity:0;transform:scale(.9);transition:opacity .6s ease,transform .6s ease}
+.rv-scale.vi{opacity:1;transform:scale(1)}
+
+/* ===== ACHIEVEMENT CARDS ENHANCED ===== */
+.avc{transition:all .4s var(--ease);position:relative;overflow:hidden}
+.avc::after{content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;background:linear-gradient(135deg,rgba(234,179,8,.15),transparent 40%,transparent 60%,rgba(234,179,8,.1));border-radius:var(--r);opacity:0;transition:opacity .4s ease;z-index:-1}
+.avc:hover::after{opacity:1}
+
+/* ===== WHY CARDS COUNTER GLOW ===== */
+.wcd{overflow:hidden;position:relative}
+.wcd::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--grad-or);transition:width .6s var(--ease)}
+.wcd:hover::after{width:100%}
+
+/* ===== PIPE NODE ENHANCED ===== */
+.pipe-node{transition:all .4s var(--ease)}
+.pipe-node.active{animation:pipeActivate .5s var(--ease)}
+@keyframes pipeActivate{0%{transform:translateX(0)}30%{transform:translateX(8px)}100%{transform:translateX(6px)}}
+
+/* ===== PROCESS STEP HOVER ===== */
+.prst .prn{position:relative;overflow:hidden}
+.prst:hover .prn::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(249,115,22,.08),transparent);animation:processGlow .5s ease}
+@keyframes processGlow{0%{opacity:0;transform:scale(.5)}100%{opacity:1;transform:scale(1)}}
+
+/* ===== CURSOR GLOW EFFECT ===== */
+.cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.04),transparent 70%);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:opacity .3s ease;opacity:0}
+.cursor-glow.active{opacity:1}
+
+/* ===== CAPABILITY BAR ENHANCED ===== */
+.cit{position:relative;overflow:hidden}
+.cit::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;background:var(--grad-or);transition:all .4s var(--ease);transform:translateX(-50%)}
+.cit:hover::after{width:80%}
+.cit .ico{transition:transform .4s var(--ease)}
+.cit:hover .ico{transform:scale(1.15) rotate(5deg)}
+
+/* ===== LAYER VIS ENHANCED ===== */
+.layer{transition:all .5s var(--ease)}
+.layer.vis{animation:layerPop .5s var(--ease)}
+@keyframes layerPop{0%{transform:translateX(20px) scale(.95);opacity:0}60%{transform:translateX(-4px) scale(1.02)}100%{transform:translateX(0) scale(1);opacity:1}}
+
+/* ===== CONTACT CARD HOVER ===== */
+.cii{position:relative;overflow:hidden}
+.cii::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(249,115,22,.06),transparent);opacity:0;transition:opacity .4s ease}
+.cii:hover::after{opacity:1}
+
+/* ===== FOOTER SOCIAL ICONS ===== */
+.fso a{transition:all .4s var(--ease)}
+.fso a:hover{transform:translateY(-4px) scale(1.1);box-shadow:0 4px 16px rgba(249,115,22,.2)}
+
+/* ===== BUTTON RIPPLE EFFECT ===== */
+.btn{position:relative;overflow:hidden}
+.btn .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.25);transform:scale(0);animation:ripple .6s ease-out forwards;pointer-events:none}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+
+/* ===== TRUSTED BY LOGOS FLOAT ===== */
+.tb-logo{animation:tbFloat 5s ease-in-out infinite}
+.tb-logo:nth-child(1){animation-delay:0s}
+.tb-logo:nth-child(2){animation-delay:.4s}
+.tb-logo:nth-child(3){animation-delay:.8s}
+.tb-logo:nth-child(4){animation-delay:1.2s}
+.tb-logo:nth-child(5){animation-delay:1.6s}
+.tb-logo:nth-child(6){animation-delay:2s}
+@keyframes tbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* ===== PROJECT IMAGE HOVER OVERLAY ===== */
+.pim::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(249,115,22,.05),transparent);opacity:0;transition:opacity .5s ease;z-index:2}
+.pcd:hover .pim::after{opacity:1}
+
+/* ===== STAGGER ANIMATION FOR GRIDS ===== */
+.sgr .scd:nth-child(1){transition-delay:0s}
+.sgr .scd:nth-child(2){transition-delay:.1s}
+.sgr .scd:nth-child(3){transition-delay:.2s}
+.sgr .scd:nth-child(4){transition-delay:.3s}
+
+/* ===== FORM FIELD ANIMATIONS ===== */
+.fgp input,.fgp select,.fgp textarea{transition:border-color .3s ease,box-shadow .3s ease,transform .2s ease}
+.fgp input:focus,.fgp select:focus,.fgp textarea:focus{transform:translateY(-1px);box-shadow:0 4px 12px rgba(249,115,22,.08),0 0 0 3px rgba(249,115,22,.08)}
+
+/* ===== SMOOTH COUNTER TRANSITION ===== */
+.hsi .n{display:inline-block;transition:all .4s var(--ease)}
+
+/* ===== REDUCED MOTION OVERRIDE ===== */
+@media(prefers-reduced-motion:reduce){
+  .cursor-glow,.hsi,.tb-logo{animation:none!important}
+  .pipe-node.active{animation:none!important}
+  #scrollProgress{transition:none!important}
+}
 
 </style>
 </head>
 <body>
+<!-- SCROLL PROGRESS BAR -->
+<div id="scrollProgress"></div>
+<!-- CURSOR GLOW -->
+<div class="cursor-glow" id="cursorGlow"></div>
 <!-- PRELOADER -->
 <div id="preloader">
   <div class="prl-logo">IDEAS<span>ETERNAL</span></div>
@@ -483,7 +768,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
 <nav class="nav" id="mainNav" aria-label="Main navigation">
   <div class="ni">
-    <a href="#home" class="nlo" aria-label="IdeaSternal Home">IDEAS<span>ETERNAL</span></a>
+    <a href="#home" class="nlo" aria-label="IdeasEternal Home">IDEAS<span>ETERNAL</span></a>
     <div class="nls"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#building">Building</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
     <div class="nct">
       <a href="#contact" class="btn bso nbtn">&#9742; Call Us</a>
@@ -552,9 +837,9 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   <div class="cn">
     <div class="story-grid">
       <div class="story-txt rv">
-        <div class="sl">About IdeaSternal</div>
+        <div class="sl">About IdeasEternal</div>
         <h2 class="st">Built to Turn<br>Ideas Into <em>Reality</em></h2>
-        <p class="ss">IdeaSternal is a software and applied AI development studio. We combine strategic thinking with modern engineering to build solutions that solve real problems for businesses, organizations, and institutions.</p>
+        <p class="ss">IdeasEternal is a software and applied AI development studio. We combine strategic thinking with modern engineering to build solutions that solve real problems for businesses, organizations, and institutions.</p>
         <p class="ss" style="margin-top:16px">From custom web applications and mobile platforms to AI systems and cloud-deployed automation &mdash; we design, build, and deploy digital products that create measurable business value.</p>
         <div style="margin-top:28px"><a href="#services" class="btn bso">See What We Build &#8594;</a></div>
       </div>
@@ -677,7 +962,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 
 <section id="why" class="sec" style="background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%)">
   <div class="cn">
-    <div class="rv"><div class="sl">Why IdeaSternal</div><h2 class="st">What Makes Us <em>Different</em></h2></div>
+    <div class="rv"><div class="sl">Why IdeasEternal</div><h2 class="st">What Makes Us <em>Different</em></h2></div>
     <div class="wgr">
       <div class="wcd rv"><div class="wnn">01</div><h4>Full-Cycle Delivery</h4><p>From idea and UI design through backend, AI, and cloud deployment &mdash; under one roof.</p></div>
       <div class="wcd rv d1"><div class="wnn">02</div><h4>AI That Actually Works</h4><p>Applied AI built for real problems &mdash; nationally recognized at multiple hackathons.</p></div>
@@ -791,12 +1076,12 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
     <div class="tgr">
       <div class="tcd rv">
         <div class="t-stars"><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span></div>
-        <p>&ldquo;IdeaSternal delivered a complete web and AI system in record time. The team clearly understood our problem and built exactly what we needed &mdash; not just what we asked for. Professional, communicative, and technically excellent.&rdquo;</p>
+        <p>&ldquo;IdeasEternal delivered a complete web and AI system in record time. The team clearly understood our problem and built exactly what we needed &mdash; not just what we asked for. Professional, communicative, and technically excellent.&rdquo;</p>
         <div class="t-auth"><div class="t-avi">&#128188;</div><div class="t-info"><h5>Priya Nair</h5><p>Product Head, FinTech Startup</p></div></div>
       </div>
       <div class="tcd rv d1">
         <div class="t-stars"><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span></div>
-        <p>&ldquo;We approached IdeaSternal to build a management portal for our organization. The role-based system, attendance tracking, and reporting features exceeded our expectations. The team was responsive and the delivery was smooth.&rdquo;</p>
+        <p>&ldquo;We approached IdeasEternal to build a management portal for our organization. The role-based system, attendance tracking, and reporting features exceeded our expectations. The team was responsive and the delivery was smooth.&rdquo;</p>
         <div class="t-auth"><div class="t-avi">&#127891;</div><div class="t-info"><h5>Commander R. Krishnan</h5><p>Director, Delta Squad Foundation</p></div></div>
       </div>
       <div class="tcd rv d2">
@@ -806,7 +1091,7 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       </div>
       <div class="tcd rv">
         <div class="t-stars"><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span></div>
-        <p>&ldquo;Our e-commerce platform went live on time and on budget. The AI recommendation engine drove a measurable increase in sales. IdeaSternal combines strong engineering with genuine business thinking &mdash; rare in this industry.&rdquo;</p>
+        <p>&ldquo;Our e-commerce platform went live on time and on budget. The AI recommendation engine drove a measurable increase in sales. IdeasEternal combines strong engineering with genuine business thinking &mdash; rare in this industry.&rdquo;</p>
         <div class="t-auth"><div class="t-avi">&#128722;</div><div class="t-info"><h5>Siddharth Rajan</h5><p>Operations Lead, Retail Company</p></div></div>
       </div>
     </div>
@@ -859,14 +1144,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   <div class="cn">
     <div class="sl" style="justify-content:center">Start a Project</div>
     <h2 class="ctt">Have an Idea?<br>Let&#8217;s <em>Build It.</em></h2>
-    <p class="cts">From websites and applications to AI, automation and cloud systems &mdash; IdeaSternal builds practical digital solutions around real business problems.</p>
+    <p class="cts">From websites and applications to AI, automation and cloud systems &mdash; IdeasEternal builds practical digital solutions around real business problems.</p>
     <div class="ctac">
       <a href="#contact" class="btn bp btn-glow" style="padding:16px 34px;font-size:15px">Start a Project &#8594;</a>
       <button class="btn bso" style="padding:16px 34px;font-size:15px" onclick="openChat()">&#128172; Let&#8217;s Talk</button>
     </div>
     <div class="ctcc">
       <a href="#contact" class="ctci">&#9742; +91 9626296000</a>
-      <a href="mailto:hello@ideaseternal.com" class="ctci">&#9993; hello@ideaseternal.com</a>
+      <a href="mailto:ideaseternal777@gmail.com" class="ctci">&#9993; ideaseternal777@gmail.com</a>
       <a href="https://ideaseternal.com" target="_blank" rel="noopener" class="ctci">&#127760; ideaseternal.com</a>
     </div>
   </div>
@@ -881,9 +1166,9 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
         <p>Ready to turn your idea into a real product? Tell us what you&#8217;re building and we&#8217;ll respond within 24 hours.</p>
         <div class="cis2">
           <a href="tel:+919626296000" class="cii"><div class="cii2">&#9742;</div><div class="cit2"><p>Phone &amp; WhatsApp</p><p>+91 9626296000</p></div></a>
-          <a href="mailto:hello@ideaseternal.com" class="cii"><div class="cii2">&#9993;</div><div class="cit2"><p>Email</p><p>hello@ideaseternal.com</p></div></a>
+          <a href="mailto:ideaseternal777@gmail.com" class="cii"><div class="cii2">&#9993;</div><div class="cit2"><p>Email</p><p>ideaseternal777@gmail.com</p></div></a>
           <a href="https://ideaseternal.com" target="_blank" rel="noopener" class="cii"><div class="cii2">&#127760;</div><div class="cit2"><p>Website</p><p>ideaseternal.com</p></div></a>
-          <a href="https://wa.me/919626296000?text=Hi%20IdeaSternal%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="cii" style="border-color:rgba(37,211,102,.25)"><div class="cii2" style="background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.15)">&#128172;</div><div class="cit2"><p>WhatsApp Direct</p><p>Chat instantly</p></div></a>
+          <a href="https://wa.me/919626296000?text=Hi%20IdeasEternal%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="cii" style="border-color:rgba(37,211,102,.25)"><div class="cii2" style="background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.15)">&#128172;</div><div class="cit2"><p>WhatsApp Direct</p><p>Chat instantly</p></div></a>
         </div>
       </div>
       <div class="cfc rv d1">
@@ -918,11 +1203,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
       </div>
       <div class="fco"><h5>Services</h5><ul><li><a href="#services">Websites &amp; Apps</a></li><li><a href="#services">Business Systems</a></li><li><a href="#services">Applied AI</a></li><li><a href="#services">Automation &amp; Data</a></li><li><a href="#services">UI/UX Design</a></li></ul></div>
       <div class="fco"><h5>Company</h5><ul><li><a href="#about">About Us</a></li><li><a href="#work">Our Work</a></li><li><a href="#building">In Development</a></li><li><a href="#achievements">Achievements</a></li><li><a href="#process">Our Process</a></li></ul></div>
-      <div class="fco"><h5>Contact</h5><ul><li><a href="tel:+919626296000">+91 9626296000</a></li><li><a href="mailto:hello@ideaseternal.com">hello@ideaseternal.com</a></li><li><a href="https://ideaseternal.com">ideaseternal.com</a></li><li><a href="https://wa.me/919626296000">WhatsApp</a></li><li><a href="#contact">Start a Project</a></li></ul></div>
+      <div class="fco"><h5>Contact</h5><ul><li><a href="tel:+919626296000">+91 9626296000</a></li><li><a href="mailto:ideaseternal777@gmail.com">ideaseternal777@gmail.com</a></li><li><a href="https://ideaseternal.com">ideaseternal.com</a></li><li><a href="https://wa.me/919626296000">WhatsApp</a></li><li><a href="#contact">Start a Project</a></li></ul></div>
     </div>
-    <div class="fbt3"><p>&copy; 2025 IdeaSternal. All rights reserved.</p><div class="fbl"><a href="#contact">Contact</a><a href="https://ideaseternal.com">ideaseternal.com</a></div></div>
+    <div class="fbt3"><p>&copy; 2025 IdeasEternal. All rights reserved.</p><div class="fbl"><a href="#contact">Contact</a><a href="https://ideaseternal.com">ideaseternal.com</a></div></div>
   </div>
 </footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/919626296000?text=Hi%20IdeasEternal%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="waf" aria-label="Chat on WhatsApp">&#128172;</a>
 
 <!-- BACK TO TOP -->
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8679;</button>
@@ -930,15 +1218,15 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 <button class="chat-fab" id="chatFab" onclick="openChat()" aria-label="Start a conversation">
   <span class="cficon">&#128172;</span> Let&#8217;s Talk
 </button>
-<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with IdeaSternal">
-  <div class="chat-hdr"><h4><span class="chd"></span>IdeaSternal</h4><div class="chat-acts"><button onclick="chatRestart()" aria-label="Restart" title="Restart">&#8634;</button><button onclick="closeChat()" aria-label="Close" title="Close">&#10005;</button></div></div>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat with IdeasEternal">
+  <div class="chat-hdr"><h4><span class="chd"></span>IdeasEternal</h4><div class="chat-acts"><button onclick="chatRestart()" aria-label="Restart" title="Restart">&#8634;</button><button onclick="closeChat()" aria-label="Close" title="Close">&#10005;</button></div></div>
   <div class="chat-body" id="chatBody"></div>
   <div class="chat-ftr hidden" id="chatFtr"><input type="text" id="chatIn" placeholder="Type your message..." autocomplete="off"><button onclick="chatSendText()" id="chatSendBtn">Send</button></div>
 </div>
 
 <div class="mol" id="mol" role="dialog" aria-modal="true">
-  <div class="mdi"><div class="msc"><div class="mhd"><img id="mhi" class="mhi" src="" alt="" style="display:none"><div id="mni" class="mni" style="display:none"></div><button class="mcl" id="mcl" aria-label="Close modal">&#10005;</button><div class="mbd" id="mbd"></div></div>
-  <div class="mby"><h2 class="mt2" id="mt"></h2><p class="mvl" id="mv"></p>
+  <div class="mdi"><div class="msc"><div class="mhd"><img id="mhi" class="mhi" src="" alt="" style="display:none"><div id="mni" class="mni" style="display:none"></div><button class="mcl" id="mcl" aria-label="Close modal">&#10005;</button></div>
+  <div class="mby"><div class="mbd" id="mbd"></div><h2 class="mt2" id="mt"></h2><p class="mvl" id="mv"></p>
     <div class="mse"><div class="mst">01 &mdash; The Problem</div><p id="mpr"></p></div>
     <div class="mse"><div class="mst">02 &mdash; The Solution</div><p id="mso"></p></div>
     <div class="mse"><div class="mst">03 &mdash; How It Works</div><div class="mfl" id="mfl"></div></div>
@@ -1090,8 +1378,8 @@ function hfs(e){
         ph=document.getElementById('fph').value,sv=document.getElementById('fsr').value,
         ms=document.getElementById('fm').value;
   const sub=encodeURIComponent('Project Inquiry - '+sv);
-  const body=encodeURIComponent('Hi IdeaSternal,\n\nName: '+n+'\nEmail: '+em+'\nPhone: '+ph+'\nService: '+sv+'\n\nMessage:\n'+ms+'\n\nSent from ideaseternal.com');
-  window.location.href='mailto:hello@ideaseternal.com?subject='+sub+'&body='+body;
+  const body=encodeURIComponent('Hi IdeasEternal,\n\nName: '+n+'\nEmail: '+em+'\nPhone: '+ph+'\nService: '+sv+'\n\nMessage:\n'+ms+'\n\nSent from ideaseternal.com');
+  window.location.href='mailto:ideaseternal777@gmail.com?subject='+sub+'&body='+body;
   btn.textContent='Email Client Opening... \u2713';
   btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)';
   setTimeout(()=>{btn.textContent='Send Message \u2192';btn.style.background=''},4000);
@@ -1118,7 +1406,7 @@ function chatStart(){
   chatState='service';chatBody.innerHTML='';chatFtr.classList.add('hidden');
   chatData={service:'',problem:'',name:'',email:'',phone:'',message:''};
   showTyping();
-  setTimeout(()=>{removeTyping();addBotMsg("Hi! \u{1F44B} Welcome to IdeaSternal.");
+  setTimeout(()=>{removeTyping();addBotMsg("Hi! \u{1F44B} Welcome to IdeasEternal.");
   showTyping();
   setTimeout(()=>{removeTyping();addBotMsg("What type of solution are you looking for?");
   setTimeout(()=>addOpts(['Website','Mobile App','AI Solution','Business Software','Automation','E-Commerce','Not Sure Yet']),300)},800)},600);
@@ -1148,8 +1436,8 @@ function handleOpt(val){
   }else if(chatState==='confirm'){
     if(val.includes('Send')){
       const sub=encodeURIComponent('Project Inquiry via Chat - '+chatData.service);
-      const body=encodeURIComponent(`Hi IdeaSternal,\n\nNew project enquiry:\n\nService: ${chatData.service}\nGoal: ${chatData.problem}\nName: ${chatData.name}\nEmail: ${chatData.email}\nPhone: ${chatData.phone||'Not provided'}\n\nProject:\n${chatData.message}\n\nSent from ideaseternal.com`);
-      window.location.href='mailto:hello@ideaseternal.com?subject='+sub+'&body='+body;
+      const body=encodeURIComponent(`Hi IdeasEternal,\n\nNew project enquiry:\n\nService: ${chatData.service}\nGoal: ${chatData.problem}\nName: ${chatData.name}\nEmail: ${chatData.email}\nPhone: ${chatData.phone||'Not provided'}\n\nProject:\n${chatData.message}\n\nSent from ideaseternal.com`);
+      window.location.href='mailto:ideaseternal777@gmail.com?subject='+sub+'&body='+body;
       showTyping();
       setTimeout(()=>{removeTyping();addBotMsg("\u2705 Your email client should open with the pre-filled message. We'll respond within 24 hours!");chatState='done';setTimeout(()=>addOpts(['Start New Conversation','Close Chat']),600)},500);
     }else if(val.includes('Edit')){chatState='name';addBotMsg("No problem! What's your name?");chatFtr.classList.remove('hidden');chatIn.placeholder='Your name...';chatIn.focus()}
@@ -1202,6 +1490,155 @@ function toggleFaq(el){
   const isOpen=el.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
   if(!isOpen)el.classList.add('open');
+}
+
+// ===== SCROLL PROGRESS BAR =====
+const scrollProg=document.getElementById('scrollProgress');
+if(scrollProg){
+  window.addEventListener('scroll',()=>{
+    const scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+    const scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    const progress=(scrollTop/scrollHeight)*100;
+    scrollProg.style.width=progress+'%';
+  },{passive:true});
+}
+
+// ===== CURSOR GLOW EFFECT =====
+const cursorGlow=document.getElementById('cursorGlow');
+if(cursorGlow&&window.innerWidth>768){
+  let mouseX=0,mouseY=0,glowX=0,glowY=0;
+  document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;cursorGlow.classList.add('active')});
+  document.addEventListener('mouseleave',()=>cursorGlow.classList.remove('active'));
+  function updateGlow(){
+    glowX+=(mouseX-glowX)*.08;glowY+=(mouseY-glowY)*.08;
+    cursorGlow.style.left=glowX+'px';cursorGlow.style.top=glowY+'px';
+    requestAnimationFrame(updateGlow);
+  }
+  requestAnimationFrame(updateGlow);
+}
+
+// ===== 3D TILT EFFECT ON PROJECT CARDS =====
+document.querySelectorAll('.pcd').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const rect=card.getBoundingClientRect();
+    const x=e.clientX-rect.left;
+    const y=e.clientY-rect.top;
+    const centerX=rect.width/2;
+    const centerY=rect.height/2;
+    const rotateX=((y-centerY)/centerY)*-4;
+    const rotateY=((x-centerX)/centerX)*4;
+    card.style.transform=`perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+  });
+});
+
+// ===== BUTTON RIPPLE EFFECT =====
+document.querySelectorAll('.btn').forEach(btn=>{
+  btn.addEventListener('click',function(e){
+    const ripple=document.createElement('span');
+    ripple.className='ripple';
+    const rect=this.getBoundingClientRect();
+    const size=Math.max(rect.width,rect.height);
+    ripple.style.width=ripple.style.height=size+'px';
+    ripple.style.left=(e.clientX-rect.left-size/2)+'px';
+    ripple.style.top=(e.clientY-rect.top-size/2)+'px';
+    this.appendChild(ripple);
+    ripple.addEventListener('animationend',()=>ripple.remove());
+  });
+});
+
+// ===== TEXT WORD-BY-WORD REVEAL =====
+document.querySelectorAll('.rv .st').forEach(title=>{
+  const html=title.innerHTML;
+  // Don't process if already contains .word spans
+  if(html.includes('class="word"'))return;
+  const parts=html.split(/(<[^>]+>)/);
+  let newHtml='';
+  let wordIndex=0;
+  parts.forEach(part=>{
+    if(part.startsWith('<')){
+      newHtml+=part;
+    }else{
+      const words=part.split(/(\s+)/);
+      words.forEach(w=>{
+        if(w.trim()){
+          newHtml+=`<span class="word" style="transition-delay:${wordIndex*0.06}s">${w}</span>`;
+          wordIndex++;
+        }else{
+          newHtml+=w;
+        }
+      });
+    }
+  });
+  title.innerHTML=newHtml;
+});
+
+// ===== PARALLAX ON HERO BACKGROUND =====
+const hg1=document.querySelector('.hg1');
+const hg2=document.querySelector('.hg2');
+if(hg1&&hg2){
+  window.addEventListener('scroll',()=>{
+    const scrolled=window.scrollY;
+    if(scrolled<window.innerHeight){
+      hg1.style.transform=`scale(${1+scrolled*0.0003}) translateY(${scrolled*0.15}px)`;
+      hg2.style.transform=`scale(${1+scrolled*0.0002}) translateY(${scrolled*0.1}px)`;
+    }
+  },{passive:true});
+}
+
+// ===== SMOOTH NUMBER COUNTER WITH EASING =====
+// Override the counter with a more dynamic feel
+const counterElements=document.querySelectorAll('.counter');
+counterElements.forEach(c=>{
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const target=parseInt(c.dataset.target);
+        let current=0;
+        const duration=2000;
+        const start=performance.now();
+        function tick(now){
+          const elapsed=now-start;
+          const progress=Math.min(elapsed/duration,1);
+          // Elastic easing
+          const eased=progress===1?1:1-Math.pow(2,-10*progress)*Math.cos((progress*10-0.75)*((2*Math.PI)/3));
+          current=Math.round(target*eased);
+          c.textContent=current+'+';
+          c.style.transform=`scale(${1+0.05*(1-progress)})`;
+          if(progress<1)requestAnimationFrame(tick);
+          else{c.textContent=target+'+';c.style.transform='scale(1)'}
+        }
+        requestAnimationFrame(tick);
+        observer.disconnect();
+      }
+    });
+  },{threshold:.5});
+  observer.observe(c);
+});
+
+// ===== SERVICE CARD MAGNETIC HOVER =====
+document.querySelectorAll('.scd').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const rect=card.getBoundingClientRect();
+    const x=((e.clientX-rect.left)/rect.width-.5)*10;
+    const y=((e.clientY-rect.top)/rect.height-.5)*10;
+    card.style.transform=`translateY(-4px) translate(${x*0.3}px,${y*0.3}px)`;
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='translateY(0) translate(0,0)';
+  });
+});
+
+// ===== ENHANCED SCROLL REVEAL FOR NEW CLASSES =====
+document.querySelectorAll('.rv-left,.rv-right,.rv-scale').forEach(el=>ro.observe(el));
+
+// ===== TYPING EFFECT ON HERO SUBTITLE =====
+const heroSubEl=document.querySelector('.hey');
+if(heroSubEl){
+  const dot=heroSubEl.querySelector('.dot');
+  if(dot)dot.style.animation='blink 1.5s ease-in-out infinite';
 }
 
 </script>
