@@ -8,7 +8,7 @@
 <nav class="nav" id="mainNav" aria-label="Main navigation">
   <div class="ni">
     <a href="#home" class="nlo" aria-label="IdeasEternal Home">IDEAS<span>ETERNAL</span></a>
-    <div class="nls"><a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#building">Building</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
+    <div class="nls"><a href="#about">About</a><a href="#services">Services</a><a href="#features">Features</a><a href="#work">Work</a><a href="#building">Building</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
     <div class="nct">
       <a href="#contact" class="btn bso nbtn">&#9742; Call Us</a>
       <a href="#contact" class="btn bp nbtn">Start a Project</a>
@@ -19,7 +19,7 @@
 <div class="mno" id="mno"></div>
 <div class="mnn" id="mnn" role="dialog" aria-label="Mobile menu">
   <button class="mnc" id="mnc" aria-label="Close menu">&#10005;</button>
-  <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a>
+  <a href="#about">About</a><a href="#services">Services</a><a href="#features">Features</a><a href="#work">Work</a>
   <a href="#building">Currently Building</a><a href="#process">Process</a><a href="#technology">Technology</a><a href="#contact">Contact</a>
   <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
     <a href="#contact" class="btn bso" style="justify-content:center">&#9742; Contact Us</a>
@@ -209,6 +209,247 @@
       <div class="wcd rv"><div class="wnn">04</div><h4>Production-Grade Engineering</h4><p>Real systems with CI/CD, AWS and Docker. Not just prototypes &mdash; production platforms.</p></div>
       <div class="wcd rv d1"><div class="wnn">05</div><h4>Scalable Foundations</h4><p>REST APIs, authentication, database design, and cloud deployment are always part of the plan.</p></div>
       <div class="wcd rv d2"><div class="wnn">06</div><h4>Nationally Recognized</h4><p>Multiple 1st prizes and finalist positions at national-level competitions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="sec" style="background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%)">
+  <div class="cn">
+    <div class="rv"><div class="sl">Built-In With Every Project</div><h2 class="st">What Every Project <em>Gets</em></h2><p class="ss">Every website and application we build includes these production-grade features &mdash; not as extras, but as standard.</p></div>
+    <div class="feat-tabs rv d1">
+      <button class="feat-tab ac" onclick="filterFeats('all')">All</button>
+      <button class="feat-tab" onclick="filterFeats('frontend')">Frontend</button>
+      <button class="feat-tab" onclick="filterFeats('backend')">Backend &amp; Business</button>
+      <button class="feat-tab" onclick="filterFeats('ops')">Optimization &amp; Ops</button>
+    </div>
+    <div class="feat-grid" id="featGrid">
+
+      <!-- 1. SEO Optimization -->
+      <div class="feat-card rv" data-feat="ops">
+        <div class="feat-ico">&#128269;</div>
+        <h4>SEO Optimization</h4>
+        <p>Technical SEO built into every page &mdash; so your website ranks on Google from day one.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Meta Tags</span>
+          <span class="feat-tag">Semantic HTML</span>
+          <span class="feat-tag">Sitemap</span>
+          <span class="feat-tag">Robots.txt</span>
+          <span class="feat-tag">Schema Data</span>
+          <span class="feat-tag">Canonical URLs</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 2. Performance Optimization -->
+      <div class="feat-card rv" data-feat="ops">
+        <div class="feat-ico">&#9889;</div>
+        <h4>Performance Optimization</h4>
+        <p>Fast-loading websites with optimized assets, caching, and Core Web Vitals compliance.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Image Optimization</span>
+          <span class="feat-tag">Lazy Loading</span>
+          <span class="feat-tag">Code Splitting</span>
+          <span class="feat-tag">Minification</span>
+          <span class="feat-tag">Core Web Vitals</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 3. Authentication & Authorization -->
+      <div class="feat-card rv" data-feat="backend">
+        <div class="feat-ico">&#128274;</div>
+        <h4>Authentication &amp; Authorization</h4>
+        <p>Secure login systems with JWT, Google OAuth, password reset, and role-based access control.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Login / Signup</span>
+          <span class="feat-tag">JWT Sessions</span>
+          <span class="feat-tag">Google OAuth</span>
+          <span class="feat-tag">Password Reset</span>
+          <span class="feat-tag">Role-Based Access</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 4. Admin Dashboard & CMS -->
+      <div class="feat-card rv" data-feat="backend">
+        <div class="feat-ico">&#128202;</div>
+        <h4>Admin Dashboard &amp; CMS</h4>
+        <p>Custom admin panels to manage users, content, products, orders, and business reports.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">User Management</span>
+          <span class="feat-tag">Content Management</span>
+          <span class="feat-tag">Analytics</span>
+          <span class="feat-tag">Reports</span>
+          <span class="feat-tag">Settings</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 5. Payment Integration -->
+      <div class="feat-card rv" data-feat="backend">
+        <div class="feat-ico">&#128179;</div>
+        <h4>Payment Integration</h4>
+        <p>Secure payment gateways with cart, checkout, verification, and webhook handling.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Razorpay</span>
+          <span class="feat-tag">Stripe</span>
+          <span class="feat-tag">Checkout Flow</span>
+          <span class="feat-tag">Webhooks</span>
+          <span class="feat-tag">Invoice Generation</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 6. REST API & Database -->
+      <div class="feat-card rv" data-feat="backend">
+        <div class="feat-ico">&#128451;</div>
+        <h4>REST API &amp; Database Architecture</h4>
+        <p>Scalable backend APIs with proper database design, data validation, and pagination.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">CRUD APIs</span>
+          <span class="feat-tag">Data Validation</span>
+          <span class="feat-tag">Relationships</span>
+          <span class="feat-tag">Search &amp; Filtering</span>
+          <span class="feat-tag">Pagination</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 7. Lead Capture & Enquiry Management -->
+      <div class="feat-card rv" data-feat="backend">
+        <div class="feat-ico">&#128229;</div>
+        <h4>Lead Capture &amp; Enquiry Management</h4>
+        <p>Contact forms that save to your database, notify your admin, and trigger emails or WhatsApp.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Contact Forms</span>
+          <span class="feat-tag">Database Storage</span>
+          <span class="feat-tag">Admin Alerts</span>
+          <span class="feat-tag">WhatsApp Notify</span>
+          <span class="feat-tag">Email Triggers</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 8. Email & Notification Systems -->
+      <div class="feat-card rv" data-feat="backend">
+        <div class="feat-ico">&#128231;</div>
+        <h4>Email &amp; Notification Systems</h4>
+        <p>Automated emails for welcome, confirmation, alerts, password reset, and order updates.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Welcome Email</span>
+          <span class="feat-tag">Order Confirmation</span>
+          <span class="feat-tag">Password Reset</span>
+          <span class="feat-tag">Push Notifications</span>
+          <span class="feat-tag">SMS Alerts</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 9. Booking & Appointment System -->
+      <div class="feat-card rv" data-feat="backend">
+        <div class="feat-ico">&#128197;</div>
+        <h4>Booking &amp; Appointment System</h4>
+        <p>Online scheduling for clinics, salons, consultants &mdash; with payments and reminders.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Service Listing</span>
+          <span class="feat-tag">Calendar View</span>
+          <span class="feat-tag">Online Payments</span>
+          <span class="feat-tag">SMS Reminders</span>
+          <span class="feat-tag">Admin Analytics</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 10. E-Commerce Features -->
+      <div class="feat-card rv" data-feat="backend">
+        <div class="feat-ico">&#128722;</div>
+        <h4>E-Commerce Features</h4>
+        <p>Complete online store with product catalog, cart, wishlist, checkout, and inventory management.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Product Catalog</span>
+          <span class="feat-tag">Cart &amp; Wishlist</span>
+          <span class="feat-tag">Checkout</span>
+          <span class="feat-tag">Inventory</span>
+          <span class="feat-tag">Order Tracking</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 11. Google Services Integration -->
+      <div class="feat-card rv" data-feat="ops">
+        <div class="feat-ico">&#128205;</div>
+        <h4>Google Services Integration</h4>
+        <p>Google Maps, Analytics, Search Console, and OAuth &mdash; connected and configured.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Google Maps</span>
+          <span class="feat-tag">Analytics</span>
+          <span class="feat-tag">Search Console</span>
+          <span class="feat-tag">Google OAuth</span>
+          <span class="feat-tag">reCAPTCHA</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 12. Security & API Protection -->
+      <div class="feat-card rv" data-feat="ops">
+        <div class="feat-ico">&#128737;</div>
+        <h4>Security &amp; API Protection</h4>
+        <p>Enterprise-grade security with HTTPS, input validation, rate limiting, CORS, and secure headers.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">HTTPS / SSL</span>
+          <span class="feat-tag">Input Validation</span>
+          <span class="feat-tag">Rate Limiting</span>
+          <span class="feat-tag">CORS Config</span>
+          <span class="feat-tag">Password Hashing</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 13. Responsive & Mobile-First -->
+      <div class="feat-card rv" data-feat="frontend">
+        <div class="feat-ico">&#128241;</div>
+        <h4>Responsive &amp; Mobile-First</h4>
+        <p>Every screen designed for Desktop, Tablet, and Mobile &mdash; pixel-perfect across devices.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Mobile-First</span>
+          <span class="feat-tag">Tablet Layout</span>
+          <span class="feat-tag">Desktop Layout</span>
+          <span class="feat-tag">Touch Optimized</span>
+          <span class="feat-tag">Cross-Browser</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 14. Production Deployment & Cloud -->
+      <div class="feat-card rv" data-feat="ops">
+        <div class="feat-ico">&#9729;</div>
+        <h4>Production Deployment &amp; Cloud</h4>
+        <p>From code to live website &mdash; cloud deployment with domain, SSL, CI/CD, and monitoring.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">AWS / Vercel</span>
+          <span class="feat-tag">Docker</span>
+          <span class="feat-tag">Domain &amp; SSL</span>
+          <span class="feat-tag">CI/CD Pipeline</span>
+          <span class="feat-tag">Monitoring</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
+      <!-- 15. Maintenance, Monitoring & Backup -->
+      <div class="feat-card rv" data-feat="ops">
+        <div class="feat-ico">&#128295;</div>
+        <h4>Maintenance &amp; Monitoring</h4>
+        <p>Ongoing support with error monitoring, database backups, security updates, and performance tuning.</p>
+        <div class="feat-tags">
+          <span class="feat-tag">Error Monitoring</span>
+          <span class="feat-tag">DB Backups</span>
+          <span class="feat-tag">Uptime Checks</span>
+          <span class="feat-tag">Security Updates</span>
+          <span class="feat-tag">Bug Fixes</span>
+        </div>
+        <div class="feat-glow"></div>
+      </div>
+
     </div>
   </div>
 </section>

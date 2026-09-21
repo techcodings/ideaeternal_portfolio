@@ -79,6 +79,20 @@ function fp(c){
 function fas(c){fp(c);document.getElementById('work').scrollIntoView({behavior:'smooth'})}
 function sap(){document.querySelectorAll('.pcd').forEach(c=>{c.style.display='';c.classList.add('rv');ro.observe(c)});const b=document.getElementById('smb');if(b)b.style.display='none'}
 
+// ===== FEATURES FILTER =====
+function filterFeats(cat){
+  document.querySelectorAll('.feat-tab').forEach(b=>b.classList.remove('ac'));
+  const lm={all:'All',frontend:'Frontend',backend:'Backend & Business',ops:'Optimization & Ops'};
+  document.querySelectorAll('.feat-tab').forEach(b=>{if(b.textContent.trim()===(lm[cat]||'All'))b.classList.add('ac')});
+  const cards=document.querySelectorAll('.feat-card');
+  cards.forEach(card=>{
+    const fc=card.dataset.feat||'';
+    const show=(cat==='all'||fc===cat);
+    card.style.display=show?'':'none';
+    if(show){card.classList.remove('vi');setTimeout(()=>{card.classList.add('vi')},50)}
+  });
+}
+
 // ===== PROJECT DATA =====
 const PD={
   deltasquad:{t:'Delta Squad Foundation \u2014 Cadet Training Portal',v:'Comprehensive organizational cadet training management system with role-based portals, attendance, assessments, leave management and reporting.',img:'assets/img/proj_deltasquad.jpg',b:[['Full Stack \u00B7 Portal','c']],pr:'The Delta Squad Foundation needed a centralized system to manage cadet training operations. Manual tracking of attendance, assessments, leave requests, notices, and training reports across commanders and cadets was inefficient and error-prone.',so:'A full-stack cadet training portal with Commander/Admin and Cadet portals. Commanders manage cadets, subjects, sessions, results, reports, and system records. Cadets view attendance, results, notices, notes, and submit leave requests. Includes secure JWT authentication, role-based access, notifications, multi-language support (i18n), and a public counselling-registration form.',fl:['Secure Login','Role Detection','Commander Dashboard','Cadet Portal','Attendance Tracking','Assessment & Results','Leave Management','Notifications','Reports'],arch:['React Frontend','Express.js API','JWT Auth','Role Middleware','PostgreSQL (Neon)','Notification Service','Admin Panel'],tc:{'Frontend':['React.js','Responsive UI','i18n Multi-language'],'Backend':['Express.js','REST APIs','JWT Authentication','Role-based Middleware'],'Database':['PostgreSQL','Neon Cloud','Relational Schema'],'Features':['Attendance Tracking','Assessment System','Leave Workflow','Notifications','Public Registration']},bv:'Centralizes all training operations into one platform. Eliminates manual tracking. Role-based portals ensure data security. Multi-language support enables broader adoption.',uc:['Training Organizations','Educational Institutions','Military Academies','Youth Programs','Corporate Training'],rec:null},
