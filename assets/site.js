@@ -11,8 +11,16 @@ mnn.querySelectorAll('a').forEach(a=>a.addEventListener('click',cNav));
 // ===== SMOOTH SCROLL for all anchor links =====
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+    const href=a.getAttribute('href');
+    if(!href||href==='#')return;
+    const t=document.querySelector(href);
+    if(t){
+      e.preventDefault();
+      const nh=document.getElementById('mainNav')?.offsetHeight||72;
+      const extraGap=window.innerWidth<=640?20:24;
+      const targetPos=t.getBoundingClientRect().top+window.pageYOffset-nh-extraGap;
+      window.scrollTo({top:Math.max(0,targetPos),behavior:'smooth'});
+    }
   });
 });
 
@@ -78,7 +86,7 @@ function fp(c){
   const cards=document.querySelectorAll('.pcd');
   cards.forEach(card=>{const cats=card.dataset.cats||'';const show=(c==='all'||cats.includes(c));card.style.display=show?'':'none'});
 }
-function fas(c){fp(c);document.getElementById('work').scrollIntoView({behavior:'smooth'})}
+function fas(c){fp(c);const w=document.getElementById('work');if(w){const nh=document.getElementById('mainNav')?.offsetHeight||72;const extra=window.innerWidth<=640?20:24;window.scrollTo({top:Math.max(0,w.getBoundingClientRect().top+window.pageYOffset-nh-extra),behavior:'smooth'});}}
 
 // ===== PROJECT DATA =====
 const PD={
@@ -212,7 +220,7 @@ mcl.addEventListener('click',cm);
 mol.addEventListener('click',e=>{if(e.target===mol)cm()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){cm();closeChat()}});
 
-function bst(){document.getElementById('contact').scrollIntoView({behavior:'smooth'})}
+function bst(){const c=document.getElementById('contact');if(c){const nh=document.getElementById('mainNav')?.offsetHeight||72;const extra=window.innerWidth<=640?20:24;window.scrollTo({top:Math.max(0,c.getBoundingClientRect().top+window.pageYOffset-nh-extra),behavior:'smooth'});}}
 
 // ===== CONTACT FORM =====
 function hfs(e){
