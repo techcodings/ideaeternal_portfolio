@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IdeasEternal — Pricing Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+@media print{
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .no-print{display:none!important}
+  .page-break{page-break-after:always}
+  @page{margin:1cm}
+}
+:root{--bg:#060b1a;--bg2:#0a1128;--bg3:#0f1836;--border:#1a2a5e;--or:#22c55e;--txt:#eef2ff;--txts:#94a3c4;--txtm:#5e6e8e;--wh:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
+
+.container{max-width:800px;margin:0 auto;padding:40px 32px}
+.brand-bar{text-align:center;padding:48px 0 24px;border-bottom:2px solid var(--or)}
+.brand-name{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;color:var(--wh);letter-spacing:.05em}
+.brand-name span{color:var(--or)}
+.brand-tag{font-size:12px;color:var(--txts);letter-spacing:.15em;text-transform:uppercase;margin-top:6px}
+.doc-title{text-align:center;margin:40px 0;font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--wh)}
+.doc-subtitle{text-align:center;font-size:15px;color:var(--txts);max-width:560px;margin:0 auto 40px;line-height:1.75}
+
+.section{margin-bottom:40px}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--or);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(34,197,94,.2)}
+.section p{font-size:14px;color:var(--txts);line-height:1.7;margin-bottom:12px}
+
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.tier{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center;transition:border-color .3s ease}
+.tier:hover{border-color:rgba(34,197,94,.4)}
+.tier.featured{border-color:var(--or);position:relative}
+.tier.featured::before{content:'POPULAR';position:absolute;top:-10px;left:50%;transform:translateX(-50%);padding:3px 14px;border-radius:100px;background:var(--or);color:#fff;font-size:9px;font-weight:800;letter-spacing:.1em}
+.tier-name{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:var(--wh);margin-bottom:6px}
+.tier-range{font-size:22px;font-weight:800;color:var(--or);margin-bottom:4px}
+.tier-note{font-size:11px;color:var(--txtm);margin-bottom:14px}
+.tier-list{text-align:left;font-size:12px;color:var(--txts);line-height:1.9}
+.tier-list li{padding-left:16px;position:relative}
+.tier-list li::before{content:'✓';position:absolute;left:0;color:var(--or);font-weight:700}
+
+.addon-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+.addon-table th{text-align:left;padding:10px 14px;background:var(--bg3);color:var(--or);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--border)}
+.addon-table td{padding:10px 14px;border:1px solid var(--border);color:var(--txts)}
+.addon-table tr:hover td{background:rgba(34,197,94,.03)}
+
+.terms{font-size:12px;color:var(--txtm);line-height:1.8}
+.terms li{margin-bottom:4px}
+
+.contact-box{text-align:center;padding:32px;background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.2);border-radius:12px;margin-top:40px}
+.contact-box h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--wh);margin-bottom:8px}
+.contact-box p{font-size:13px;color:var(--txts);margin-bottom:16px}
+.contact-info{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;font-size:13px;color:var(--txts)}
+.contact-info a{color:var(--or);text-decoration:none;font-weight:600}
+
+.print-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:10px;background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;border:none;cursor:pointer;font-size:14px;font-weight:700;font-family:inherit;margin:20px auto;transition:all .3s ease}
+.print-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(34,197,94,.4)}
+
+.footer-note{text-align:center;font-size:11px;color:var(--txtm);margin-top:40px;padding-top:20px;border-top:1px solid rgba(26,42,94,.3)}
+
+@media(max-width:700px){.tier-grid{grid-template-columns:1fr}.container{padding:24px 16px}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="brand-bar">
+    <div class="brand-name">IDEAS<span>ETERNAL</span></div>
+    <div class="brand-tag">Web &amp; App Development &middot; Business Software</div>
+  </div>
+
+  <h1 class="doc-title">Pricing Guide</h1>
+  <p class="doc-subtitle">Transparent pricing for quality software. Every project is custom-scoped to your exact requirements. This guide provides indicative pricing ranges to help you plan your budget.</p>
+
+  <div class="no-print" style="text-align:center">
+    <button class="print-btn" onclick="window.print()">&#128196; Save as PDF / Print</button>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Our Services</h2>
+    <p>IdeasEternal builds websites, web applications, billing systems, ERP solutions, industry-specific software, and interactive web experiences. We have delivered projects across education, interior design, sports, agriculture, chemical industry, and organizational management domains.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Service Tiers</h2>
+    <div class="tier-grid">
+      <div class="tier">
+        <div class="tier-name">Starter</div>
+        <div class="tier-range">₹15,000 – ₹30,000</div>
+        <div class="tier-note">Business websites &amp; landing pages</div>
+        <ul class="tier-list">
+          <li>Responsive website (up to 5 pages)</li>
+          <li>Mobile-optimised design</li>
+          <li>Contact form integration</li>
+          <li>WhatsApp integration</li>
+          <li>SEO basics &amp; analytics</li>
+          <li>Domain &amp; hosting setup</li>
+          <li>1 round of revisions</li>
+        </ul>
+      </div>
+      <div class="tier featured">
+        <div class="tier-name">Professional</div>
+        <div class="tier-range">₹30,000 – ₹75,000</div>
+        <div class="tier-note">Web apps &amp; business software</div>
+        <ul class="tier-list">
+          <li>Custom web application</li>
+          <li>Admin dashboard &amp; CMS</li>
+          <li>User login &amp; role-based access</li>
+          <li>Database design &amp; APIs</li>
+          <li>Billing / invoicing features</li>
+          <li>Cloud deployment</li>
+          <li>30 days post-launch support</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="tier-name">Enterprise</div>
+        <div class="tier-range">₹75,000+</div>
+        <div class="tier-note">ERP, multi-module &amp; complex systems</div>
+        <ul class="tier-list">
+          <li>Full ERP / management system</li>
+          <li>Multiple user roles &amp; portals</li>
+          <li>Reporting &amp; analytics</li>
+          <li>Third-party integrations</li>
+          <li>Custom PDF generation</li>
+          <li>Multi-branch / multi-user</li>
+          <li>Priority support &amp; maintenance</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--txtm);text-align:center;margin-top:8px">All prices are indicative and in INR (₹). Final pricing depends on project scope, complexity, and timeline.</p>
+  </div>
+
+  <div class="section page-break">
+    <h2 class="section-title">Common Project Types &amp; Indicative Pricing</h2>
+    <table class="addon-table">
+      <thead>
+        <tr><th>Project Type</th><th>Typical Range (INR)</th><th>Typical Timeline</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Business / Portfolio Website</td><td>₹15,000 – ₹25,000</td><td>1 – 2 weeks</td></tr>
+        <tr><td>Interactive / Animated Website</td><td>₹25,000 – ₹50,000</td><td>2 – 3 weeks</td></tr>
+        <tr><td>Billing &amp; Invoicing Application</td><td>₹30,000 – ₹60,000</td><td>3 – 5 weeks</td></tr>
+        <tr><td>GST-Compliant Billing Suite</td><td>₹40,000 – ₹80,000</td><td>4 – 6 weeks</td></tr>
+        <tr><td>School / Institution ERP</td><td>₹75,000 – ₹1,50,000</td><td>6 – 10 weeks</td></tr>
+        <tr><td>Custom Business Software</td><td>₹50,000 – ₹1,00,000</td><td>4 – 8 weeks</td></tr>
+        <tr><td>Industry-Specific Web Platform</td><td>₹40,000 – ₹80,000</td><td>3 – 6 weeks</td></tr>
+        <tr><td>WebGL / 3D Interactive Experience</td><td>₹35,000 – ₹75,000</td><td>3 – 5 weeks</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Optional Add-ons</h2>
+    <table class="addon-table">
+      <thead>
+        <tr><th>Add-on</th><th>Pricing</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Monthly maintenance &amp; support</td><td>₹3,000 – ₹8,000 / month</td></tr>
+        <tr><td>Domain registration (annual)</td><td>₹800 – ₹1,500 / year</td></tr>
+        <tr><td>Cloud hosting setup</td><td>Included in project</td></tr>
+        <tr><td>SSL certificate</td><td>Included (Let's Encrypt)</td></tr>
+        <tr><td>Additional pages or modules</td><td>₹3,000 – ₹10,000 each</td></tr>
+        <tr><td>Custom PDF / report generation</td><td>₹5,000 – ₹15,000</td></tr>
+        <tr><td>Third-party API integration</td><td>₹5,000 – ₹20,000 each</td></tr>
+        <tr><td>Priority turnaround (expedited)</td><td>+25% of project cost</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">What's Included in Every Project</h2>
+    <p>Every IdeasEternal project includes:</p>
+    <ul class="terms" style="padding-left:20px;margin-top:8px">
+      <li>Responsive, mobile-first design</li>
+      <li>Clean, maintainable source code</li>
+      <li>Deployment to your hosting platform</li>
+      <li>30 days of free post-launch bug fixes</li>
+      <li>Complete source code handover</li>
+      <li>Documentation and usage guide</li>
+      <li>SEO fundamentals (meta tags, semantic HTML, performance)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">How We Work</h2>
+    <p><strong>1. Discovery Call</strong> — We discuss your requirements, timeline, and budget expectations. No commitment required.</p>
+    <p><strong>2. Scope &amp; Quotation</strong> — We prepare a detailed, fixed-price quotation based on agreed scope.</p>
+    <p><strong>3. Development</strong> — We build iteratively with regular progress updates. You review and approve at each milestone.</p>
+    <p><strong>4. Delivery &amp; Launch</strong> — We deploy, test, and hand over the complete project with documentation.</p>
+    <p><strong>5. Support</strong> — 30 days of free post-launch support. Optional ongoing maintenance plans available.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Payment Terms</h2>
+    <ul class="terms" style="padding-left:20px">
+      <li>50% advance to begin development</li>
+      <li>Remaining 50% upon completion and before final handover</li>
+      <li>Payments accepted via UPI, bank transfer (NEFT/RTGS), or cash</li>
+      <li>All prices are exclusive of applicable taxes (GST at 18% if applicable)</li>
+      <li>Custom quotations provided for projects outside standard scope</li>
+    </ul>
+  </div>
+
+  <div class="contact-box">
+    <h3>Ready to Discuss Your Project?</h3>
+    <p>Contact us for a free, no-obligation consultation and custom quotation.</p>
+    <div class="contact-info">
+      <span>&#9742; <a href="tel:+919626296000">+91 9626296000</a></span>
+      <span>&#9993; <a href="mailto:ideaseternal777@gmail.com">ideaseternal777@gmail.com</a></span>
+      <span>&#128172; <a href="https://wa.me/919626296000">WhatsApp</a></span>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    &copy; 2025 IdeasEternal. This pricing guide is for reference purposes. Final pricing is confirmed through a formal project quotation.<br>
+    Prices are subject to change. Valid as of October 2025.
+  </div>
+</div>
+</body>
+</html>

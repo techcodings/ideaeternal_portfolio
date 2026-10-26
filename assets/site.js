@@ -24,17 +24,19 @@ document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
 function animateCounters(){
   document.querySelectorAll('.counter').forEach(c=>{
     const target=parseInt(c.dataset.target);
-    const duration=1500;
+    if(isNaN(target))return;
+    const duration=2000;
     const start=performance.now();
-    function update(now){
+    function tick(now){
       const elapsed=now-start;
       const progress=Math.min(elapsed/duration,1);
-      const eased=1-Math.pow(1-progress,3);
+      const eased=progress===1?1:1-Math.pow(2,-10*progress)*Math.cos((progress*10-0.75)*((2*Math.PI)/3));
       c.textContent=Math.round(target*eased)+'+';
-      if(progress<1)requestAnimationFrame(update);
-      else c.textContent=target+'+';
+      c.style.transform=`scale(${1+0.05*(1-progress)})`;
+      if(progress<1)requestAnimationFrame(tick);
+      else{c.textContent=target+'+';c.style.transform='scale(1)'}
     }
-    requestAnimationFrame(update);
+    requestAnimationFrame(tick);
   });
 }
 const heroObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){animateCounters();heroObs.disconnect()}})},{threshold:.3});
@@ -71,43 +73,111 @@ const lv=document.getElementById('layerVis');if(lv)layerObs.observe(lv);
 // ===== FILTER =====
 function fp(c){
   document.querySelectorAll('.fbt').forEach(b=>b.classList.remove('ac'));
-  const lm={all:'All',ai:'AI / ML',web:'Web',mobile:'Mobile',cloud:'Cloud',automation:'Automation',cyber:'Cyber'};
+  const lm={all:'All',website:'Websites',billing:'Billing',erp:'ERP',industry:'Industry'};
   document.querySelectorAll('.fbt').forEach(b=>{if(b.textContent.trim()===(lm[c]||'All'))b.classList.add('ac')});
   const cards=document.querySelectorAll('.pcd');
   cards.forEach(card=>{const cats=card.dataset.cats||'';const show=(c==='all'||cats.includes(c));card.style.display=show?'':'none'});
 }
 function fas(c){fp(c);document.getElementById('work').scrollIntoView({behavior:'smooth'})}
-function sap(){document.querySelectorAll('.pcd').forEach(c=>{c.style.display='';c.classList.add('rv');ro.observe(c)});const b=document.getElementById('smb');if(b)b.style.display='none'}
-
-// ===== FEATURES FILTER =====
-function filterFeats(cat){
-  document.querySelectorAll('.feat-tab').forEach(b=>b.classList.remove('ac'));
-  const lm={all:'All',frontend:'Frontend',backend:'Backend & Business',ops:'Optimization & Ops'};
-  document.querySelectorAll('.feat-tab').forEach(b=>{if(b.textContent.trim()===(lm[cat]||'All'))b.classList.add('ac')});
-  const cards=document.querySelectorAll('.feat-card');
-  cards.forEach(card=>{
-    const fc=card.dataset.feat||'';
-    const show=(cat==='all'||fc===cat);
-    card.style.display=show?'':'none';
-    if(show){card.classList.remove('vi');setTimeout(()=>{card.classList.add('vi')},50)}
-  });
-}
 
 // ===== PROJECT DATA =====
 const PD={
-  deltasquad:{t:'Delta Squad Foundation \u2014 Cadet Training Portal',v:'Comprehensive organizational cadet training management system with role-based portals, attendance, assessments, leave management and reporting.',img:'assets/img/proj_deltasquad.jpg',b:[['Full Stack \u00B7 Portal','c']],pr:'The Delta Squad Foundation needed a centralized system to manage cadet training operations. Manual tracking of attendance, assessments, leave requests, notices, and training reports across commanders and cadets was inefficient and error-prone.',so:'A full-stack cadet training portal with Commander/Admin and Cadet portals. Commanders manage cadets, subjects, sessions, results, reports, and system records. Cadets view attendance, results, notices, notes, and submit leave requests. Includes secure JWT authentication, role-based access, notifications, multi-language support (i18n), and a public counselling-registration form.',fl:['Secure Login','Role Detection','Commander Dashboard','Cadet Portal','Attendance Tracking','Assessment & Results','Leave Management','Notifications','Reports'],arch:['React Frontend','Express.js API','JWT Auth','Role Middleware','PostgreSQL (Neon)','Notification Service','Admin Panel'],tc:{'Frontend':['React.js','Responsive UI','i18n Multi-language'],'Backend':['Express.js','REST APIs','JWT Authentication','Role-based Middleware'],'Database':['PostgreSQL','Neon Cloud','Relational Schema'],'Features':['Attendance Tracking','Assessment System','Leave Workflow','Notifications','Public Registration']},bv:'Centralizes all training operations into one platform. Eliminates manual tracking. Role-based portals ensure data security. Multi-language support enables broader adoption.',uc:['Training Organizations','Educational Institutions','Military Academies','Youth Programs','Corporate Training'],rec:null},
-  safewave:{t:'SAFEWAVE \u2014 Fake Website Identification',v:'AI-powered cybersecurity platform detecting fake, fraudulent and phishing websites in real time.',img:'assets/img/proj_cyber.jpg',b:[['Cybersecurity \u00B7 AI','c']],pr:'Online fraud through fake websites is a growing threat. Phishing sites impersonate banks, government portals, and e-commerce platforms to steal credentials. There was no proactive AI-powered system that could analyze an unknown website\u2019s authenticity in real time.',so:'SAFEWAVE analyzes website properties \u2014 domain age, SSL validity, content structure, URL patterns, and behavioral signals \u2014 using ML classification to produce a trust score. Users receive an instant verdict: Safe, Suspicious, or Dangerous.',fl:['Website URL Input','Domain & SSL Analysis','ML Classification','Pattern Matching','Trust Score','User Alert'],arch:['User','Frontend (React)','API Gateway','URL Analyzer','ML Classifier','Trust Score Engine','Result'],tc:{'Frontend':['React.js','TypeScript','Real-time UI'],'Backend':['Node.js','REST API','URL Analyzer'],'AI/ML':['Classification Model','Feature Extraction','Risk Scoring'],'Deployment':['CI/CD','Cloud-hosted']},bv:'Protecting citizens from phishing reduces financial fraud and data breaches. Businesses can integrate SAFEWAVE as a security layer.',uc:['Banking & Finance','Government Portals','E-Commerce','Enterprise Security','Cybersecurity'],rec:{i:'\u{1F3C6}',t:'Smart India Hackathon 2024',o:'Ministry of Education, Govt. of India \u00B7 July 2024'}},
-  multimodal:{t:'Multi-modal AI Guardian',v:'Real-time multi-modal AI surveillance combining face recognition, gesture analysis, and threat scoring.',img:'assets/img/proj_multimodal.jpg',b:[['AI \u00B7 Surveillance','c']],pr:'Traditional CCTV requires humans to watch feeds continuously \u2014 impossible to scale. Law enforcement needed an intelligent system to analyze multiple streams, detect threats, and surface alerts automatically.',so:'Integrates three AI subsystems: Face Recognition, Gesture Detection, and Heatmap Analysis for crowd intelligence \u2014 all feeding into a central threat scoring engine.',fl:['Live Camera Feeds','Frame Processing','Face Recognition','Gesture Detection','Behavioral Analysis','Threat Scoring','Alert Dashboard'],arch:['Camera Feeds','OpenCV Pipeline','Face Recognition','Gesture CNN','Behavior Analyzer','Threat Score','Alert Dashboard'],tc:{'AI/ML':['OpenCV','TensorFlow','Face Recognition','Gesture Detection'],'Backend':['Python','Flask API','Real-time Processing'],'Frontend':['Dashboard UI','Camera Feed']},bv:'Reduces human monitoring burden by 80%+ through AI automation. Enables faster threat response in public spaces.',uc:['Law Enforcement','Public Safety','Border Security','Transit Hubs','Smart Cities'],rec:{i:'\u{1F3C6}',t:'Rajasthan Police Hackathon 1.0',o:'Rajasthan Police \u00B7 February 2024 \u00B7 Selected from 250+ teams'}},
-  edii:{t:'AI Submission Validator',v:'GPT-integrated AI backend for intelligent screening of submissions for quality and originality.',img:'assets/img/proj_ai.jpg',b:[['Applied AI','c']],pr:'Organizations receive thousands of idea submissions. Manually screening each for originality, completeness, and feasibility is time-consuming and inconsistent.',so:'AI-powered validation backend that automatically analyzes submitted ideas using GPT integration and NLP, scoring on originality, clarity, feasibility and completeness.',fl:['Idea Submission','NLP Pre-processing','GPT Analysis','Originality Check','Completeness Score','Firebase Store','Report'],arch:['User Submission','FastAPI','NLP Preprocessor','GPT API','Scoring Engine','Firebase','Admin Dashboard'],tc:{'AI/NLP':['GPT API','NLP Processing','Content Analysis','Originality Detection'],'Backend':['Python','FastAPI','REST API'],'Database':['Firebase Realtime','Score Tracking']},bv:'Eliminates days of manual review. Ensures consistent, unbiased evaluation. Surfaces highest-quality ideas for decision-making.',uc:['Government Programs','Hackathon Platforms','Startup Accelerators','Grant Programs','Universities'],rec:null},
-  ibots:{t:'E-Commerce Platform',v:'Full-stack MERN e-commerce with AI-powered recommendations, analytics dashboard and cloud deployment.',img:'assets/img/proj_ecommerce.jpg',b:[['E-Commerce \u00B7 Full Stack','c']],pr:'A modern, scalable e-commerce platform with product catalogs, order management, personalized experiences, and a powerful admin dashboard.',so:'Custom MERN-stack e-commerce with AI-powered product recommendations. Admin dashboard provides real-time inventory tracking, order management, and sales analytics.',fl:['User Browse/Search','AI Recommendations','Product Catalog','Cart & Checkout','Order Processing','Admin Dashboard','Analytics'],arch:['User','React SPA','Express API','JWT Auth','MongoDB','AI Engine','AWS (EC2/S3)'],tc:{'Frontend':['React.js','Responsive UI','Real-time Updates'],'Backend':['Node.js','Express.js','REST APIs','JWT Auth'],'AI':['Recommendations','Behavior Analysis'],'Infrastructure':['AWS Cloud','Docker','CI/CD','MongoDB Atlas']},bv:'Dashboard reduced reporting time by 50%. Personalized UX improved engagement by 20%. Cloud deployment handles real transactions.',uc:['Retail & E-Commerce','Product Companies','B2B Marketplaces','Electronics'],rec:null},
-  signlanguage:{t:'Sign Language Translator',v:'Real-time sign language to text translation using computer vision and CNN.',img:'assets/img/proj_sign.jpg',b:[['AI \u00B7 Accessibility','c']],pr:'Communication between hearing-impaired individuals and those unfamiliar with sign language is a significant barrier. Real-time tools are rare.',so:'Computer vision application using a webcam to capture hand gestures in real time and translate them to text via a CNN trained on sign language datasets.',fl:['Webcam Input','Frame Capture','Hand Detection','CNN Classifier','Character Map','Text Output'],arch:['Camera','OpenCV Capture','Hand Landmark','CNN Model','Character Recognition','Text Display'],tc:{'AI/CV':['OpenCV','CNN (TensorFlow)','Hand Detection','Gesture Classification'],'Backend':['Python','Real-time Processing']},bv:'Makes communication accessible without specialized hardware. Applicable in hospitals, schools, customer service counters.',uc:['Healthcare','Education','Customer Service','Public Services','Accessibility'],rec:null},
-  stockpred:{t:'Stock Price Predictor',v:'ML time-series forecasting model for stock market prediction using historical data analysis.',img:'assets/img/proj_stock.jpg',b:[['AI \u00B7 Finance','c']],pr:'Predicting stock prices is a classic data science challenge. Traditional analysis struggles to capture complex temporal patterns in financial data.',so:'LSTM-based deep learning model trained on historical stock data to forecast future price movements. Includes data preprocessing, feature engineering, and visualization.',fl:['Data Collection','Preprocessing','Feature Engineering','LSTM Model','Training','Prediction','Visualization'],arch:['Market Data API','Pandas Pipeline','Feature Engineer','LSTM Network','Prediction Output','Chart Visualization'],tc:{'AI/ML':['LSTM','TensorFlow','Scikit-learn','Time Series'],'Data':['Pandas','NumPy','Matplotlib'],'Backend':['Python']},bv:'Demonstrates advanced ML capability on complex financial data. Pattern applicable to demand forecasting, resource planning.',uc:['Financial Services','Investment','Demand Forecasting','Business Intelligence'],rec:null},
-  d2t:{t:'Product Management System',v:'Mobile-first product and order management with integrated payment and real-time tracking.',img:'assets/img/proj_d2t.jpg',b:[['Mobile \u00B7 Operations','c']],pr:'Manual order management via spreadsheets caused delays, errors, and missed payments. A mobile-first solution was needed.',so:'Cross-platform mobile app with product catalog management, order tracking, payment integration, and real-time inventory synchronization.',fl:['Product Catalog','Order Placement','Inventory Update','Payment','Order Fulfillment','Analytics'],arch:['Mobile App','React Native UI','Express API','Payment Gateway','MongoDB','Admin Panel'],tc:{'Mobile':['React Native','Mobile-first UI'],'Backend':['Node.js','REST API','Payment Gateway'],'Database':['MongoDB','Transaction Logs']},bv:'Improved efficiency by 40%. Handles 100+ daily transactions. Reduced order errors significantly.',uc:['Product Distribution','Field Sales','Order Management','SME Businesses'],rec:null},
-  emailsms:{t:'Email & SMS Verification Pipeline',v:'Automated pipeline verifying contact data \u2014 eliminating invalid entries before they cause problems.',img:'assets/img/proj_auto.jpg',b:[['Automation \u00B7 Data','c']],pr:'Businesses accumulate invalid emails and phone numbers. Campaigns to invalid addresses damage sender reputation and increase costs.',so:'Automated verification pipeline checking MX records, SMTP handshake, format validity, and SMS reachability. Invalid contacts quarantined with reason codes.',fl:['Contact List','Format Check','MX/DNS Lookup','SMTP Handshake','SMS Check','DB Update','Report'],arch:['Input List','Format Validator','DNS/MX Resolver','SMTP Verifier','SMS Gateway','Result Database'],tc:{'Backend':['Python','Node.js','Async Processing'],'Verification':['SMTP Validation','DNS Lookup','SMS Gateway API'],'Database':['MongoDB','Batch Processing']},bv:'Reduces bounce rates, protects sender reputation, saves marketing budget.',uc:['E-Commerce','Digital Marketing','CRM Systems','Healthcare','Financial Services'],rec:null},
-  sentiment:{t:'Sentiment Analysis Engine',v:'NLP-powered sentiment engine transforming customer reviews into actionable intelligence.',img:'assets/img/proj_sentiment.jpg',b:[['AI \u00B7 NLP','c']],pr:'Businesses receive thousands of reviews but lack tools to analyze sentiment at scale.',so:'Sentiment system processing reviews using NLP, classifying and extracting key topics. Dashboard shows sentiment trends and quality signals.',fl:['Reviews Input','NLP Processing','Classification','Topic Extraction','Aggregation','Dashboard'],arch:['Data Source','Text Preprocessor','BERT Model','Topic Modeler','Score Aggregator','React Dashboard'],tc:{'AI/NLP':['BERT/Transformer','Sentiment Classification','Topic Modeling'],'Backend':['Python','Flask API'],'Frontend':['React.js','Charts']},bv:'Understand customer sentiment without reading thousands of reviews.',uc:['E-Commerce','Product Mgmt','Customer Experience','Market Research'],rec:null},
-  aichatbot:{t:'AI Customer Support Chatbot',v:'GPT-powered chatbot trained on custom business data for automated 24/7 customer support and lead generation.',img:'assets/img/proj_chatbot.jpg',b:[['AI \u00B7 SaaS','c']],pr:'Businesses spend heavily on customer support teams. Most queries are repetitive \u2014 FAQs, order status, pricing, returns. Customers expect instant answers 24/7 but human agents are expensive and have limited availability.',so:'An AI chatbot trained on the client\u2019s own documentation, FAQs, and product data using GPT + LangChain. It handles customer queries in natural language, escalates complex issues to humans, and learns from conversations. Includes an analytics dashboard showing resolution rates and common topics.',fl:['Customer Message','NLP Processing','Knowledge Base Search','GPT Response Generation','Escalation Check','Response Delivery','Analytics Log'],arch:['Chat Widget','Express API','LangChain Pipeline','Vector DB (Pinecone)','GPT API','Escalation Engine','Admin Dashboard'],tc:{'AI':['GPT-4 API','LangChain','Vector Embeddings','RAG Architecture'],'Backend':['Node.js','Express','WebSocket','MongoDB'],'Frontend':['React.js','Chat UI','Admin Dashboard'],'Infrastructure':['Docker','CI/CD','Cloud Hosting']},bv:'Reduces support costs by 60-70%. Handles unlimited concurrent conversations. Available 24/7 with instant response. Captures leads automatically from chat conversations.',uc:['E-Commerce','SaaS Companies','Healthcare','Real Estate','Education','Financial Services','Hospitality'],rec:null},
-  hospital:{t:'Hospital & Clinic Management System',v:'End-to-end healthcare management with patient records, appointments, doctor portals, prescriptions, and billing.',img:'assets/img/proj_hospital.jpg',b:[['Healthcare \u00B7 Full Stack','c']],pr:'Clinics and small hospitals manage patient records on paper or spreadsheets. Appointment scheduling is phone-based, prescriptions are handwritten, and billing is manual. This creates errors, delays, and poor patient experience.',so:'A full-stack hospital management system with role-based portals for Admin, Doctor, and Receptionist. Manages patient records, appointment scheduling with calendar view, digital prescriptions, lab reports, billing with invoice generation, and department management. Secure authentication with audit trails.',fl:['Patient Registration','Appointment Booking','Doctor Assignment','Consultation Notes','Prescription','Lab Reports','Billing','Invoice'],arch:['React Frontend','Express API','JWT Auth','Role Middleware','PostgreSQL','PDF Generator','Email/SMS Notifier'],tc:{'Frontend':['React.js','Calendar UI','PDF Viewer','Responsive Design'],'Backend':['Node.js','Express','REST APIs','JWT Auth','Role-based Access'],'Database':['PostgreSQL','Patient Records','Audit Logs'],'Features':['Appointment Calendar','Digital Prescriptions','Invoice Generator','Lab Report Upload','SMS/Email Notifications']},bv:'Eliminates paper records. Reduces appointment scheduling time by 80%. Digital prescriptions reduce errors. Automated billing saves 15+ hours/week. Complete audit trail for compliance.',uc:['Clinics','Small Hospitals','Dental Practices','Physiotherapy Centers','Diagnostic Labs','Veterinary Clinics'],rec:null},
-  booking:{t:'Booking & Appointment System',v:'Universal scheduling platform for service businesses \u2014 clinics, salons, tutors, consultants \u2014 with payments and analytics.',img:'assets/img/proj_booking.jpg',b:[['SaaS \u00B7 Platform','c']],pr:'Service businesses (salons, clinics, tutors, consultants) lose revenue from no-shows, double bookings, and phone-based scheduling. They need a modern self-service booking system that works 24/7.',so:'A SaaS booking platform where businesses create service listings, set availability, and let customers book online. Includes automated reminders (email/SMS), payment collection via Stripe, customer management, and an admin dashboard with booking analytics and revenue tracking.',fl:['Service Setup','Availability Calendar','Customer Booking','Payment (Stripe)','Confirmation','Reminder (SMS/Email)','Service Delivery','Review & Rating'],arch:['React Frontend','Express API','MongoDB','Stripe Payment','Calendar Engine','Notification Service (Twilio)','Admin Dashboard'],tc:{'Frontend':['React.js','Calendar UI','Payment Widget','Responsive'],'Backend':['Express.js','REST APIs','Stripe Integration','Twilio SMS'],'Database':['MongoDB','Booking Records','Customer Profiles'],'Features':['Online Booking','Stripe Payments','SMS/Email Reminders','Analytics Dashboard','Multi-service Support','Review System']},bv:'Eliminates no-shows with automated reminders. Captures bookings 24/7 without staff. Online payments reduce cancellations by 40%. Dashboard gives real-time revenue insights.',uc:['Salons & Spas','Medical Clinics','Tutoring Services','Consulting Firms','Fitness Studios','Photography','Legal Services'],rec:null}
+  deltasquad:{
+    t:'Delta Squad Foundation \u2014 Cadet Training Portal',
+    v:'Comprehensive organizational cadet training management system with role-based portals, attendance, assessments, leave management and reporting.',
+    img:'assets/img/proj_deltasquad.jpg',
+    b:[['Training Portal \u00B7 Full Stack','c']],
+    pr:'The Delta Squad Foundation needed a centralized system to manage cadet training operations. Manual tracking of attendance, assessments, leave requests, notices, and training reports across commanders and cadets was inefficient and error-prone.',
+    so:'A full-stack cadet training portal with Commander/Admin and Cadet portals. Commanders manage cadets, subjects, sessions, results, reports, and system records. Cadets view attendance, results, notices, notes, and submit leave requests. Includes secure JWT authentication, role-based access, notifications, multi-language support (i18n), and a public counselling-registration form.',
+    fl:['Secure Login','Role Detection','Commander Dashboard','Cadet Portal','Attendance Tracking','Assessment & Results','Leave Management','Notifications','Reports'],
+    tc:{'Frontend':['React.js','Responsive UI','i18n Multi-language'],'Backend':['Express.js','REST APIs','JWT Authentication','Role-based Middleware'],'Database':['PostgreSQL','Neon Cloud','Relational Schema'],'Features':['Attendance Tracking','Assessment System','Leave Workflow','Notifications','Public Registration']},
+    bv:'Centralizes all training operations into one platform. Eliminates manual tracking. Role-based portals ensure data security. Multi-language support enables broader adoption.',
+    link:'https://deltasquads.netlify.app/'
+  },
+  afterbuild:{
+    t:'AfterBuild Studio \u2014 Luxury Interior Design Website',
+    v:'Premium architectural and interior design studio website with portfolio gallery, service pillars, founder section, and brand identity.',
+    img:'assets/img/proj_afterbuild.jpg',
+    b:[['Interior Design \u00B7 Website','c']],
+    pr:'AfterBuild Studio, a luxury interior design firm, needed a premium web presence that reflects their design quality and attracts high-end clients. Their previous online presence did not match the calibre of their portfolio.',
+    so:'A modern, visually stunning website showcasing the studio\u2019s portfolio, services (Interior Design, Architecture, Project Management, Custom Furniture), team section with founder credentials, and a project gallery with before/after imagery. Designed to convey luxury through dark aesthetics and gold accents.',
+    fl:['Hero with Brand Video','Portfolio Gallery','Service Pillars','Founder Section','Contact Form','Responsive Design','SEO Optimized'],
+    tc:{'Frontend':['Next.js','TypeScript','Tailwind CSS','Responsive Design'],'Design':['Premium Dark Theme','Gold Accents','Portfolio Grid','Smooth Animations'],'Deployment':['Netlify','CI/CD','Custom Domain']},
+    bv:'Establishes a premium digital presence matching the studio\u2019s real-world reputation. Professional portfolio presentation drives client enquiries from high-net-worth individuals.',
+    link:'https://afterbuild.netlify.app/'
+  },
+  schoolerp:{
+    t:'Greenwood International School ERP',
+    v:'Full-stack school management system with 8 user roles, 74 database tables, and comprehensive academic, financial, and administrative modules.',
+    img:'assets/img/proj_school_erp.jpg',
+    b:[['Education \u00B7 ERP','c']],
+    pr:'The school was managing student records, attendance, exams, fees, library, and transport on paper and spreadsheets across multiple departments. This led to data inconsistency, reporting delays, and administrative overhead.',
+    so:'A comprehensive School ERP with 8 user roles (Admin, Principal, Teacher, Accountant, Admission Officer, Librarian, Parent, Student) and modules for student information, attendance, exam management, fee tracking, library management, transport routing, and communication. Built on a 74-table PostgreSQL database with Flask backend and React frontend.',
+    fl:['8 User Role Portals','Student Information System','Attendance Tracking','Exam & Results Management','Fee Management & Receipts','Library Management','Transport Routing','Parent Portal','Communication System'],
+    tc:{'Frontend':['React','TypeScript','Vite','Responsive Design'],'Backend':['Flask (Python)','SQLAlchemy ORM','REST APIs','JWT Authentication'],'Database':['PostgreSQL','SQLite (dev)','74 Tables','Relational Schema'],'Features':['Role-Based Access Control','PDF Report Generation','Email Notifications','Dashboard Analytics']},
+    bv:'Eliminates paper-based processes across all departments. 8 role-specific portals ensure each user sees only what they need. Automated fee tracking and exam result generation saves 20+ hours/week of administrative work.',
+    link:'https://friendly-dragon-fe77ba.netlify.app'
+  },
+  gstbilling:{
+    t:'Offline GST Enterprise Billing Suite',
+    v:'Production-quality offline-first GST billing system with tax engine, invoicing, quotations, delivery challans, bank reconciliation, job costing, and GSTR exports.',
+    img:'assets/img/proj_gst_billing.jpg',
+    b:[['GST Billing \u00B7 Enterprise','c']],
+    pr:'A construction/building materials business needed a comprehensive offline billing solution that handles GST compliance, multi-counter operations, delivery challans, and bank reconciliation \u2014 without depending on constant internet connectivity.',
+    so:'An offline-first billing suite with WAL-mode SQLite for reliability. Features include: GST tax engine (CGST/SGST/IGST with HSN-based rates), invoice & quotation generation (A4 and thermal), delivery challan management, payment tracking, bank reconciliation, job costing, customer portal, and GSTR-1/GSTR-3B export. Multi-counter LAN support for simultaneous operation.',
+    fl:['GST Tax Engine','Invoice Generation (A4 & Thermal)','Quotation Management','Delivery Challans','Payment Tracking','Bank Reconciliation','Job Costing','GSTR-1/3B Export','Customer Portal','Multi-Counter LAN','E-way Bill Adapter'],
+    tc:{'Frontend':['React 19','TypeScript','Vite','Responsive UI'],'Backend':['Express.js','REST APIs','SQLite WAL Mode'],'Business Logic':['GST Tax Engine','HSN Code Mapping','CGST/SGST/IGST Calculation','E-way Bill'],'Features':['Offline-First Architecture','PDF Invoice Generation','Bank Reconciliation','Job Costing','Multi-Counter Support']},
+    bv:'Complete GST compliance without internet dependency. Multi-counter support enables simultaneous billing. GSTR exports eliminate manual tax filing data entry. Bank reconciliation catches payment discrepancies automatically.',
+    link:'https://gst-building.onrender.com/'
+  },
+  football:{
+    t:'New Life Sports \u2014 Football Academy Platform',
+    v:'Interactive football academy website with training programs by age group, 3D tactical pitch, player development pathway, and registration system.',
+    img:'assets/img/proj_football_academy.jpg',
+    b:[['Sports \u00B7 Academy','c']],
+    pr:'New Life Sports Football Academy needed a modern web platform to showcase their training programs, attract new registrations, and provide information about coaching methodology, facility details, and player development pathways.',
+    so:'A dynamic Next.js website with age-based program sections (Mini Kickers to Elite Development), interactive 3D tactical pitch visualization, player development pathway timeline, training schedule display, photo/video gallery, coach profiles, and an integrated registration form. Mobile-optimized with smooth animations.',
+    fl:['Age-Based Training Programs','3D Tactical Pitch','Player Development Pathway','Training Schedules','Photo & Video Gallery','Coach Profiles','Registration System','Mobile-First Design'],
+    tc:{'Frontend':['Next.js 16','TypeScript','Tailwind CSS','Lucide Icons'],'Design':['Sports-themed Dark Design','3D Pitch Visualization','Smooth Animations','Responsive Layout'],'Deployment':['Netlify','Static Site Generation']},
+    bv:'Professional academy presence that converts visitors into registrations. Interactive elements (3D pitch, pathway timeline) differentiate from competitor academies. Age-based program structure helps parents find the right fit immediately.',
+    link:'https://newlifesports.netlify.app/'
+  },
+  corn:{
+    t:'Pioneer \u2014 Corn. Revolutionized.',
+    v:'Award-quality interactive WebGL experience with Three.js 3D corn models, post-processing effects, GSAP camera transitions, and cinematic science storytelling.',
+    img:'assets/img/proj_corn_webgl.jpg',
+    b:[['WebGL \u00B7 3D Interactive','c']],
+    pr:'Pioneer needed an immersive, interactive web experience to showcase their corn science and innovation story. Traditional static websites could not convey the depth and beauty of agricultural research in an engaging way.',
+    so:'A cinematic WebGL experience built with Three.js. Features include: 3D corn models with procedural geometry, UnrealBloomPass and BokehPass post-processing, GSAP-driven camera transitions between scenes, scroll-triggered animations, GLSL shaders for custom effects, and information panels revealing the science of corn development. The experience takes users through corn\u2019s journey from seed to harvest.',
+    fl:['Three.js 3D Scene','Procedural Corn Geometry','WebGL Post-Processing','GSAP Camera Transitions','Scroll-Triggered Animations','GLSL Custom Shaders','Interactive Science Panels','Cinematic Storytelling'],
+    tc:{'3D/WebGL':['Three.js','WebGL','GLSL Shaders','Procedural Geometry','Post-Processing (Bloom, Bokeh)'],'Animation':['GSAP (GreenSock)','ScrollTrigger','Camera Transitions'],'Frontend':['Vite','JavaScript','Responsive Design']},
+    bv:'Creates a memorable, immersive brand experience that traditional websites cannot match. Interactive 3D elements increase time-on-site and engagement dramatically. Cinematic quality positions the brand as innovative.',
+    link:'https://cornrevolutions.netlify.app/#science'
+  },
+  chemical:{
+    t:'S.B.R. Chemicals & Oils \u2014 GST Billing & Cloud ERP',
+    v:'Industry-specific billing system for chemical and oil distributor with custom measurement units, GST engine, Supabase cloud sync, and pixel-perfect paper invoice matching.',
+    img:'assets/img/proj_chemical_billing.jpg',
+    b:[['Chemical Industry \u00B7 Billing','c']],
+    pr:'S.B.R. Chemicals & Oils, a chemical distributor, needed a billing system that handles their unique requirements: custom measurement units (Litres, Barrels, Kgs, Drums), chemical inventory tracking, GST compliance, and invoices that match their existing paper format exactly.',
+    so:'A cloud-connected billing and ERP system built specifically for the chemical industry. Features GST-compliant invoicing with custom units, customer and product management, inventory tracking, Supabase cloud sync for multi-device access, and PDF invoice generation that pixel-perfectly matches the client\u2019s existing paper invoice layout.',
+    fl:['Chemical Product Catalog','Custom Units (L/Barrel/Kg/Drum)','GST Invoice Generation','Customer Management','Inventory Tracking','Cloud Sync (Supabase)','Pixel-Perfect PDF Invoices','Payment Tracking','Admin Dashboard'],
+    tc:{'Frontend':['React 19','TypeScript','Vite','Responsive UI'],'Backend & Cloud':['Supabase (PostgreSQL)','Real-time Sync','Row-Level Security'],'Business Logic':['GST Tax Engine','Custom Unit Conversion','Chemical Inventory','Invoice PDF Generation']},
+    bv:'Replaces manual paper-based billing with a digital system that maintains the exact invoice format the business is used to. Cloud sync enables billing from any device. Chemical-specific units eliminate conversion errors.',
+    link:'https://srs-chemical-billing.netlify.app/'
+  },
+  warehouse:{
+    t:'Warehouse Management System',
+    v:'Inventory and warehouse management platform currently under development. Stock tracking, order processing, and supply chain coordination.',
+    img:'assets/img/proj_gst_billing.jpg',
+    b:[['Warehouse \u00B7 Management','c']],
+    pr:'The client needs a centralized system to manage warehouse inventory, track stock movements, process orders, and coordinate supply chain operations across multiple locations.',
+    so:'A warehouse management platform with inventory tracking, stock alerts, order processing workflow, and reporting dashboard. Currently in early development phase.',
+    fl:['Inventory Tracking','Stock Alerts','Order Processing','Supplier Management','Reports & Analytics'],
+    tc:{'Frontend':['React','TypeScript'],'Backend':['Node.js','REST APIs'],'Database':['PostgreSQL']},
+    bv:'Centralizes warehouse operations, reduces stock discrepancies, and automates reorder alerts. Enables data-driven supply chain decisions.',
+    link:null
+  }
 };
 
 // ===== MODAL =====
@@ -123,15 +193,17 @@ function om(k){
   document.getElementById('mpr').textContent=d.pr;
   document.getElementById('mso').textContent=d.so;
   document.getElementById('mfl').innerHTML=d.fl.map((s,i)=>`<div class="mfs">${s}</div>${i<d.fl.length-1?'<div class="mfa">\u2192</div>':''}`).join('');
-  const marchEl=document.getElementById('march');
-  if(d.arch&&d.arch.length){marchEl.parentElement.style.display='';marchEl.innerHTML=d.arch.map((n,i)=>`<div class="march-n">${n}</div>${i<d.arch.length-1?'<div class="march-a">\u2193</div>':''}`).join('')}
-  else marchEl.parentElement.style.display='none';
   document.getElementById('mtc').innerHTML=Object.entries(d.tc).map(([l,items])=>`<div class="mtcc"><div class="mtct">${l}</div><ul>${items.map(i=>`<li>${i}</li>`).join('')}</ul></div>`).join('');
   document.getElementById('mbv').textContent=d.bv;
-  document.getElementById('muc').innerHTML=(d.uc||[]).map(u=>`<div class="muci">${u}</div>`).join('');
-  const rs=document.getElementById('mres');
-  if(d.rec){rs.style.display='';document.getElementById('mrec').innerHTML=`<div class="mreci">${d.rec.i}</div><div class="mrect"><h5>${d.rec.t}</h5><p>${d.rec.o}</p></div>`}
-  else rs.style.display='none';
+  // Live demo link
+  const linksEl=document.getElementById('mlinks');
+  const lkEl=document.getElementById('mlk');
+  if(d.link){
+    linksEl.style.display='';
+    lkEl.innerHTML=`<a href="${d.link}" target="_blank" rel="noopener" class="mla mlap">Visit Live Demo \u2192</a>`;
+  } else {
+    linksEl.style.display='none';
+  }
   mol.classList.add('op');document.body.style.overflow='hidden';
   mol.querySelector('.msc').scrollTop=0;
 }
@@ -180,8 +252,8 @@ function chatStart(){
   showTyping();
   setTimeout(()=>{removeTyping();addBotMsg("Hi! \u{1F44B} Welcome to IdeasEternal.");
   showTyping();
-  setTimeout(()=>{removeTyping();addBotMsg("What type of solution are you looking for?");
-  setTimeout(()=>addOpts(['Website','Mobile App','AI Solution','Business Software','Automation','E-Commerce','Not Sure Yet']),300)},800)},600);
+  setTimeout(()=>{removeTyping();addBotMsg("What type of project are you looking for?");
+  setTimeout(()=>addOpts(['Business Website','Billing System','ERP / Management Software','Interactive Website','Industry-Specific App','Not Sure Yet']),300)},800)},600);
 }
 
 function addBotMsg(t){const d=document.createElement('div');d.className='chat-msg bot';d.textContent=t;chatBody.appendChild(d);chatBody.scrollTop=chatBody.scrollHeight}
@@ -198,7 +270,7 @@ function handleOpt(val){
     chatData.service=val;chatState='problem';
     showTyping();
     setTimeout(()=>{removeTyping();addBotMsg("Great choice! What are you trying to achieve?");
-    setTimeout(()=>addOpts(['Build a New Product','Automate Existing Work','Improve Current System','Add AI Features','Need a Website','Need a Mobile App']),300)},600);
+    setTimeout(()=>addOpts(['Build a New Product','Replace Paper / Manual Process','Improve Current System','Need Online Presence','Need GST Billing','Not sure \u2014 need advice']),300)},600);
   }else if(chatState==='problem'){
     chatData.problem=val;chatState='name';
     showTyping();
@@ -263,3 +335,299 @@ function toggleFaq(el){
   document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
   if(!isOpen)el.classList.add('open');
 }
+
+// ===== SCROLL PROGRESS BAR =====
+const scrollProg=document.getElementById('scrollProgress');
+if(scrollProg){
+  window.addEventListener('scroll',()=>{
+    const scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+    const scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    const progress=(scrollTop/scrollHeight)*100;
+    scrollProg.style.width=progress+'%';
+  },{passive:true});
+}
+
+// ===== CURSOR GLOW EFFECT =====
+const cursorGlow=document.getElementById('cursorGlow');
+if(cursorGlow&&window.innerWidth>768){
+  let mouseX=0,mouseY=0,glowX=0,glowY=0;
+  document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;cursorGlow.classList.add('active')});
+  document.addEventListener('mouseleave',()=>cursorGlow.classList.remove('active'));
+  function updateGlow(){
+    glowX+=(mouseX-glowX)*.08;glowY+=(mouseY-glowY)*.08;
+    cursorGlow.style.left=glowX+'px';cursorGlow.style.top=glowY+'px';
+    requestAnimationFrame(updateGlow);
+  }
+  requestAnimationFrame(updateGlow);
+}
+
+// ===== 3D TILT EFFECT ON PROJECT CARDS =====
+document.querySelectorAll('.pcd').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const rect=card.getBoundingClientRect();
+    const x=e.clientX-rect.left;
+    const y=e.clientY-rect.top;
+    const centerX=rect.width/2;
+    const centerY=rect.height/2;
+    const rotateX=((y-centerY)/centerY)*-4;
+    const rotateY=((x-centerX)/centerX)*4;
+    card.style.transform=`perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+  });
+});
+
+// ===== BUTTON RIPPLE EFFECT =====
+document.querySelectorAll('.btn').forEach(btn=>{
+  btn.addEventListener('click',function(e){
+    const ripple=document.createElement('span');
+    ripple.className='ripple';
+    const rect=this.getBoundingClientRect();
+    const size=Math.max(rect.width,rect.height);
+    ripple.style.width=ripple.style.height=size+'px';
+    ripple.style.left=(e.clientX-rect.left-size/2)+'px';
+    ripple.style.top=(e.clientY-rect.top-size/2)+'px';
+    this.appendChild(ripple);
+    ripple.addEventListener('animationend',()=>ripple.remove());
+  });
+});
+
+// ===== SERVICE CARD MAGNETIC HOVER =====
+document.querySelectorAll('.scd').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const rect=card.getBoundingClientRect();
+    const x=((e.clientX-rect.left)/rect.width-.5)*10;
+    const y=((e.clientY-rect.top)/rect.height-.5)*10;
+    card.style.transform=`translateY(-4px) translate(${x*0.3}px,${y*0.3}px)`;
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='translateY(0) translate(0,0)';
+  });
+});
+
+// ===== PARALLAX ON HERO BACKGROUND =====
+const hg1=document.querySelector('.hg1');
+const hg2=document.querySelector('.hg2');
+if(hg1&&hg2){
+  window.addEventListener('scroll',()=>{
+    const scrolled=window.scrollY;
+    if(scrolled<window.innerHeight){
+      hg1.style.transform=`scale(${1+scrolled*0.0003}) translateY(${scrolled*0.15}px)`;
+      hg2.style.transform=`scale(${1+scrolled*0.0002}) translateY(${scrolled*0.1}px)`;
+    }
+  },{passive:true});
+}
+
+// ===== TEXT WORD-BY-WORD REVEAL =====
+document.querySelectorAll('.rv .st').forEach(title=>{
+  const html=title.innerHTML;
+  if(html.includes('class="word"'))return;
+  const parts=html.split(/(<[^>]+>)/);
+  let newHtml='';
+  let wordIndex=0;
+  parts.forEach(part=>{
+    if(part.startsWith('<')){
+      newHtml+=part;
+    }else{
+      const words=part.split(/(\s+)/);
+      words.forEach(w=>{
+        if(w.trim()){
+          newHtml+=`<span class="word" style="transition-delay:${wordIndex*0.06}s">${w}</span>`;
+          wordIndex++;
+        }else{
+          newHtml+=w;
+        }
+      });
+    }
+  });
+  title.innerHTML=newHtml;
+});
+
+// ===== ANIMATED HERO CANVAS PARTICLES =====
+(function(){
+  const hero=document.querySelector('.hero');
+  if(!hero||window.innerWidth<768)return;
+  const canvas=document.createElement('canvas');
+  canvas.style.cssText='position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5';
+  hero.querySelector('.hbg').appendChild(canvas);
+  const ctx=canvas.getContext('2d');
+  let w,h,particles=[];
+  function resize(){w=canvas.width=hero.offsetWidth;h=canvas.height=hero.offsetHeight}
+  resize();window.addEventListener('resize',resize);
+  class Particle{
+    constructor(){this.reset()}
+    reset(){this.x=Math.random()*w;this.y=Math.random()*h;this.vx=(Math.random()-.5)*.3;this.vy=(Math.random()-.5)*.3;this.r=Math.random()*1.5+.5;this.life=Math.random()*200+100;this.age=0;this.opacity=0}
+    update(){this.x+=this.vx;this.y+=this.vy;this.age++;
+      if(this.age<30)this.opacity=this.age/30;
+      else if(this.age>this.life-30)this.opacity=(this.life-this.age)/30;
+      else this.opacity=1;
+      if(this.age>=this.life||this.x<0||this.x>w||this.y<0||this.y>h)this.reset();}
+    draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`rgba(34,197,94,${this.opacity*.15})`;ctx.fill()}
+  }
+  for(let i=0;i<40;i++)particles.push(new Particle());
+  function connectParticles(){
+    for(let i=0;i<particles.length;i++){
+      for(let j=i+1;j<particles.length;j++){
+        const dx=particles[i].x-particles[j].x;
+        const dy=particles[i].y-particles[j].y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<120){
+          const op=((120-dist)/120)*.06*particles[i].opacity*particles[j].opacity;
+          ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);
+          ctx.strokeStyle=`rgba(34,197,94,${op})`;ctx.lineWidth=.5;ctx.stroke();
+        }
+      }
+    }
+  }
+  function animate(){ctx.clearRect(0,0,w,h);particles.forEach(p=>{p.update();p.draw()});connectParticles();requestAnimationFrame(animate)}
+  animate();
+})();
+
+// ===== MAGNETIC CTA BUTTONS =====
+document.querySelectorAll('.btn-glow').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const rect=btn.getBoundingClientRect();
+    const x=e.clientX-rect.left-rect.width/2;
+    const y=e.clientY-rect.top-rect.height/2;
+    btn.style.transform=`translate(${x*.15}px,${y*.15}px) scale(1.02)`;
+  });
+  btn.addEventListener('mouseleave',()=>{
+    btn.style.transform='translate(0,0) scale(1)';
+    btn.style.transition='transform .4s cubic-bezier(.23,1,.32,1)';
+    setTimeout(()=>btn.style.transition='',400);
+  });
+});
+
+// ===== SECTION LABELS TEXT REVEAL =====
+const labelObs=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const el=entry.target;
+      const original=el.textContent;
+      const chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let iterations=0;
+      const interval=setInterval(()=>{
+        el.textContent=original.split('').map((char,i)=>{
+          if(i<iterations||char===' ')return char;
+          return chars[Math.floor(Math.random()*chars.length)];
+        }).join('');
+        iterations+=.5;
+        if(iterations>=original.length)clearInterval(interval);
+      },30);
+      labelObs.unobserve(el);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.sl').forEach(el=>labelObs.observe(el));
+
+// ===== SMOOTH SECTION PARALLAX =====
+(function(){
+  if(window.innerWidth<768)return;
+  const parallaxSections=document.querySelectorAll('.sec');
+  window.addEventListener('scroll',()=>{
+    const scrollY=window.scrollY;
+    parallaxSections.forEach(sec=>{
+      const rect=sec.getBoundingClientRect();
+      if(rect.top<window.innerHeight&&rect.bottom>0){
+        const progress=(window.innerHeight-rect.top)/(window.innerHeight+rect.height);
+        const translate=(progress-.5)*-15;
+        const before=sec.querySelector('.sl');
+        if(before){before.style.transform=`translateY(${translate}px)`}
+      }
+    });
+  },{passive:true});
+})();
+
+// ===== ENHANCED PRELOADER WITH PERCENTAGE =====
+(function(){
+  const pl=document.getElementById('preloader');
+  if(!pl)return;
+  const txt=pl.querySelector('.prl-txt');
+  if(!txt)return;
+  let pct=0;
+  const interval=setInterval(()=>{
+    pct+=Math.floor(Math.random()*15)+5;
+    if(pct>100)pct=100;
+    txt.textContent=pct+'%';
+    if(pct>=100){clearInterval(interval);txt.textContent='Ready'}
+  },100);
+})();
+
+// ===== TYPED TEXT IN HERO BADGE =====
+(function(){
+  const badge=document.querySelector('.hey');
+  if(!badge)return;
+  const texts=['Custom Software & Web Development','Billing Systems & ERP Solutions','8 Client Projects Delivered','From Idea to Live Product'];
+  let textIdx=0;let charIdx=0;let isDeleting=false;let isPaused=false;
+  const textSpan=badge.childNodes[badge.childNodes.length-1];
+  if(!textSpan||textSpan.nodeType!==3)return;
+  function type(){
+    const current=texts[textIdx];
+    if(!isDeleting&&!isPaused){
+      textSpan.textContent=current.substring(0,charIdx+1);
+      charIdx++;
+      if(charIdx===current.length){isPaused=true;setTimeout(()=>{isPaused=false;isDeleting=true;type()},2500);return}
+    }else if(isDeleting){
+      textSpan.textContent=current.substring(0,charIdx-1);
+      charIdx--;
+      if(charIdx===0){isDeleting=false;textIdx=(textIdx+1)%texts.length}
+    }
+    setTimeout(type,isDeleting?30:60);
+  }
+  setTimeout(type,3000);
+})();
+
+// ===== INTERSECTION-BASED CARD STAGGER =====
+const gridObs=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const grid=entry.target;
+      const cards=grid.querySelectorAll('.pcd,.scd,.wcd');
+      cards.forEach((card,i)=>{
+        setTimeout(()=>{card.classList.add('vi')},i*80);
+      });
+      gridObs.unobserve(grid);
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.pgr,.sgr,.wgr').forEach(g=>gridObs.observe(g));
+
+// ===== SMOOTH SCROLL INDICATOR =====
+(function(){
+  const hero=document.querySelector('.hero');
+  if(!hero)return;
+  const indicator=document.createElement('div');
+  indicator.innerHTML='<div style="width:24px;height:40px;border:2px solid rgba(255,255,255,.2);border-radius:12px;display:flex;justify-content:center;padding-top:6px"><div style="width:3px;height:8px;background:var(--or);border-radius:2px;animation:scrollIndicator 2s ease-in-out infinite"></div></div><style>@keyframes scrollIndicator{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(10px);opacity:.3}}</style>';
+  indicator.style.cssText='position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:10;opacity:.6;transition:opacity .3s ease';
+  hero.appendChild(indicator);
+  window.addEventListener('scroll',()=>{indicator.style.opacity=window.scrollY>100?'0':'0.6'},{passive:true});
+})();
+
+// ===== INTERACTIVE GLOW ON IMAGES =====
+document.querySelectorAll('.pim').forEach(pim=>{
+  pim.addEventListener('mousemove',e=>{
+    const rect=pim.getBoundingClientRect();
+    const x=((e.clientX-rect.left)/rect.width)*100;
+    const y=((e.clientY-rect.top)/rect.height)*100;
+    pim.style.setProperty('--glow-x',x+'%');
+    pim.style.setProperty('--glow-y',y+'%');
+  });
+});
+
+// ===== SMOOTH NUMBER COUNTING FOR STATS =====
+document.querySelectorAll('.hsi').forEach(stat=>{
+  stat.addEventListener('mouseenter',()=>{
+    const n=stat.querySelector('.n');
+    if(!n||!n.dataset.target)return;
+    const target=parseInt(n.dataset.target);
+    let current=0;
+    const step=Math.ceil(target/20);
+    const interval=setInterval(()=>{
+      current+=step;
+      if(current>=target){current=target;clearInterval(interval)}
+      n.textContent=current+'+';
+    },40);
+  });
+});
+
